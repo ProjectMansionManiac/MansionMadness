@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour {
     {
         Text winText = GameObject.Find("WinText").GetComponent<Text>();
         winText.enabled = true;
+
+        GameManager.GetInstance().alive = false;
+
         Destroy(this.gameObject);
     }
 }
