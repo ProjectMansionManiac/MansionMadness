@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : Enemy {
-
-    public Transform[] shootPos;
+public class EnemyBullet : Bullet {
 
 }
