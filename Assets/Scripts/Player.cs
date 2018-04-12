@@ -40,8 +40,11 @@ public class Player : MonoBehaviour
     private bool wallSliding;
     private int wallDirX;
 
+    public Animator animator;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -178,7 +181,7 @@ public class Player : MonoBehaviour
     {
         Text winText = GameObject.Find("WinText").GetComponent<Text>();
         winText.enabled = true;
-        winText.text = "LOOOOSER";
+        winText.text = "GAME OVER";
 
         GameManager.GetInstance().alive = false;
 
