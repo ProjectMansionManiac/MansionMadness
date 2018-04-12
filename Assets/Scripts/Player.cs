@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
     public int damage;
     public int health;
+    public GameObject[] hearts;
 
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;
@@ -42,6 +46,9 @@ public class Player : MonoBehaviour
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+        RefreshHealthbar();
+
+        GameManager.GetInstance().alive = true;
     }
 
     private void Update()
@@ -146,7 +153,9 @@ public class Player : MonoBehaviour
 
     private void HandleShooting()
     {
-        Vector2 direction = Vector2.right;
+        var heading = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+
+        Vector2 direction = new Vector2(heading.x,heading.y).normalized;
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -158,6 +167,7 @@ public class Player : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         health -= damage;
+        RefreshHealthbar();
         if (health <= 0)
         {
             Die();
@@ -166,6 +176,45 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        Text winText = GameObject.Find("WinText").GetComponent<Text>();
+        winText.enabled = true;
+        winText.text = "LOOOOSER";
+
+        GameManager.GetInstance().alive = false;
+
         Destroy(this.gameObject);
+    }
+
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(5f);
+    }
+
+    void RefreshHealthbar()
+    {
+        if (health == 0)
+        {
+            hearts[0].SetActive(false);
+            hearts[1].SetActive(false);
+            hearts[2].SetActive(false);
+        }
+        else if (health == 1)
+        {
+            hearts[0].SetActive(true);
+            hearts[1].SetActive(false);
+            hearts[2].SetActive(false);
+        }
+        else if (health == 2)
+        {
+            hearts[0].SetActive(true);
+            hearts[1].SetActive(true);
+            hearts[2].SetActive(false);
+        }
+        else if (health >= 3)
+        {
+            hearts[0].SetActive(true);
+            hearts[1].SetActive(true);
+            hearts[2].SetActive(true);
+        }
     }
 }

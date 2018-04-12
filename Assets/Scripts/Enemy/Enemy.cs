@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
@@ -24,6 +25,8 @@ public class Enemy : MonoBehaviour {
 
     public void Die()
     {
+        Text winText = GameObject.Find("WinText").GetComponent<Text>();
+        winText.enabled = true;
         Destroy(this.gameObject);
     }
 }
