@@ -1,3 +1,2 @@
 * text=auto
 *.sln text merge=union eol=crlf
-Assets/ filter=lfs -crlf

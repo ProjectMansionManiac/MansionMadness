@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 58007229437281590}
   - component: {fileID: 50602143884340092}
   - component: {fileID: 114950462784685142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  speed: 0
+  speed: 5
   direction: {x: 0, y: 0}
 --- !u!212 &212858001803698160
 SpriteRenderer:

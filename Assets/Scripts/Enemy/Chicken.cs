@@ -12,7 +12,7 @@ public class Chicken : Boss {
     IEnumerator Shooting()
     {
         while (true) {
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(1f);
             for(int i = 0; i < shootPos.Length; i++)
             {
                 Shoot(i);
