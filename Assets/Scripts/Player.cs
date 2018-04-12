@@ -4,6 +4,7 @@
 public class Player : MonoBehaviour
 {
     public int damage;
+    public int health;
 
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;
@@ -145,13 +146,26 @@ public class Player : MonoBehaviour
 
     private void HandleShooting()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionalInput, 20f, 10);
-        Debug.Log(hit.collider);
-        if (hit.collider != null && hit.collider.tag == "Enemy")
+        Vector2 direction = Vector2.right;
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            //float distance = Mathf.Abs(hit.point.y - transform.position.y);
-            //hit.collider.gameObject.GetComponent<Enemy>().ApplyDamage(damage);
-            Debug.Log("Treffer!");
+            GameObject playerBullet = (GameObject)Instantiate(Resources.Load("PlayerBullet"),transform.position,Quaternion.identity);
+            playerBullet.GetComponent<PlayerBullet>().Initialize(damage, direction);
         }
+    }
+
+    public void ApplyDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
     }
 }

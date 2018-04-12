@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    public int maxHealth;
+    public int health;
+
+    public int damage;
+
+	void Awake () {
+        health = maxHealth;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void ApplyDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
+    }
 }
