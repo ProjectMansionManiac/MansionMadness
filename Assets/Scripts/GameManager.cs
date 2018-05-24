@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    static GameManager instance;
+    static GameManager instance = null;
+    public GameState currentState = null;
 
     public bool alive = false;
 
@@ -26,7 +27,8 @@ public class GameManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 GameObject.Find("MenuCanvas").GetComponent<Canvas>().enabled = true;
-                SceneManager.UnloadSceneAsync("levelDesign");
+                SceneManager.UnloadSceneAsync("Gate1");
+                this.currentState = new GameState();
             }
         }
     }
@@ -35,8 +37,25 @@ public class GameManager : MonoBehaviour {
     {
         if (GameObject.Find("MenuCanvas").GetComponent<Canvas>().enabled == true)
         {
-            SceneManager.LoadScene("levelDesign", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Gate1", LoadSceneMode.Additive);
             GameObject.Find("MenuCanvas").GetComponent<Canvas>().enabled = false;
+            this.currentState = new GameState();
         }
+    }
+
+    public void ReloadScene()
+    {
+        Invoke("InvokedReload", .1f);
+    }
+
+    public void InvokedReload()
+    {
+        SceneManager.LoadScene("Gate1", LoadSceneMode.Additive);
+        this.currentState = new GameState();
+    }
+
+    public void BackToMenu()
+    {
+        GameObject.Find("MenuCanvas").GetComponent<Canvas>().enabled = true;
     }
 }

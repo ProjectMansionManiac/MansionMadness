@@ -8,6 +8,7 @@ TagManager:
   - PlayerBullet
   - Through
   - EnemyBullet
+  - Mirror
   layers:
   - Default
   - TransparentFX

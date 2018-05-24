@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : Bullet {
+public class PlayerBullet : Bullet
+{
 
 }
