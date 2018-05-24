@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour {
 
         GameManager.GetInstance().alive = false;
 
-        Destroy(this.gameObject);
+        Time.timeScale = 0f;
+
+        Destroy(gameObject);
     }
 }
