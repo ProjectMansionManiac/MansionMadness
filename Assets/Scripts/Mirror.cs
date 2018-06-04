@@ -5,13 +5,13 @@ using UnityEngine;
 public class Mirror : MonoBehaviour
 {
     public int damage;
+	
     [SerializeField]
-    float damageTick;
+	float damageTick;
+	
     float currentTick;
     bool canDamage = true;
 
-
-    public Boss boss;
     private LineRenderer lineRenderer;
     private void Start()
     {
@@ -39,21 +39,11 @@ public class Mirror : MonoBehaviour
         // check if the collider has a bullet component
         if (bullet == null)
             return;
-
-        // mirrors position
-        Vector2 position = transform.position;
-        // boss to mirror vector
-        Vector2 bossToMirror = transform.position - boss.transform.position;
+        
         // initialize a new vector to zero which
         // will be the normal vector of the reflection
-        Vector2 n = Vector2.zero;
-        
-        // get direction from boss to mirror
-        n = bossToMirror - position;
-
-        // normalize it
-        n.Normalize();
-
+        Vector2 n = transform.forward;
+		
         // generate reflection vector between colliding object and mirror
         Vector2 reflection = Vector2.Reflect(bullet.direction, n);
         // reflection contains a new forward vector now
@@ -66,20 +56,11 @@ public class Mirror : MonoBehaviour
         Debug.Log("I Reflect");
 
         lineRenderer.SetPosition(0, reflectionPoint);
-        // mirrors position
-        Vector2 position = transform.position;
-        // boss to mirror vector
-        Vector2 bossToMirror = transform.position - boss.transform.position;
+
         // initialize a new vector to zero which
         // will be the normal vector of the reflection
-        Vector2 n = Vector2.zero;
-
-        // get direction from boss to mirror
-        n = bossToMirror - position;
-
-        // normalize it
-        n.Normalize();
-
+        Vector2 n = transform.forward;
+		
         // generate reflection vector between colliding object and mirror
         Vector2 reflection = Vector2.Reflect(inputVector, n);
         reflection.Normalize();
@@ -103,9 +84,9 @@ public class Mirror : MonoBehaviour
         lineRenderer.enabled = true;
 
         lineRenderer.SetPosition(1, hit.point);
-        Debug.Log("I hit");
         canReflect = true;
         StartCoroutine(DisableLineRenderer());
+
         if (hit.collider.gameObject.tag == "Player")
         {
             TriggerDamage(hit.collider.gameObject);
