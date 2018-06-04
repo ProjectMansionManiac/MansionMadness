@@ -8,7 +8,7 @@ public class Chicken : Boss {
 
     private void Start()
     {
-        StartCoroutine(Shooting());
+        //StartCoroutine(Shooting());
     }
 
     IEnumerator Shooting()
