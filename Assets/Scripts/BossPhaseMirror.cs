@@ -7,7 +7,7 @@ public class BossPhaseMirror : BossPhase {
 
 	public override void ActivatePhase()
     {
-
+        if (torso != null)
         torso.SetActive(true);
 
         foreach (GameObject mirror in mirrors)
@@ -18,16 +18,23 @@ public class BossPhaseMirror : BossPhase {
 
     public override void DeactivatePhase()
     {
-        base.DeactivatePhase();
-
         foreach (GameObject mirror in mirrors)
         {
             mirror.SetActive(false);
         }
+
+        base.DeactivatePhase();
     }
 
     private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ActivatePhase();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            DeactivatePhase();
+        }
     }
 }
