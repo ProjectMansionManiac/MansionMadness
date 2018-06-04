@@ -42,7 +42,7 @@ public class Mirror : MonoBehaviour
         
         // initialize a new vector to zero which
         // will be the normal vector of the reflection
-        Vector2 n = transform.forward;
+        Vector2 n = transform.up;
 		
         // generate reflection vector between colliding object and mirror
         Vector2 reflection = Vector2.Reflect(bullet.direction, n);
@@ -59,20 +59,19 @@ public class Mirror : MonoBehaviour
 
         // initialize a new vector to zero which
         // will be the normal vector of the reflection
-        Vector2 n = transform.forward;
+        Vector2 n = transform.up;
 		
         // generate reflection vector between colliding object and mirror
         Vector2 reflection = Vector2.Reflect(inputVector, n);
         reflection.Normalize();
 
-        var layerMask = 1 << 9;
-        var layerMask2 = 1 << 12;
+        var layerMask = 1 << 12;
         // This would cast rays only against colliders in layer xxx.
         // But instead we want to collide against everything except layer xxx. The ~ operator does this, it inverts a bitmask.
         layerMask = ~layerMask;
 
         RaycastHit2D hit = Physics2D.Raycast(reflectionPoint, reflection, 100f, layerMask);
-
+        Debug.Log(hit.transform.gameObject);
         if (!hit)
         {
             lineRenderer.enabled = true;
