@@ -29,5 +29,5 @@ public class DamageComponent : MonoBehaviour
     }
     
     [SerializeField] protected bool isDead = false;
-    [SerializeField] protected float health = 100.0f;
+    [SerializeField] public float health = 100.0f;
 }

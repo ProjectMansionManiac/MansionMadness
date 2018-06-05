@@ -12,6 +12,8 @@ public class BossPhaseMirror : BossPhase {
         if (torso != null)
         torso.tag = "Enemy";
 
+        //animator.Play("MirrorPhase");
+
         foreach (GameObject mirror in mirrors)
         {
             mirror.SetActive(true);
@@ -35,15 +37,6 @@ public class BossPhaseMirror : BossPhase {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ActivatePhase();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            DeactivatePhase();
-        }
-
         if (playerObject.transform.position.x < transform.position.x)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);

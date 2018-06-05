@@ -13,9 +13,22 @@ public class BossPhase : MonoBehaviour {
 
     public GameObject playerObject;
 
+    public Animator animator;
+
+    public BossDamageComponent[] allDamageComponents;
+    public int totalMaxHealth;
+    public int totalHealth;
+
+
     private void Start()
     {
         playerObject = GameObject.Find("Player");
+        allDamageComponents = GetComponentsInChildren<BossDamageComponent>();
+        foreach (var damageComponent in allDamageComponents)
+        {
+            totalMaxHealth += (int)damageComponent.health;
+        }
+        totalHealth = totalMaxHealth;
     }
 
     public virtual void ActivatePhase()
@@ -25,13 +38,11 @@ public class BossPhase : MonoBehaviour {
 
     public virtual void DeactivatePhase()
     {
-        head.tag = "";
-        torso.tag = "";
-        rightArm.tag = ""; 
-        leftArm.tag = "";
-        rightLeg.tag = "";
-        leftLeg.tag = "";
-
-        this.enabled = false;
+        head.tag = "Untagged";
+        torso.tag = "Untagged";
+        rightArm.tag = "Untagged"; 
+        leftArm.tag = "Untagged";
+        rightLeg.tag = "Untagged";
+        leftLeg.tag = "Untagged";
     }
 }
