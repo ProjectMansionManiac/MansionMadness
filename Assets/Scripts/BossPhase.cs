@@ -11,19 +11,26 @@ public class BossPhase : MonoBehaviour {
     public GameObject rightLeg;
     public GameObject leftLeg;
 
-	public virtual void ActivatePhase()
+    public GameObject playerObject;
+
+    private void Start()
+    {
+        playerObject = GameObject.Find("Player");
+    }
+
+    public virtual void ActivatePhase()
     {
 
     }
 
     public virtual void DeactivatePhase()
     {
-        head.SetActive(false);
-        torso.SetActive(false);
-        rightArm.SetActive(false);
-        leftArm.SetActive(false);
-        rightLeg.SetActive(false);
-        leftLeg.SetActive(false);
+        head.tag = "";
+        torso.tag = "";
+        rightArm.tag = ""; 
+        leftArm.tag = "";
+        rightLeg.tag = "";
+        leftLeg.tag = "";
 
         this.enabled = false;
     }

@@ -7,13 +7,20 @@ public class BossPhaseMirror : BossPhase {
 
 	public override void ActivatePhase()
     {
+        base.ActivatePhase();
+
         if (torso != null)
-        torso.SetActive(true);
+        torso.tag = "Enemy";
 
         foreach (GameObject mirror in mirrors)
         {
             mirror.SetActive(true);
         }
+    }
+
+    private void OnEnable()
+    {
+        ActivatePhase();
     }
 
     public override void DeactivatePhase()
@@ -35,6 +42,15 @@ public class BossPhaseMirror : BossPhase {
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             DeactivatePhase();
+        }
+
+        if (playerObject.transform.position.x < transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
