@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class DropComponent : MonoBehaviour
 {
@@ -29,11 +30,13 @@ public class DropComponent : MonoBehaviour
 
     void Start()
     {
+        Assert.IsNotNull(prefab.GetComponent<BoxCollider2D>());
+
         // save the drop height
         manualDropHeight = dropHeight;
 
         // retrieve the size of the drop element
-        fieldSize = prefab.GetComponent<SpriteRenderer>().sprite.rect.width;
+        fieldSize = prefab.GetComponent<BoxCollider2D>().size.x;
 
         // set the position of the first element off by half it's size
         lastX = this.transform.position.x + (fieldSize / 2);
