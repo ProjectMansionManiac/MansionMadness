@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4822683733502198}
   - component: {fileID: 212928367393570974}
   - component: {fileID: 61952618329756894}
+  - component: {fileID: 114628768727604874}
   m_Layer: 0
   m_Name: spear
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754619965365250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.21189, y: 8.134252, z: 0}
+  m_LocalPosition: {x: -28, y: 6.930722, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,6 +67,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &114628768727604874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754619965365250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69bcb57acb974244d955af945de934f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropDelay: 1
+  dropSpeed: 0.5
+  removeDelay: 5
 --- !u!212 &212928367393570974
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -98,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b5bd17a63e4abf4389a0925a3d79f90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3525cd72831d74f40985b41b5115c40e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
