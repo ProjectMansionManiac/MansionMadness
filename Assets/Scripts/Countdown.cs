@@ -17,17 +17,11 @@ public class Countdown
         this.activated = false;
     }
 
-    public void Update(float deltaTime, bool log)
+    public void Update(float deltaTime)
     {
         if (activated)
             return;
-
-        if (log)
-        {
-            Debug.Log("Delta Time: " + deltaTime);
-            Debug.Log("Current Time: " + currentTime);
-        }
-
+        
         if ((this.currentTime - deltaTime) <= 0)
         {
             this.currentTime = this.tickRate;
