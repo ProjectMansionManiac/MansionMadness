@@ -28,6 +28,11 @@ public class DropComponent : MonoBehaviour
     [SerializeField]
     float randomSpawnHeightMax;
 
+    [SerializeField]
+    private float dropRespawnTime = 15;
+    private Countdown respawnCountdown;
+    private bool respawn = false;
+
     void Start()
     {
         Assert.IsNotNull(prefab.GetComponent<BoxCollider2D>());
@@ -73,10 +78,31 @@ public class DropComponent : MonoBehaviour
             // set the X position for the next element
             lastX += spacingSize + fieldSize;
         }
+
+        // add a respawn countdown
+        respawnCountdown = new Countdown(() => { this.respawn = true; }, dropRespawnTime);
     }
 
     private void Update()
     {
-        
+        // update the respawn countdown
+        respawnCountdown.Update(Time.deltaTime);
+
+        if (respawn)
+        {
+            foreach(var drop in drops)
+            {
+                // respawn the drops
+                drop.transform.position = new Vector3(
+                    drop.transform.position.x,
+                    this.transform.position.y + dropHeight,
+                    drop.transform.position.z
+                );
+
+                // activate the drops
+                drop.SetActive(true);
+            }
+            respawn = false;
+        }
     }
 }

@@ -28,8 +28,11 @@ public class PlayerMovement : MonoBehaviour
     public float wallStickTime = .25f;
     private float timeToWallUnstick;
 
+    [SerializeField]
     private float gravity;
+    [SerializeField]
     private float maxJumpVelocity;
+    [SerializeField]
     private float minJumpVelocity;
     private Vector3 velocity;
     private float velocityXSmoothing;

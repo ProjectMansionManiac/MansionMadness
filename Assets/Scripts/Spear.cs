@@ -19,6 +19,9 @@ public class Spear : MonoBehaviour
     [SerializeField]
     private float removeDelay = 5.0f;
 
+    [SerializeField]
+    private float spearDamage = 50.0f;
+
     void Start ()
     {
         Action action = () => { this.dropping = true; };
@@ -30,8 +33,8 @@ public class Spear : MonoBehaviour
 	
 	void Update ()
     {
-        dropCountdown.Update(Time.deltaTime, true);
-        removeTimer.Update(Time.deltaTime, false);
+        dropCountdown.Update(Time.deltaTime);
+        removeTimer.Update(Time.deltaTime);
 
         if (dropping)
         {
@@ -40,7 +43,28 @@ public class Spear : MonoBehaviour
 
         if (remove)
         {
-            Destroy(this.gameObject);
+            this.remove = false;
+            this.dropping = false;
+            this.gameObject.SetActive(false);
         }
 	}
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Player")
+        {
+            var dmgComp = collider.gameObject.GetComponent<DamageComponent>();
+
+            if (dmgComp == null)
+                return;
+
+            dmgComp.health -= this.spearDamage;
+            this.gameObject.SetActive(false);
+        }
+
+        if (collider.tag == "Through")
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
 }
