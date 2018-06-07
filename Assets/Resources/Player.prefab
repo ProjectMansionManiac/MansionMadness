@@ -35,7 +35,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4485929271008746}
   - component: {fileID: 61313291605876354}
-  - component: {fileID: 114377225066036652}
   - component: {fileID: 114290449263101344}
   m_Layer: 10
   m_Name: Hitbox
@@ -61,6 +60,7 @@ GameObject:
   - component: {fileID: 114637391997770472}
   - component: {fileID: 120045955466287410}
   - component: {fileID: 95453862086711294}
+  - component: {fileID: 82252522227256892}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1956108275729304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -137.2, y: -13.5, z: 0}
+  m_LocalPosition: {x: -137, y: -13.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4485929271008746}
@@ -234,6 +234,102 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1972411434961714}
   m_Enabled: 1
+--- !u!82 &82252522227256892
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956108275729304}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0cc5dd8c8825b6d4a81cd756047d6814,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: f5e08af3d1747ae49b1a718c6796d6e7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95453862086711294
 Animator:
   serializedVersion: 3
@@ -265,10 +361,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   damageTick: 0.1
-  maxAmmo: 1000
-  currentAmmo: 1000
-  refillTick: 0.1
-  refillAmount: 200
+  maxAmmo: 100
+  currentAmmo: 100
+  refillTick: 0.03
+  refillAmount: 50
   shootingOrigin: {fileID: 4917867936763012}
   AmmoBar: {fileID: 0}
 --- !u!114 &114114557937520664
@@ -284,7 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &114290449263101344
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1723007605148394}
@@ -326,26 +422,6 @@ MonoBehaviour:
   wallStickTime: 0.25
   animator: {fileID: 95453862086711294}
   originalSize: 1
---- !u!114 &114377225066036652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1723007605148394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 451d8e0b57b9e7541953268455d259de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDead: 0
-  health: 100
-  healthBar: {fileID: 0}
-  gameOverScreen: {fileID: 0}
-  damageColor: {r: 0, g: 0, b: 0, a: 0}
-  spriteRenderer: {fileID: 0}
-  animationSpeed: 0
-  contactDamage: 10
-  damageZoneCooldownTime: 5
 --- !u!114 &114637391997770472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +447,9 @@ MonoBehaviour:
   canDoubleJump: 0
   wallSlideSpeedMax: 3
   wallStickTime: 0.25
+  gravity: 0
+  maxJumpVelocity: 0
+  minJumpVelocity: 0
   controller: {fileID: 114901449477805156}
   animator: {fileID: 95453862086711294}
   originalSize: 1
