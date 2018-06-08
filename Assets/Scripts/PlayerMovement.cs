@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private float maxJumpVelocity;
     [SerializeField]
     private float minJumpVelocity;
-    private Vector3 velocity;
+    public Vector3 velocity;
     private float velocityXSmoothing;
 
     public Controller2D controller;

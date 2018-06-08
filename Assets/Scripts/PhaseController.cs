@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PhaseController : MonoBehaviour {
 
-    public PhaseType[] phases;
+    //public PhaseType[] phases;
     int currentPhaseIndex = 0;
 
     public static PhaseController instance = null;

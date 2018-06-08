@@ -6,10 +6,7 @@ public class BossPhase : MonoBehaviour {
 
     public GameObject head;
     public GameObject torso;
-    public GameObject rightArm;
-    public GameObject leftArm;
-    public GameObject rightLeg;
-    public GameObject leftLeg;
+    public GameObject restbody;
 
     public GameObject playerObject;
 
@@ -40,9 +37,6 @@ public class BossPhase : MonoBehaviour {
     {
         head.tag = "Untagged";
         torso.tag = "Untagged";
-        rightArm.tag = "Untagged"; 
-        leftArm.tag = "Untagged";
-        rightLeg.tag = "Untagged";
-        leftLeg.tag = "Untagged";
+        restbody.tag = "Untagged"; 
     }
 }

@@ -131,7 +131,7 @@ public class PlayerShooting : MonoBehaviour
             // But instead we want to collide against everything except layer xxx. The ~ operator does this, it inverts a bitmask.
             layerMask = ~layerMask;
 
-            RaycastHit2D hit = Physics2D.Raycast(shootingOrigin.position, inputDirection, 100f, layerMask);
+            RaycastHit2D hit = Physics2D.Raycast((Vector2)shootingOrigin.position, inputDirection, 100f, layerMask);
 
             if (!hit)
             {

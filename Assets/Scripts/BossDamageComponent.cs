@@ -22,10 +22,11 @@ public class BossDamageComponent : DamageComponent
 
         StartCoroutine(DamageAnimation());
         // check if health is below zero
-        if (this.health == 0)
+        if (this.health <= 0)
         {
             // the boss is dead...
-            transform.parent.GetComponent<Chicken>().Die();
+            isDead = true;
+            gameObject.SetActive(false);
         }
     }
 

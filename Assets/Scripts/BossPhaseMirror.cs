@@ -37,6 +37,12 @@ public class BossPhaseMirror : BossPhase {
 
     private void Update()
     {
+        totalHealth = 0;
+        foreach (var damageComponent in allDamageComponents)
+        {
+            totalHealth += (int)damageComponent.health;
+        }
+
         if (playerObject.transform.position.x < transform.position.x)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);

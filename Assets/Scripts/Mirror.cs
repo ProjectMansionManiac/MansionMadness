@@ -70,15 +70,16 @@ public class Mirror : MonoBehaviour
         // But instead we want to collide against everything except layer xxx. The ~ operator does this, it inverts a bitmask.
         layerMask = ~layerMask;
 
-        RaycastHit2D hit = Physics2D.Raycast(reflectionPoint, reflection, 100f, layerMask);
-        Debug.Log(hit.transform.gameObject);
+        RaycastHit2D hit = Physics2D.Raycast(reflectionPoint, reflection, 100f);
         if (!hit)
         {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(1, reflectionPoint + reflection * 20f);
-            Debug.Log("I not hit");
+            Debug.Log("I not hit " + reflection + " " + inputVector);
             return;
         };
+
+        Debug.Log(hit.transform.gameObject);
 
         lineRenderer.enabled = true;
 
@@ -130,8 +131,6 @@ public class Mirror : MonoBehaviour
 
     private void TriggerDamage(GameObject receiver)
     {
-        if (receiver.name != "Hitbox")
-            return; 
         //trigger damage at the Enemy GameObject
         DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
         info.sender = this.gameObject;

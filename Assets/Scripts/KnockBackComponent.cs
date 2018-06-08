@@ -9,16 +9,19 @@ public class KnockBackComponent : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var obj = collision.gameObject;
-
-        Debug.Log("Collision!");
-
+        
         if (obj.tag == "Player")
         {
-            var player = obj.GetComponentInChildren<Player>();
-            float xDot = Vector3.Dot(obj.transform.position - this.transform.position, Vector3.right);
-            player.velocity.x += (xDot / xDot) * pushBackCoefficient;
+            var player = obj.GetComponentInChildren<PlayerMovement>();
+            float xDot = Vector3.Dot(this.transform.position - obj.transform.position, this.transform.position);
 
-            Debug.Log("xDot * pushBackCoefficient: " + (xDot / xDot * pushBackCoefficient));
+            if (player == null)
+                return;
+
+            player.velocity.x += (xDot / Mathf.Abs(xDot)) * pushBackCoefficient;
+            
+            if (player.velocity.x == 0.0f)
+                player.velocity.x = -1.0f;
         }
     }
 }

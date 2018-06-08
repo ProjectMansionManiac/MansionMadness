@@ -93,7 +93,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1972411434961714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.949997, y: 3.54, z: -15.625}
+  m_LocalPosition: {x: 0.36, y: 3.09, z: -15.625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4993931424638122}
@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1956108275729304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -137, y: -13.5, z: 0}
+  m_LocalPosition: {x: -13.4, y: -3.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4485929271008746}
@@ -161,7 +161,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.263134
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -193,7 +193,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.6}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 2.52, y: 3.97}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -337,7 +337,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1956108275729304}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dc070e1ea07abdf4da4cf7df1a30111c, type: 2}
   m_CullingMode: 0
@@ -409,19 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21abc4c9fcee4ca418ece364c442f238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  hearts: []
-  maxJumpHeight: 4
-  minJumpHeight: 1
-  timeToJumpApex: 0.4
-  wallJumpClimb: {x: 7.5, y: 16}
-  wallJumpOff: {x: 8.5, y: 7}
-  wallLeap: {x: 18, y: 17}
-  canDoubleJump: 0
-  wallSlideSpeedMax: 3
-  wallStickTime: 0.25
-  animator: {fileID: 95453862086711294}
-  originalSize: 1
 --- !u!114 &114637391997770472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -438,7 +425,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  maxJumpHeight: 4
+  maxJumpHeight: 7
   minJumpHeight: 1
   timeToJumpApex: 0.4
   wallJumpClimb: {x: 0, y: 0}
@@ -450,6 +437,7 @@ MonoBehaviour:
   gravity: 0
   maxJumpVelocity: 0
   minJumpVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
   controller: {fileID: 114901449477805156}
   animator: {fileID: 95453862086711294}
   originalSize: 1
@@ -609,7 +597,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2885fab9a6b467046af6a3ad3cbf9385, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f4d56f6f244cfe428e6e19651582818, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
