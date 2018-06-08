@@ -33615,7 +33615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24dc3282b4d3874f922701b4399670d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: f5e08af3d1747ae49b1a718c6796d6e7, type: 3}
 --- !u!61 &167821798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33654,7 +33653,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &213589184
+--- !u!1 &213589184 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1497088114969292, guid: dd5839e12cdbed145b72db6e38cb4e5f,
     type: 2}
@@ -37645,6 +37644,15 @@ Prefab:
       propertyPath: mirrors.Array.data[3]
       value: 
       objectReference: {fileID: 1925338369}
+    - target: {fileID: 1821429653051982, guid: bd743c680b77f864197871952fb62e15, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 61174414449665660, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd743c680b77f864197871952fb62e15, type: 2}
   m_IsPrefabParent: 0
