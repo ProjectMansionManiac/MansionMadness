@@ -12,10 +12,7 @@ public class BossPhaseInit : BossPhase {
         base.ActivatePhase();
         head.tag = "Enemy";
         torso.tag = "Enemy";
-        rightArm.tag = "Enemy";
-        leftArm.tag = "Enemy";
-        rightLeg.tag = "Enemy";
-        leftLeg.tag = "Enemy";
+        restbody.tag = "Enemy";
 
         //animator.Play("InitPhase");
     }
@@ -37,8 +34,9 @@ public class BossPhaseInit : BossPhase {
         {
             totalHealth += (int)damageComponent.health;
         }
-        if (totalHealth / totalMaxHealth < healthFraction)
+        if ((float)totalHealth / (float)totalMaxHealth < healthFraction)
         {
+            Debug.Log(totalHealth / totalMaxHealth);
             DeactivatePhase();
             PhaseController.instance.StartNextPhase();
             this.enabled = false;

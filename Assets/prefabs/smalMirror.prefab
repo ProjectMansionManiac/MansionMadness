@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212606587718498726}
   - component: {fileID: 114991923551306662}
   - component: {fileID: 120966148993125262}
-  - component: {fileID: 68852951072112308}
-  m_Layer: 12
+  - component: {fileID: 61237698856479336}
+  m_Layer: 0
   m_Name: smalMirror
   m_TagString: Mirror
   m_Icon: {fileID: 0}
@@ -36,15 +36,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1540392228707708}
-  m_LocalRotation: {x: -0, y: -0, z: 0.91238314, w: 0.40933734}
-  m_LocalPosition: {x: -16.55, y: -2.25, z: 0}
-  m_LocalScale: {x: 2.613183, y: 0.1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.859674, w: 0.5108431}
+  m_LocalPosition: {x: -16.68, y: -1.37, z: 0}
+  m_LocalScale: {x: 2.613185, y: 0.10000007, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 131.67401}
---- !u!68 &68852951072112308
-EdgeCollider2D:
+--- !u!61 &61237698856479336
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -56,10 +56,18 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8, y: 0.8}
+    newSize: {x: 0.8, y: 0.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
 --- !u!114 &114991923551306662
 MonoBehaviour:
   m_ObjectHideFlags: 1

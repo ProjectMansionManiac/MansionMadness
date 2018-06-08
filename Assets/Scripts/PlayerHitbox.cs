@@ -15,8 +15,6 @@ public class PlayerHitbox : MonoBehaviour {
     {
         if (collision.tag == "EnemyBullet")
         {
-            player.ApplyDamage(collision.gameObject.GetComponent<EnemyBullet>().damage);
-            Destroy(collision.gameObject);
         }
     }
 }

@@ -22,11 +22,11 @@ public class PlayerInput : MonoBehaviour
         {
             if (directionalInput == Vector2.zero)
             {
-                player.animator.Play("Idle");
+                playerMovement.animator.Play("Idle");
             }
             else if (-.2f > directionalInput.x && directionalInput.x > .2f )
             {
-                player.animator.Play("Walk");
+                playerMovement.animator.Play("Walk");
             }
         }
 
@@ -43,13 +43,13 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             playerMovement.OnJumpInputDown();
-            player.animator.Play("Jump");
+            playerMovement.animator.Play("Jump");
         }
 
         if (Input.GetButtonUp("Jump"))
         {
             playerMovement.OnJumpInputUp();
-            player.animator.Play("Idle");
+            playerMovement.animator.Play("Idle");
         }
     }
 }
