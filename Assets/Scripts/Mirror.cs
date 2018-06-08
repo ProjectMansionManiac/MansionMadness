@@ -86,6 +86,22 @@ public class Mirror : MonoBehaviour
         canReflect = true;
         StartCoroutine(DisableLineRenderer());
 
+
+        if (hit.collider.gameObject.tag == "Mirror")
+        {
+            Debug.Log("I Hit Mirror");
+            hit.collider.gameObject.GetComponent<Mirror>().Reflect(hit.point - new Vector2(reflectionPoint.x, reflectionPoint.y), hit.point);
+        }
+        //dont do anything, if cooldown isn't over yet.
+        if (!canDamage)
+            return;
+
+        //otherwise hit enemy
+        if (hit.collider.gameObject.tag == "Enemy")
+        {
+            TriggerDamage(hit.collider.gameObject);
+        }
+
         if (hit.collider.gameObject.tag == "Player")
         {
             TriggerDamage(hit.collider.gameObject);
@@ -121,7 +137,7 @@ public class Mirror : MonoBehaviour
         info.sender = this.gameObject;
         info.damage = this.damage;
 
-        receiver.GetComponent<PlayerDamageComponent>().OnDamageReceived(info);
+        receiver.GetComponent<DamageComponent>().OnDamageReceived(info);
 
         canDamage = false;
     }
