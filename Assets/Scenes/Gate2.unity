@@ -132,7 +132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &23859335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &46888615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2503,6 +2503,16 @@ Prefab:
       propertyPath: phases.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114948432867694192, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114364474292285644, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
       propertyPath: phases.Array.data[0].phaseTypes.Array.size
@@ -2530,11 +2540,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4846708751260250, guid: bd743c680b77f864197871952fb62e15, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.15
+      value: -3.31
       objectReference: {fileID: 0}
     - target: {fileID: 4846708751260250, guid: bd743c680b77f864197871952fb62e15, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.69
+      value: 5.18
       objectReference: {fileID: 0}
     - target: {fileID: 4846708751260250, guid: bd743c680b77f864197871952fb62e15, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2587,12 +2597,12 @@ Prefab:
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
       propertyPath: phases.Array.data[0].HealthToChangePhase
-      value: 270
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
       propertyPath: phases.Array.data[2].HealthToChangePhase
-      value: 210
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
@@ -2602,7 +2612,7 @@ Prefab:
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
       propertyPath: phases.Array.data[4].HealthToChangePhase
-      value: 150
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
@@ -2617,7 +2627,52 @@ Prefab:
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
       propertyPath: phases.Array.data[1].HealthToChangePhase
-      value: 240
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: phases.Array.data[2].phaseTypes.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948432867694192, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 23859334}
+    - target: {fileID: 114948432867694192, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 1399062668}
+    - target: {fileID: 114948432867694192, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1841174484}
+    - target: {fileID: 114948432867694192, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 46888614}
+    - target: {fileID: 114364474292285644, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: totalMaxHealth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114364474292285644, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: totalHealth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114364474292285644, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 23859334}
+    - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
+        type: 2}
+      propertyPath: phases.Array.data[4].phaseTypes.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd743c680b77f864197871952fb62e15, type: 2}
@@ -2688,7 +2743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1399062669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2979,7 +3034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1841174485
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3291,12 +3346,12 @@ Prefab:
     - target: {fileID: 114319916945616024, guid: b19f396039a87874d917193c2f2a6633,
         type: 2}
       propertyPath: CooldownTimeWhenLaserIsEmpty
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114319916945616024, guid: b19f396039a87874d917193c2f2a6633,
         type: 2}
       propertyPath: laserLength
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b19f396039a87874d917193c2f2a6633, type: 2}
