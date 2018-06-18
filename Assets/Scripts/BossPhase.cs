@@ -16,6 +16,10 @@ public class BossPhase : MonoBehaviour {
     public int totalMaxHealth;
     public int totalHealth;
 
+    [SerializeField] private GameObject[] ObjectsToSpawn;
+
+    [HideInInspector]
+    public float HealthToChangePhase;
 
     private void Start()
     {
@@ -30,11 +34,33 @@ public class BossPhase : MonoBehaviour {
 
     public virtual void ActivatePhase()
     {
+        foreach (GameObject obj in ObjectsToSpawn)
+        {
+            obj.SetActive(false);
+        }
+    }
 
+    public virtual void Update()
+    {
+        totalHealth = 0;
+        foreach (var damageComponent in allDamageComponents)
+        {
+            totalHealth += (int)damageComponent.health;
+        }
+        if ((float)totalHealth < PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex - 1].HealthToChangePhase)
+        {
+            DeactivatePhase();
+            PhaseController.instance.StartNextPhase();
+        }
     }
 
     public virtual void DeactivatePhase()
     {
+        foreach (GameObject obj in ObjectsToSpawn)
+        {
+            obj.SetActive(false);
+        }
+
         head.tag = "Untagged";
         torso.tag = "Untagged";
         restbody.tag = "Untagged"; 

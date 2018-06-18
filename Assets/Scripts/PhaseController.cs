@@ -5,9 +5,11 @@ using UnityEngine;
 public class PhaseController : MonoBehaviour {
 
     //public PhaseType[] phases;
-    int currentPhaseIndex = 0;
+    public int currentPhaseIndex = 0;
 
     public static PhaseController instance = null;
+
+    public Phase[] phases;
 
     private void Awake()
     {
@@ -33,34 +35,44 @@ public class PhaseController : MonoBehaviour {
 
     public void StartNextPhase()
     {
-        switch (currentPhaseIndex)
+        GetComponent<BossPhaseInit>().enabled = false;
+        GetComponent<BossPhaseMirror>().enabled = false;
+        foreach (PhaseType phaseType in phases[currentPhaseIndex].phaseTypes)
+        switch (phaseType)
         {
-            case (int)PhaseType.Init:
+            case PhaseType.Init:
                 GetComponent<BossPhaseInit>().enabled = true;
                 break;
-            case (int)PhaseType.Mirror:
+            case PhaseType.Mirror:
                 GetComponent<BossPhaseMirror>().enabled = true;
                 break;
-            case (int)PhaseType.Spear:
+            case PhaseType.Spear:
                 GetComponent<BossPhaseSpear>().enabled = true;
                 break;
-            case (int)PhaseType.MirrorSpear:
+            case PhaseType.MirrorSpear:
+                
+                break;
+            case PhaseType.Charge:
 
                 break;
-            case (int)PhaseType.Charge:
+            case PhaseType.Projectile:
 
                 break;
-            case (int)PhaseType.Projectile:
+            case PhaseType.ChargeProjectile:
 
                 break;
-            case (int)PhaseType.ChargeProjectile:
-
-                break;
-            case (int)PhaseType.All:
+            case PhaseType.All:
 
                 break;
         }
-
         currentPhaseIndex++;
     }
+
+    [System.Serializable]
+    public class Phase
+    {
+        public PhaseType[] phaseTypes;
+        public float HealthToChangePhase;
+    }
 }
+

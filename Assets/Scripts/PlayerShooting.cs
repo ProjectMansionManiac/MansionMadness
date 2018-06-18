@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public float laserlength;
+    public float laserLength;
+    public float CooldownTimeWhenLaserIsEmpty;
 
     public int damage;
     [SerializeField]
@@ -31,8 +32,11 @@ public class PlayerShooting : MonoBehaviour
 
     public Image AmmoBar;
 
+    public Animator ammoBarBlink;
+
     private void Start()
     {
+        ammoBarBlink = GameObject.Find("AmmoBarBG").GetComponent<Animator>();
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.SetPosition(0, shootingOrigin.position);
     }
@@ -52,6 +56,9 @@ public class PlayerShooting : MonoBehaviour
 
     void HandleRefill()
     {
+        if (inCooldown)
+            return;
+
         currentrefillTick += Time.deltaTime;
 
         if (currentrefillTick >= refillTick)
@@ -71,6 +78,8 @@ public class PlayerShooting : MonoBehaviour
             {
                 canShoot = false;
                 shootPressed = false;
+                if (!inCooldown)
+                AmmoEmpty();
             }
         }
         
@@ -102,6 +111,24 @@ public class PlayerShooting : MonoBehaviour
         canDamage = false;
     }
 
+    private void AmmoEmpty()
+    {
+        StartCoroutine(DisableShooting());
+    }
+
+    bool inCooldown = false;
+
+    IEnumerator DisableShooting()
+    {
+        currentAmmo = 0f;
+        inCooldown = true;
+        ammoBarBlink.enabled = true;
+        yield return new WaitForSeconds(CooldownTimeWhenLaserIsEmpty);
+        ammoBarBlink.enabled = false;
+        inCooldown = false;
+        currentAmmo = 1.1f;
+    }
+
     private void HandleShooting()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -109,7 +136,18 @@ public class PlayerShooting : MonoBehaviour
             shootPressed = true;
         }
 
-        if (!canShoot || !shootPressed)
+        if (!canShoot)
+        {
+            lineRenderer.enabled = false;
+            return;
+        }
+
+        if (inCooldown)
+        {
+            lineRenderer.enabled = false;
+            return;
+        }
+        if (!shootPressed)
         {
             lineRenderer.enabled = false;
             return;
@@ -134,11 +172,6 @@ public class PlayerShooting : MonoBehaviour
             layerMask = ~layerMask;
 
             RaycastHit2D hit = Physics2D.Raycast((Vector2)shootingOrigin.position, inputDirection, 100f, layerMask);
-            float distance = Vector2.Distance(shootingOrigin.position, hit.point);
-            if (laserlength < distance)
-            {
-             
-            }
 
             if (!hit)
             {
@@ -146,8 +179,13 @@ public class PlayerShooting : MonoBehaviour
                 lineRenderer.SetPosition(1, shootingOrigin.position + inputDirection * 20f);
                 return;
             };
+            float distance = Vector2.Distance(shootingOrigin.position, hit.point);
+            if (laserLength < distance)
+            {
+                return;
+            }
 
-            
+
 
             lineRenderer.enabled = true;
 
@@ -156,7 +194,7 @@ public class PlayerShooting : MonoBehaviour
             if (hit.collider.gameObject.tag == "Mirror")
             {
                 Debug.Log("I Hit Mirror");
-                hit.collider.gameObject.GetComponent<Mirror>().Reflect(hit.point - new Vector2(shootingOrigin.position.x, shootingOrigin.position.y), hit.point);
+                hit.collider.gameObject.GetComponent<Mirror>().Reflect(hit.point - new Vector2(shootingOrigin.position.x, shootingOrigin.position.y), hit.point, laserLength - distance);
             }
             //dont do anything, if cooldown isn't over yet.
             if (!canDamage)

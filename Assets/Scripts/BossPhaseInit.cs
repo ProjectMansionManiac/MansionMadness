@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossPhaseInit : BossPhase {
-
-    [Header("Health fraction from 0-1. The phase will change at this health fraction")]
-    public float healthFraction;
-
     public override void ActivatePhase()
     {
         base.ActivatePhase();
@@ -27,19 +23,8 @@ public class BossPhaseInit : BossPhase {
         base.DeactivatePhase();
     }
 
-    private void Update()
+    public override void Update()
     {
-        totalHealth = 0;
-        foreach (var damageComponent in allDamageComponents)
-        {
-            totalHealth += (int)damageComponent.health;
-        }
-        if ((float)totalHealth / (float)totalMaxHealth < healthFraction)
-        {
-            Debug.Log(totalHealth / totalMaxHealth);
-            DeactivatePhase();
-            PhaseController.instance.StartNextPhase();
-            this.enabled = false;
-        }
+        base.Update();
     }
 }
