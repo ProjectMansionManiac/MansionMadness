@@ -51,7 +51,7 @@ public class Mirror : MonoBehaviour
         bullet.direction = reflection;
     }
 
-    public void Reflect(Vector2 inputVector, Vector2 reflectionPoint)
+    public void Reflect(Vector2 inputVector, Vector2 reflectionPoint, float laserLength)
     {
         Debug.Log("I Reflect");
 
@@ -71,6 +71,8 @@ public class Mirror : MonoBehaviour
         layerMask = ~layerMask;
 
         RaycastHit2D hit = Physics2D.Raycast(reflectionPoint, reflection, 100f);
+     
+
         if (!hit)
         {
             lineRenderer.enabled = true;
@@ -78,6 +80,12 @@ public class Mirror : MonoBehaviour
             Debug.Log("I not hit " + reflection + " " + inputVector);
             return;
         };
+
+        float distance = Vector2.Distance(reflectionPoint, hit.point);
+        if (laserLength < distance)
+        {
+            return;
+        }
 
         Debug.Log(hit.transform.gameObject);
 
@@ -91,7 +99,7 @@ public class Mirror : MonoBehaviour
         if (hit.collider.gameObject.tag == "Mirror")
         {
             Debug.Log("I Hit Mirror");
-            hit.collider.gameObject.GetComponent<Mirror>().Reflect(hit.point - new Vector2(reflectionPoint.x, reflectionPoint.y), hit.point);
+            hit.collider.gameObject.GetComponent<Mirror>().Reflect(hit.point - new Vector2(reflectionPoint.x, reflectionPoint.y), hit.point, laserLength - distance);
         }
         //dont do anything, if cooldown isn't over yet.
         if (!canDamage)
