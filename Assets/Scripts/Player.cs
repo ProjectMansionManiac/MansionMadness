@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private void Start()
     { 
             
-        GameManager.GetInstance().currentState.currentCheckPoint = transform.position;
+        //GameManager.GetInstance().currentState.currentCheckPoint = transform.position;
     }
 
     public void Die()
