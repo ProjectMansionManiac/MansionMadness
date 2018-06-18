@@ -62,7 +62,20 @@ public class PlayerMovement : MonoBehaviour
         coll = this.GetComponent<BoxCollider2D>();
         originalSize = coll.size.y;
 
+
+        StartCoroutine(RefreshCalculations());
         //GameManager.GetInstance().alive = true;
+    }
+
+    IEnumerator RefreshCalculations()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
+            minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+            gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
+        }
     }
 
     private void Update()
