@@ -30,10 +30,14 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
-        if (directionalInput == Vector2.left)
+        if (directionalInput.x < 0)
         {
             player.GetComponent<SpriteRenderer>().flipX = true;
-        } else
+        } else if (directionalInput == Vector2.zero)
+        {
+
+        }
+        else
         {
             player.GetComponent<SpriteRenderer>().flipX = false;
         }

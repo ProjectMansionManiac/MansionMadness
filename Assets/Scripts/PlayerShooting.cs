@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public float laserlength;
+
     public int damage;
     [SerializeField]
     float damageTick = 0.1f;
@@ -132,6 +134,11 @@ public class PlayerShooting : MonoBehaviour
             layerMask = ~layerMask;
 
             RaycastHit2D hit = Physics2D.Raycast((Vector2)shootingOrigin.position, inputDirection, 100f, layerMask);
+            float distance = Vector2.Distance(shootingOrigin.position, hit.point);
+            if (laserlength < distance)
+            {
+             
+            }
 
             if (!hit)
             {
