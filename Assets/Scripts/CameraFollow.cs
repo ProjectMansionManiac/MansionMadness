@@ -60,9 +60,9 @@ public class CameraFollow : MonoBehaviour
         focusPosition += Vector2.right * currentLookAheadX;
         transform.position = (Vector3)focusPosition + Vector3.forward * -10;
 
-        transform.position.Set(
+        transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, levelTopLeft.x + cameraClipOffsetX, levelBottomRight.x - cameraClipOffsetX),
-            Mathf.Clamp(transform.position.y, levelTopLeft.y + cameraClipOffsetY, levelBottomRight.y - cameraClipOffsetY),
+            Mathf.Clamp(transform.position.y, levelBottomRight.y + cameraClipOffsetY, levelTopLeft.y - cameraClipOffsetY),
             transform.position.z
         );
     }
