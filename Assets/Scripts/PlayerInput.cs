@@ -17,6 +17,10 @@ public class PlayerInput : MonoBehaviour
     {
         Vector2 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
+        if (directionalInput.y < 0)
+        {
+            directionalInput.y = 0f;
+        }
 
         if (!Input.GetButton("Jump"))
         {
