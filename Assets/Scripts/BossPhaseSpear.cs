@@ -2,15 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossPhaseSpear : MonoBehaviour {
+public class BossPhaseSpear : BossPhase {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] float TimeBetweenSpikes;
+    [SerializeField] float minSpikePosX, maxSpikePosX, spikePosY;
+    [SerializeField] float spikeAmount;
+    GameObject dropObject;
+    public override void ActivatePhase()
+    {
+        Debug.Log("Spear Phase Started");
+        base.ActivatePhase();
+        head.tag = "Enemy";
+        torso.tag = "Enemy";
+        restbody.tag = "Enemy";
+
+        StartCoroutine(HandleSpikeDrop());
+        //animator.Play("InitPhase");
+    }
+
+    private void OnEnable()
+    {
+        ActivatePhase();
+    }
+
+    public override void DeactivatePhase()
+    {
+        base.DeactivatePhase();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+    }
+
+    IEnumerator HandleSpikeDrop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(TimeBetweenSpikes);
+            float randX = Random.Range(minSpikePosX, maxSpikePosX);
+            dropObject = Instantiate(Resources.Load("SpikeDrop"), new Vector3(randX, spikePosY, 0f), Quaternion.identity) as GameObject;        }
+    }
 }

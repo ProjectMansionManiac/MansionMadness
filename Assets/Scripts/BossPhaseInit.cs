@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossPhaseInit : BossPhase {
     public override void ActivatePhase()
     {
+        Debug.Log("Init Phase Started");
         base.ActivatePhase();
         head.tag = "Enemy";
         torso.tag = "Enemy";
