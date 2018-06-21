@@ -19,6 +19,12 @@ public class CameraFollow : MonoBehaviour
 
     private bool lookAheadStopped;
 
+    [SerializeField] private Vector2 levelTopLeft;
+    [SerializeField] private Vector2 levelBottomRight;
+
+    [SerializeField] private float cameraClipOffsetX;
+    [SerializeField] private float cameraClipOffsetY;
+
     private void Start()
     {
         focusArea = new FocusArea(target.coll.bounds, focusAreaSize);
@@ -53,6 +59,12 @@ public class CameraFollow : MonoBehaviour
         focusPosition.y = Mathf.SmoothDamp(transform.position.y, focusPosition.y, ref smoothVelocityY, verticalSmoothTime);
         focusPosition += Vector2.right * currentLookAheadX;
         transform.position = (Vector3)focusPosition + Vector3.forward * -10;
+
+        transform.position.Set(
+            Mathf.Clamp(transform.position.x, levelTopLeft.x + cameraClipOffsetX, levelBottomRight.x - cameraClipOffsetX),
+            Mathf.Clamp(transform.position.y, levelTopLeft.y + cameraClipOffsetY, levelBottomRight.y - cameraClipOffsetY),
+            transform.position.z
+        );
     }
 
     private void OnDrawGizmos()
