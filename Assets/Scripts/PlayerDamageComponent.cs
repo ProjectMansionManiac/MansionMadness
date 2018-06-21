@@ -63,6 +63,18 @@ public class PlayerDamageComponent : DamageComponent
             Destroy(collision.gameObject);
         }
 
+        if (other.tag == "Spike")
+        {
+            DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
+            info.damage = collision.gameObject.GetComponent<Spike>().damage;
+            info.sender = collision.gameObject;
+            this.OnDamageReceived(info);
+
+            //collision.gameObject.GetComponent<KnockBackComponent>().canKnockback = false;
+
+            Destroy(collision.gameObject);
+        }
+
         if (other.tag == "Enemy" && damageZoneActive == false)
         {
             var damageComponent = other.GetComponent<DamageComponent>();

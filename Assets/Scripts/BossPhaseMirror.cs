@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossPhaseMirror : BossPhase {
 	public override void ActivatePhase()
     {
+        Debug.Log("Mirror Phase Started");
         base.ActivatePhase();
 
         if (torso != null)

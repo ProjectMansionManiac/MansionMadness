@@ -11,23 +11,28 @@ public class BossDamageComponent : DamageComponent
     public int animationSpeed;
     bool isAnimating = false;
 
+    Chicken chicken;
+
     void Start()
     {
         spriteRenderer = GameObject.Find("Enemy").GetComponent<SpriteRenderer>(); ;
         normalColor = spriteRenderer.color;
+        chicken = GetComponentInParent<Chicken>();
     }
     public override void OnDamageReceived(DamageInfo info)
     {
         base.OnDamageReceived(info);
 
         StartCoroutine(DamageAnimation());
+
+        chicken.health -= info.damage;
         // check if health is below zero
-        if (this.health <= 0)
-        {
-            // the boss is dead...
-            isDead = true;
-            gameObject.SetActive(false);
-        }
+        //if (this.health <= 0)
+        //{
+        //    // the boss is dead...
+        //    isDead = true;
+        //    gameObject.SetActive(false);
+        //}
     }
 
     IEnumerator DamageAnimation()

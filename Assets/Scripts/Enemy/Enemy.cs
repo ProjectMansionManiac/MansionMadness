@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
-    public int maxHealth;
-    public int health;
+    public float maxHealth;
+    public float health;
 
-    public int damage;
+    public float damage;
 
 	void Awake () {
         health = maxHealth;
 	}
 
-    public void ApplyDamage(int damage)
+    public void ApplyDamage(float damage)
     {
         health -= damage;
         if (health <= 0)

@@ -37,6 +37,7 @@ public class PhaseController : MonoBehaviour {
     {
         GetComponent<BossPhaseInit>().enabled = false;
         GetComponent<BossPhaseMirror>().enabled = false;
+        if (phases.Length > currentPhaseIndex)
         foreach (PhaseType phaseType in phases[currentPhaseIndex].phaseTypes)
         switch (phaseType)
         {
@@ -72,7 +73,7 @@ public class PhaseController : MonoBehaviour {
     public class Phase
     {
         public PhaseType[] phaseTypes;
-        public float HealthToChangePhase;
+        public float PhaseHealth;
     }
 }
 

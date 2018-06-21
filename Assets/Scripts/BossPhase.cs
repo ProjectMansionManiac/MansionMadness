@@ -8,46 +8,55 @@ public class BossPhase : MonoBehaviour {
     public GameObject torso;
     public GameObject restbody;
 
+    [HideInInspector]
     public GameObject playerObject;
 
     public Animator animator;
 
-    public BossDamageComponent[] allDamageComponents;
-    public int totalMaxHealth;
-    public int totalHealth;
-
-    [SerializeField] private GameObject[] ObjectsToSpawn;
+    [HideInInspector]
+    public Chicken chicken;
 
     [HideInInspector]
-    public float HealthToChangePhase;
+    public float totalMaxHealth;
+
+    [HideInInspector]
+    public float totalHealth;
+
+    [SerializeField] private GameObject[] ObjectsToSpawn;
 
     private void Start()
     {
         playerObject = GameObject.Find("Player");
-        allDamageComponents = GetComponentsInChildren<BossDamageComponent>();
-        foreach (var damageComponent in allDamageComponents)
-        {
-            totalMaxHealth += (int)damageComponent.health;
-        }
-        totalHealth = totalMaxHealth;
-    }
+        //allDamageComponents = GetComponentsInChildren<BossDamageComponent>();
+        //foreach (var damageComponent in allDamageComponents)
+        //{
+        //    totalMaxHealth += (int)damageComponent.health;
+        //}
+        //totalHealth = totalMaxHealth;
+
+        chicken = GetComponent<Chicken>();
+}
 
     public virtual void ActivatePhase()
     {
+        Debug.Log("Boss Phase Changed...");
         foreach (GameObject obj in ObjectsToSpawn)
         {
-            obj.SetActive(false);
+            obj.SetActive(true);
         }
+
+        chicken = GetComponent<Chicken>();
+        totalMaxHealth = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
+        totalHealth = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
+        chicken.maxHealth = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
+        chicken.health = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
     }
 
     public virtual void Update()
     {
-        totalHealth = 0;
-        foreach (var damageComponent in allDamageComponents)
-        {
-            totalHealth += (int)damageComponent.health;
-        }
-        if ((float)totalHealth < PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex - 1].HealthToChangePhase)
+        totalHealth = chicken.health;
+       
+        if ((float)totalHealth <= 0)
         {
             DeactivatePhase();
             PhaseController.instance.StartNextPhase();

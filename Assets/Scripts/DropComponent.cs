@@ -85,24 +85,24 @@ public class DropComponent : MonoBehaviour
 
     private void Update()
     {
-        // update the respawn countdown
-        respawnCountdown.Update(Time.deltaTime);
+        //// update the respawn countdown
+        //respawnCountdown.Update(Time.deltaTime);
 
-        if (respawn)
-        {
-            foreach(var drop in drops)
-            {
-                // respawn the drops
-                drop.transform.position = new Vector3(
-                    drop.transform.position.x,
-                    this.transform.position.y + dropHeight,
-                    drop.transform.position.z
-                );
+        //if (respawn)
+        //{
+        //    foreach(var drop in drops)
+        //    {
+        //        // respawn the drops
+        //        drop.transform.position = new Vector3(
+        //            drop.transform.position.x,
+        //            this.transform.position.y + dropHeight,
+        //            drop.transform.position.z
+        //        );
 
-                // activate the drops
-                drop.SetActive(true);
-            }
-            respawn = false;
-        }
+        //        // activate the drops
+        //        drop.SetActive(true);
+        //    }
+        //    respawn = false;
+        //}
     }
 }

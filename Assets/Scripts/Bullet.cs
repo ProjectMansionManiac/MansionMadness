@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public void Initialize(int damage, Vector2 direction)
+    public void Initialize(float damage, Vector2 direction)
     {
         this.damage = damage;
         this.direction = direction;
@@ -24,12 +24,12 @@ public class Bullet : MonoBehaviour
         transform.position += (Vector3)direction * speed * Time.deltaTime;
     }
 
-    public int damage;
-    public int speed;
+    public float damage;
+    public float speed;
 
     public Vector2 direction;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 11)
         {
