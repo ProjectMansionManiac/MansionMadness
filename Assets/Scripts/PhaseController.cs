@@ -26,11 +26,8 @@ public class PhaseController : MonoBehaviour {
         Init,
         Mirror,
         Spear,
-        MirrorSpear,
         Charge,
-        Projectile,
-        ChargeProjectile,
-        All
+        BigFireball
     }
 
     public void StartNextPhase()
@@ -50,21 +47,12 @@ public class PhaseController : MonoBehaviour {
             case PhaseType.Spear:
                 GetComponent<BossPhaseSpear>().enabled = true;
                 break;
-            case PhaseType.MirrorSpear:
-                
-                break;
             case PhaseType.Charge:
-
-                break;
-            case PhaseType.Projectile:
-
-                break;
-            case PhaseType.ChargeProjectile:
-
-                break;
-            case PhaseType.All:
-
-                break;
+                        GetComponent<BossPhaseCharge>().enabled = true;
+                        break;
+            case PhaseType.BigFireball:
+                        GetComponent<BossPhaseBigFireballs>().enabled = true;
+                        break;
         }
         currentPhaseIndex++;
     }

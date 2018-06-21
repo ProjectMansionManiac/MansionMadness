@@ -161,10 +161,13 @@ public class PlayerShooting : MonoBehaviour
 
             Vector3 inputDirection = Vector3.zero;
 
-            inputDirection.x = Input.GetAxis("HorizontalShoot");
-            inputDirection.y = Input.GetAxis("VerticalShoot");
+            inputDirection.x = Mathf.Round(Input.GetAxis("HorizontalShoot"));
+            inputDirection.y = Mathf.Round(Input.GetAxis("VerticalShoot"));
 
             inputDirection.Normalize();
+
+            inputDirection.x = Mathf.Round(inputDirection.x);
+            inputDirection.y = Mathf.Round(inputDirection.y);
 
             var layerMask = 1 << 10;
             // This would cast rays only against colliders in layer xxx.
