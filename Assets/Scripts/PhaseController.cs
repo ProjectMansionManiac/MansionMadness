@@ -34,6 +34,9 @@ public class PhaseController : MonoBehaviour {
     {
         GetComponent<BossPhaseInit>().enabled = false;
         GetComponent<BossPhaseMirror>().enabled = false;
+        GetComponent<BossPhaseSpear>().enabled = false;
+        GetComponent<BossPhaseCharge>().enabled = false;
+        GetComponent<BossPhaseBigFireballs>().enabled = false;
         if (phases.Length > currentPhaseIndex)
         foreach (PhaseType phaseType in phases[currentPhaseIndex].phaseTypes)
         switch (phaseType)
@@ -48,11 +51,11 @@ public class PhaseController : MonoBehaviour {
                 GetComponent<BossPhaseSpear>().enabled = true;
                 break;
             case PhaseType.Charge:
-                        GetComponent<BossPhaseCharge>().enabled = true;
-                        break;
+                GetComponent<BossPhaseCharge>().enabled = true;
+                break;
             case PhaseType.BigFireball:
-                        GetComponent<BossPhaseBigFireballs>().enabled = true;
-                        break;
+                GetComponent<BossPhaseBigFireballs>().enabled = true;
+                break;
         }
         currentPhaseIndex++;
     }

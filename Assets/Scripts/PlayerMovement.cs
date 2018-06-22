@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     public float originalSize;
     public BoxCollider2D coll;
 
-    bool ducking = false;
+    [HideInInspector] public bool ducking = false;
 
     private void Start()
     {
@@ -87,9 +87,10 @@ public class PlayerMovement : MonoBehaviour
 
         CalculateVelocity();
         //HandleWallSliding();
-        HandleDuck();
 
         controller.Move(velocity * Time.deltaTime, directionalInput);
+
+        HandleDuck();
 
         if (controller.collisions.above || controller.collisions.below)
         {

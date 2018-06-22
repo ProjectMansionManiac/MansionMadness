@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3e581352743564aa086f1666db2a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1962412378795336, guid: 081da6b39274e6949a728a5271ef31be, type: 2}
+  prefab: {fileID: 1831849271353592, guid: 0992c032e8e2f9e4b95c205c0ada9fdc, type: 2}
   drops:
   - {fileID: 0}
   - {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   - {fileID: 0}
   dropHeight: 0
   manualDropHeight: 0
-  spacingSize: 3
+  spacingSize: 1
   randomSpawnHeight: 0
   randomSpawnHeightMin: 6
   randomSpawnHeightMax: 6

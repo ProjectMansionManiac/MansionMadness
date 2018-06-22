@@ -34,11 +34,17 @@ public class PlayerShooting : MonoBehaviour
 
     public Animator ammoBarBlink;
 
+    Animator animator;
+
+    PlayerMovement playerMovement;
+
     private void Start()
     {
         ammoBarBlink = GameObject.Find("AmmoBarBG").GetComponent<Animator>();
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.SetPosition(0, shootingOrigin.position);
+        animator = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -153,8 +159,9 @@ public class PlayerShooting : MonoBehaviour
             return;
         }
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && !playerMovement.ducking)
         {
+            animator.Play("Shoot");
             currentAmmo--;
             Debug.Log("I Shoot");
             lineRenderer.SetPosition(0, shootingOrigin.position);

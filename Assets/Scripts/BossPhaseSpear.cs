@@ -37,7 +37,7 @@ public class BossPhaseSpear : BossPhase {
 
     IEnumerator HandleSpikeDrop()
     {
-        while (true)
+        while (stillActive)
         {
             yield return new WaitForSeconds(TimeBetweenSpikes);
             float randX = Random.Range(minSpikePosX, maxSpikePosX);
