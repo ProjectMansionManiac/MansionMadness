@@ -15,6 +15,9 @@ public class PlayerDamageComponent : DamageComponent
     public int animationSpeed;
     bool isAnimating = false;
 
+    bool isInvincible = false;
+    public float invincibilityTime = 1f;
+
     private void Start()
     {
         spriteRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
@@ -48,6 +51,11 @@ public class PlayerDamageComponent : DamageComponent
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isInvincible)
+            return;
+
+        StartCoroutine(Invincibility());
+
         var other = collision.gameObject;
 
         Debug.Log("Hit " + other.name);
@@ -96,6 +104,13 @@ public class PlayerDamageComponent : DamageComponent
     {
         this.health = 100.0f;
         this.transform.parent.position = GameManager.GetInstance().currentState.currentCheckPoint;
+    }
+
+    IEnumerator Invincibility()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibilityTime);
+        isInvincible = false;
     }
 
     IEnumerator DamageAnimation()

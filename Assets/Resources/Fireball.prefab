@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 199027786030169922}
   - component: {fileID: 50818848841223586}
   - component: {fileID: 58661448641263470}
+  - component: {fileID: 58188403993556066}
+  - component: {fileID: 114118729807186142}
   m_Layer: 9
   m_Name: Fireball
   m_TagString: EnemyBullet
@@ -64,6 +66,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!58 &58188403993556066
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265206917387214}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!58 &58661448641263470
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -79,6 +96,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &114118729807186142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265206917387214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcc9ad90b891854795cc0e827a4311b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canKnockback: 1
+  pushBackCoefficient: 25
 --- !u!114 &114989020978065318
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -19,11 +19,12 @@ public class PlayerInput : MonoBehaviour
 
         if (directionalInput.y < 0)
         {
-            directionalInput.y = 0f;
+            directionalInput.y = 1f;
         }
 
-        if (!Input.GetButton("Jump"))
+        if (!Input.GetButton("Jump") && !Input.GetButton("Fire1"))
         {
+            
             if (directionalInput == Vector2.zero)
             {
                 playerMovement.animator.Play("Idle");
@@ -48,16 +49,16 @@ public class PlayerInput : MonoBehaviour
 
         playerMovement.SetDirectionalInput(directionalInput);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !Input.GetButton("Fire1"))
         {
             playerMovement.OnJumpInputDown();
             playerMovement.animator.Play("Jump");
         }
 
-        if (Input.GetButtonUp("Jump"))
-        {
-            playerMovement.OnJumpInputUp();
-            playerMovement.animator.Play("Idle");
-        }
+        //if (Input.GetButtonUp("Jump"))
+        //{
+        //    playerMovement.OnJumpInputUp();
+        //    playerMovement.animator.Play("Idle");
+        //}
     }
 }

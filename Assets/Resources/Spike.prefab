@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canKnockback: 1
-  pushBackCoefficient: 100
+  pushBackCoefficient: 25
 --- !u!212 &212287627418811784
 SpriteRenderer:
   m_ObjectHideFlags: 1

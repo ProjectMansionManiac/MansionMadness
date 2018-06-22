@@ -24,6 +24,8 @@ public class BossPhase : MonoBehaviour {
 
     [SerializeField] private GameObject[] ObjectsToSpawn;
 
+    [HideInInspector] public bool stillActive = false;
+
     private void Start()
     {
         playerObject = GameObject.Find("Player");
@@ -39,6 +41,7 @@ public class BossPhase : MonoBehaviour {
 
     public virtual void ActivatePhase()
     {
+        stillActive = true;
         Debug.Log("Boss Phase Changed...");
         foreach (GameObject obj in ObjectsToSpawn)
         {
@@ -65,6 +68,7 @@ public class BossPhase : MonoBehaviour {
 
     public virtual void DeactivatePhase()
     {
+        stillActive = false;
         foreach (GameObject obj in ObjectsToSpawn)
         {
             obj.SetActive(false);
