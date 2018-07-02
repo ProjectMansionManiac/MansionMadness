@@ -78,6 +78,7 @@ public class Mirror : MonoBehaviour
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(1, reflectionPoint + reflection * 20f);
             Debug.Log("I not hit " + reflection + " " + inputVector);
+            StartCoroutine(DisableLineRenderer());
             return;
         };
 

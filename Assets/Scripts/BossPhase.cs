@@ -11,8 +11,6 @@ public class BossPhase : MonoBehaviour {
     [HideInInspector]
     public GameObject playerObject;
 
-    public Animator animator;
-
     [HideInInspector]
     public Chicken chicken;
 
