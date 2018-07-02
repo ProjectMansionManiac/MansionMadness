@@ -6,7 +6,7 @@ public class PhaseController : MonoBehaviour {
 
     //public PhaseType[] phases;
     public int currentPhaseIndex = 0;
-
+    private Animator animator;
     public static PhaseController instance = null;
 
     public Phase[] phases;
@@ -14,6 +14,7 @@ public class PhaseController : MonoBehaviour {
     private void Awake()
     {
         instance = this;
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -37,6 +38,9 @@ public class PhaseController : MonoBehaviour {
         GetComponent<BossPhaseSpear>().enabled = false;
         GetComponent<BossPhaseCharge>().enabled = false;
         GetComponent<BossPhaseBigFireballs>().enabled = false;
+
+        animator.Play(phases[currentPhaseIndex].animationToPlay);
+
         if (phases.Length > currentPhaseIndex)
         foreach (PhaseType phaseType in phases[currentPhaseIndex].phaseTypes)
         switch (phaseType)
@@ -65,6 +69,7 @@ public class PhaseController : MonoBehaviour {
     {
         public PhaseType[] phaseTypes;
         public float PhaseHealth;
+        public string animationToPlay;
     }
 }
 
