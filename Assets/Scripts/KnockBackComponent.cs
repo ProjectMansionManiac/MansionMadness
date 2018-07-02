@@ -10,8 +10,8 @@ public class KnockBackComponent : MonoBehaviour
     float pushBackCoefficient = 1.0f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (!canKnockback)
-        //    return;
+        if (!canKnockback)
+            return;
         
         var obj = collision.gameObject;
         
@@ -24,14 +24,14 @@ public class KnockBackComponent : MonoBehaviour
                 return;
 
 
-            player.velocity.x += (xDot / Mathf.Abs(xDot)) * pushBackCoefficient;
+            player.velocity.x = (xDot / Mathf.Abs(xDot)) * pushBackCoefficient;
             
             if (player.velocity.x < 0.1f && player.velocity.x > -0.1f)
                 player.velocity.x = -1.0f;
 
             canKnockback = false;
 
-            //StartCoroutine(ReactivateKnockback());
+            StartCoroutine(ReactivateKnockback());
         }
     }
 
