@@ -63,7 +63,7 @@ public class PlayerDamageComponent : DamageComponent
         if (other.tag == "EnemyBullet")
         {
             DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
-            info.damage = collision.gameObject.GetComponent<EnemyBullet>().damage;
+            info.damage = collision.gameObject.GetComponent<Bullet>().damage;
             info.sender = collision.gameObject;
 
             this.OnDamageReceived(info);
