@@ -111,6 +111,7 @@ MonoBehaviour:
   speed: 10
   direction: {x: 0, y: 0}
   ballSpawnAmount: 3
+  canExplode: 0
 --- !u!114 &114886504486727970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canKnockback: 1
-  pushBackCoefficient: 25
+  pushBackCoefficient: 9
 --- !u!198 &198280249891477350
 ParticleSystem:
   m_ObjectHideFlags: 1
