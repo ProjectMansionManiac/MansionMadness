@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossPhaseBigFireballs : BossPhase
 {
+    public GameObject BigFireBallPrefab;
 
     [SerializeField] float TimeBetweenFireballs = 1f;
     [SerializeField] Transform shootingPivot;
@@ -49,10 +50,15 @@ public class BossPhaseBigFireballs : BossPhase
         }
     }
 
+    private void OnDisable()
+    {
+        canShoot = false;
+    }
+
     void Shoot()
     {
         Vector2 direction = (playerObject.transform.position - shootingPivot.position).normalized;
-        GameObject fireball = (GameObject)Instantiate(Resources.Load("BigFireball"), shootingPivot.position, Quaternion.identity);
+        GameObject fireball = (GameObject)Instantiate(BigFireBallPrefab, shootingPivot.position, Quaternion.identity);
         fireball.GetComponent<BigFireball>().Initialize(5f, direction);
     }
 }

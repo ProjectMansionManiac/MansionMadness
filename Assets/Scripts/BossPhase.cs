@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BossPhase : MonoBehaviour {
 
-    public GameObject head;
-    public GameObject torso;
-    public GameObject restbody;
+    [HideInInspector] public GameObject head;
+    [HideInInspector] public GameObject torso;
+    [HideInInspector] public GameObject restbody;
 
     [HideInInspector]
     public GameObject playerObject;
@@ -29,14 +29,19 @@ public class BossPhase : MonoBehaviour {
     private void Start()
     {
         playerObject = GameObject.Find("Player");
-        //allDamageComponents = GetComponentsInChildren<BossDamageComponent>();
-        //foreach (var damageComponent in allDamageComponents)
-        //{
-        //    totalMaxHealth += (int)damageComponent.health;
-        //}
-        //totalHealth = totalMaxHealth;
 
-        chicken = GetComponent<Chicken>();
+        head = transform.Find("HitboxHead").gameObject;
+        torso = transform.Find("HitboxTorso").gameObject;
+        restbody = transform.Find("HitboxBody").gameObject;
+
+    //allDamageComponents = GetComponentsInChildren<BossDamageComponent>();
+    //foreach (var damageComponent in allDamageComponents)
+    //{
+    //    totalMaxHealth += (int)damageComponent.health;
+    //}
+    //totalHealth = totalMaxHealth;
+
+    chicken = GetComponent<Chicken>();
 }
 
     public virtual void ActivatePhase()
