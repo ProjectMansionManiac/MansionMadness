@@ -62,17 +62,22 @@ public class PlayerDamageComponent : DamageComponent
 
         if (other.tag == "EnemyBullet")
         {
+            var knockbackComp = other.GetComponent<KnockBackComponent>();
+
             DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
             info.damage = collision.gameObject.GetComponent<Bullet>().damage;
             info.sender = collision.gameObject;
 
             this.OnDamageReceived(info);
 
+            knockbackComp.Execute(gameObject.transform.parent.gameObject);
+
             Destroy(collision.gameObject);
         }
-
         if (other.tag == "Spike")
         {
+            var knockbackComp = other.GetComponent<KnockBackComponent>();
+
             DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
             info.damage = collision.gameObject.GetComponent<Spike>().damage;
             info.sender = collision.gameObject;
@@ -80,11 +85,14 @@ public class PlayerDamageComponent : DamageComponent
 
             //collision.gameObject.GetComponent<KnockBackComponent>().canKnockback = false;
 
+            knockbackComp.Execute(gameObject.transform.parent.gameObject);
+
             Destroy(collision.gameObject);
         }
-
         if (other.tag == "Enemy" && damageZoneActive == false)
         {
+            var knockbackComp = other.GetComponent<KnockBackComponent>();
+
             var damageComponent = other.GetComponent<DamageComponent>();
             if (damageComponent != null)
             {
@@ -97,6 +105,8 @@ public class PlayerDamageComponent : DamageComponent
 
                 StartCoroutine(DamageTick());
             }
+
+            knockbackComp.Execute(gameObject.transform.parent.gameObject);
         }
     }
 
