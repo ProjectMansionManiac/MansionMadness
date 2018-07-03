@@ -676,7 +676,7 @@ MonoBehaviour:
   - phaseTypes: 01000000
     PhaseHealth: 50
     animationToPlay: MirrorPhaseBoss
-  - phaseTypes: 0100000004000000
+  - phaseTypes: 0400000001000000
     PhaseHealth: 50
     animationToPlay: MirrorPhaseBoss
   - phaseTypes: 02000000
@@ -685,7 +685,7 @@ MonoBehaviour:
   - phaseTypes: 03000000
     PhaseHealth: 150
     animationToPlay: 
-  - phaseTypes: 0200000004000000
+  - phaseTypes: 0400000002000000
     PhaseHealth: 100
     animationToPlay: Speerphase
 --- !u!114 &114892080357825476
