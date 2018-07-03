@@ -803,6 +803,11 @@ Prefab:
       propertyPath: AmmoBar
       value: 
       objectReference: {fileID: 1863832639}
+    - target: {fileID: 114323213043760870, guid: b19f396039a87874d917193c2f2a6633,
+        type: 2}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b19f396039a87874d917193c2f2a6633, type: 2}
   m_IsPrefabParent: 0
@@ -1940,6 +1945,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1102630106 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1208635038802416, guid: 63ee2744900a3b14492ba2b696672d7b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1339773945}
 --- !u!1 &1110600317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,6 +2313,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4431143362942950, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 10.55
@@ -2355,6 +2370,51 @@ Prefab:
       propertyPath: ObjectsToSpawn.Array.data[3]
       value: 
       objectReference: {fileID: 922607394}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[4]
+      value: 
+      objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[5]
+      value: 
+      objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[6]
+      value: 
+      objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[7]
+      value: 
+      objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[8]
+      value: 
+      objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: ObjectsToSpawn.Array.data[9]
+      value: 
+      objectReference: {fileID: 1102630106}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
   m_IsPrefabParent: 0
