@@ -352,13 +352,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  health: 100
+  health: 200
   healthBar: {fileID: 0}
   gameOverScreen: {fileID: 0}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   spriteRenderer: {fileID: 212394936268527288}
   animationSpeed: 20
-  invincibilityTime: 0.7
+  invincibilityTime: 1
   contactDamage: 10
   damageZoneCooldownTime: 0.5
 --- !u!114 &114586543589625028
