@@ -36,6 +36,11 @@ public class BossPhaseSpear : BossPhase {
         base.Update();
     }
 
+    void OnDisable()
+    {
+        DeactivatePhase();
+    }
+
     IEnumerator HandleSpikeDrop()
     {
         while (stillActive)

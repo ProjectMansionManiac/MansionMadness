@@ -24,6 +24,11 @@ public class BossPhaseInit : BossPhase {
         base.DeactivatePhase();
     }
 
+    void OnDisable()
+    {
+        DeactivatePhase();
+    }
+
     public override void Update()
     {
         base.Update();

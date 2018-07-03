@@ -35,6 +35,12 @@ public class BossPhaseBigFireballs : BossPhase
         canShoot = false;
     }
 
+    void OnDisable()
+    {
+        DeactivatePhase();
+        canShoot = false;
+    }
+
     public override void Update()
     {
         base.Update();
@@ -48,11 +54,6 @@ public class BossPhaseBigFireballs : BossPhase
             Shoot();
 
         }
-    }
-
-    private void OnDisable()
-    {
-        canShoot = false;
     }
 
     void Shoot()

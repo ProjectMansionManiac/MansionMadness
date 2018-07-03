@@ -39,6 +39,8 @@ public class PhaseController : MonoBehaviour {
         GetComponent<BossPhaseCharge>().enabled = false;
         GetComponent<BossPhaseBigFireballs>().enabled = false;
 
+        Debug.Log(currentPhaseIndex);
+
         animator.Play(phases[currentPhaseIndex].animationToPlay);
         if (phases[currentPhaseIndex].spriteToShowInThatPhase != null)
         GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex].spriteToShowInThatPhase;

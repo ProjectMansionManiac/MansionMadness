@@ -36,6 +36,11 @@ public class BossPhaseCharge : BossPhase {
         base.Update();
     }
 
+    void OnDisable()
+    {
+        DeactivatePhase();
+    }
+
     IEnumerator HandleCharge()
     {
         while (canCharge)

@@ -73,7 +73,6 @@ public class BossPhase : MonoBehaviour {
        
         if ((float)totalHealth <= 0)
         {
-            DeactivatePhase();
             PhaseController.instance.StartNextPhase();
         }
     }
