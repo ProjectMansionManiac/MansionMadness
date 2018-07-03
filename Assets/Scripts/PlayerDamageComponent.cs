@@ -34,7 +34,7 @@ public class PlayerDamageComponent : DamageComponent
     {
         base.OnDamageReceived(info);
 
-        healthBar.fillAmount = this.health / 100f;
+        healthBar.fillAmount = this.health / this.maxHealth;
         StartCoroutine(DamageAnimation());
         // check if health is below zero
         if (this.health == 0f)
@@ -116,7 +116,7 @@ public class PlayerDamageComponent : DamageComponent
 
     public void Respawn()
     {
-        this.health = 100.0f;
+        this.health = this.maxHealth;
         this.transform.parent.position = GameManager.GetInstance().currentState.currentCheckPoint;
     }
 

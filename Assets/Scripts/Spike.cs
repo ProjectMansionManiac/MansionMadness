@@ -28,8 +28,6 @@ public class Spike : MonoBehaviour {
     void Start () {
         StartCoroutine(WaitBeforFall());
 	}
-	
-    
 
 	// Update is called once per frame
 	void Update () {
