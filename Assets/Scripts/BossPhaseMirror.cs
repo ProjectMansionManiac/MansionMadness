@@ -24,6 +24,11 @@ public class BossPhaseMirror : BossPhase {
         base.DeactivatePhase();
     }
 
+    void OnDisable()
+    {
+        DeactivatePhase();
+    }
+
     public override void Update()
     {
         base.Update();
