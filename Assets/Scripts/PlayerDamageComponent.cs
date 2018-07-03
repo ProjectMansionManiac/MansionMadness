@@ -89,9 +89,11 @@ public class PlayerDamageComponent : DamageComponent
 
             Destroy(collision.gameObject);
         }
-        if (other.tag == "Enemy" && damageZoneActive == false)
+        if ((other.name == "HitboxHead" || other.name == "HitboxBody" || other.name == "HitboxTorso") && damageZoneActive == false)
         {
             var knockbackComp = other.GetComponent<KnockBackComponent>();
+
+            Debug.Log(other.gameObject);
 
             var damageComponent = other.GetComponent<DamageComponent>();
             if (damageComponent != null)
