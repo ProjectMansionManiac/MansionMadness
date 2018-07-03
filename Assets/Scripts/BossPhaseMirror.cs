@@ -27,13 +27,5 @@ public class BossPhaseMirror : BossPhase {
     public override void Update()
     {
         base.Update();
-        if (playerObject.transform.position.x < transform.position.x)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
     }
 }

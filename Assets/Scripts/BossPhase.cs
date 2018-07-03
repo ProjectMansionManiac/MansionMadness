@@ -60,6 +60,15 @@ public class BossPhase : MonoBehaviour {
 
     public virtual void Update()
     {
+        if (playerObject.transform.position.x < transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
         totalHealth = chicken.health;
        
         if ((float)totalHealth <= 0)

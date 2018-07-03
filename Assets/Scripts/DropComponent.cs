@@ -8,18 +8,17 @@ public class DropComponent : MonoBehaviour
     [SerializeField]
     private GameObject prefab;
     [SerializeField]
-    private List<GameObject> drops;
-    [SerializeField]
+    private int SpikeAmount;
+    public List<GameObject> drops;
     private float dropHeight;
 
-    [SerializeField]
     private float manualDropHeight;
 
     private float lastX;
     
     private float fieldSize;
     [SerializeField]
-    private float spacingSize;
+    public float spacingSize;
 
     [SerializeField]
     bool randomSpawnHeight;
@@ -49,6 +48,7 @@ public class DropComponent : MonoBehaviour
         // set the position of the first element off by half it's size
         lastX = this.transform.position.x + (fieldSize / 2);
         // now offset the position to the start of the row
+
         lastX -= ((drops.Count * fieldSize / 2) + ((drops.Count - 1) * spacingSize / 2));
 
         // iterate over all elements

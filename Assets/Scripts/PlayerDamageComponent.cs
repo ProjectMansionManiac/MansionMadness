@@ -62,8 +62,6 @@ public class PlayerDamageComponent : DamageComponent
 
         var other = collision.gameObject;
 
-        Debug.Log("Hit " + other.name);
-
         if (other.tag == "EnemyBullet")
         {
             var knockbackComp = other.GetComponent<KnockBackComponent>();
@@ -96,8 +94,6 @@ public class PlayerDamageComponent : DamageComponent
         if ((other.name == "HitboxHead" || other.name == "HitboxBody" || other.name == "HitboxTorso") && damageZoneActive == false)
         {
             var knockbackComp = other.GetComponent<KnockBackComponent>();
-
-            Debug.Log(other.gameObject);
 
             var damageComponent = other.GetComponent<DamageComponent>();
             if (damageComponent != null)
@@ -133,7 +129,6 @@ public class PlayerDamageComponent : DamageComponent
     {
         if (!isAnimating)
         {
-            Debug.Log("Hey Man");
             isAnimating = true;
             for (int i = 0; i < animationSpeed; i++)
             {
