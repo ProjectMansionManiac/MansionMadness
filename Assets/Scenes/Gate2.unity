@@ -2415,6 +2415,11 @@ Prefab:
       propertyPath: ObjectsToSpawn.Array.data[9]
       value: 
       objectReference: {fileID: 1102630106}
+    - target: {fileID: 114540161005148622, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: spikePosY
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
   m_IsPrefabParent: 0
