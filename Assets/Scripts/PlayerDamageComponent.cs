@@ -24,6 +24,8 @@ public class PlayerDamageComponent : DamageComponent
         normalColor = spriteRenderer.color;
         healthBar = GameObject.Find("HealthBar").GetComponent<Image>();
         //gameOverScreen = GameObject.Find("GameOverScreen");
+
+        this.health = this.maxHealth;
     }
 
     private bool damageZoneActive = false;
