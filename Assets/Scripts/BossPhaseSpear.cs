@@ -6,7 +6,7 @@ public class BossPhaseSpear : BossPhase {
 
     [SerializeField] float TimeBetweenSpikes;
     [SerializeField] float minSpikePosX, maxSpikePosX, spikePosY;
-    [SerializeField] float spikeAmount;
+
     GameObject dropObject;
     public override void ActivatePhase()
     {
