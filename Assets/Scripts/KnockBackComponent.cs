@@ -14,8 +14,6 @@ public class KnockBackComponent : MonoBehaviour
 
         var obj = collision.gameObject;
         
-        Debug.Log("Collision (" + this.gameObject.name + " with " + collision.name + ")");
-        
         var player = obj.GetComponentInChildren<PlayerMovement>();
         float xDot = Vector3.Dot(obj.transform.position - this.transform.position, this.transform.position);
         
@@ -23,8 +21,6 @@ public class KnockBackComponent : MonoBehaviour
             return;
         
         player.velocity.x = ((xDot / Mathf.Abs(xDot)) * pushBackCoefficient);
-        
-        Debug.Log("Velocity: " + player.velocity.x);
         
         if (player.velocity.x > 0.1f && player.velocity.x < -0.1f)
            player.velocity.x = -1.0f;
