@@ -13,8 +13,8 @@ public class BossPhaseSpear : BossPhase {
         Debug.Log("Spear Phase Started");
         base.ActivatePhase();
         head.tag = "Enemy";
-        torso.tag = "Enemy";
-        restbody.tag = "Enemy";
+        torso.tag = "Untagged";
+        restbody.tag = "Untagged";
 
         StartCoroutine(HandleSpikeDrop());
         //animator.Play("InitPhase");
