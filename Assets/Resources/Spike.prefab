@@ -139,8 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab4eb19a7bb0544d9114daee00ca5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  downSpeed: 4
-  lifetime: 3
+  moveDownSpeed: 1
+  waitTimeAfterSpawn: 2
+  shakeTime: 1
+  lifetimeAfterHit: 1
+  shakeSpeed: 0.5
+  shakeAmount: 0.5
   damage: 10
 --- !u!212 &212867568047688568
 SpriteRenderer:
