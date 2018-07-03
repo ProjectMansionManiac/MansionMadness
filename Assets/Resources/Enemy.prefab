@@ -644,7 +644,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4296875, y: 2.5}
+    oldSize: {x: 6.4, y: 6.4}
     newSize: {x: 1.83, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -780,12 +780,12 @@ MonoBehaviour:
   torso: {fileID: 1684236062828756}
   restbody: {fileID: 1992944345654408}
   playerObject: {fileID: 0}
-  animator: {fileID: 0}
   chicken: {fileID: 0}
   totalMaxHealth: 0
   totalHealth: 0
   ObjectsToSpawn:
   - {fileID: 1546114499243868}
+  stillActive: 0
   TimeBetweenSpikes: 5
   minSpikePosX: -18
   maxSpikePosX: 1
@@ -818,11 +818,11 @@ MonoBehaviour:
   torso: {fileID: 1684236062828756}
   restbody: {fileID: 1992944345654408}
   playerObject: {fileID: 0}
-  animator: {fileID: 0}
   chicken: {fileID: 0}
   totalMaxHealth: 0
   totalHealth: 0
   ObjectsToSpawn: []
+  stillActive: 0
 --- !u!114 &114367637989524158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -854,11 +854,12 @@ MonoBehaviour:
   torso: {fileID: 1684236062828756}
   restbody: {fileID: 1992944345654408}
   playerObject: {fileID: 0}
-  animator: {fileID: 0}
   chicken: {fileID: 114966268999675078}
   totalMaxHealth: 0
   totalHealth: 100
   ObjectsToSpawn: []
+  stillActive: 0
+  BigFireBallPrefab: {fileID: 0}
   TimeBetweenFireballs: 1
   shootingPivot: {fileID: 4872721590946964}
 --- !u!114 &114608724115122838
@@ -876,14 +877,19 @@ MonoBehaviour:
   phases:
   - phaseTypes: 00000000
     PhaseHealth: 90
+    animationToPlay: 
   - phaseTypes: 01000000
     PhaseHealth: 90
+    animationToPlay: 
   - phaseTypes: 02000000
     PhaseHealth: 90
+    animationToPlay: 
   - phaseTypes: 03000000
     PhaseHealth: 90
+    animationToPlay: 
   - phaseTypes: 04000000
     PhaseHealth: 90
+    animationToPlay: 
 --- !u!114 &114872475319367138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -899,11 +905,11 @@ MonoBehaviour:
   torso: {fileID: 1684236062828756}
   restbody: {fileID: 1992944345654408}
   playerObject: {fileID: 0}
-  animator: {fileID: 0}
   chicken: {fileID: 0}
   totalMaxHealth: 0
   totalHealth: 0
   ObjectsToSpawn: []
+  stillActive: 0
   TimeBetweenCharges: 5
   TimeWithoutHelmet: 5
 --- !u!114 &114948432867694192
@@ -921,7 +927,6 @@ MonoBehaviour:
   torso: {fileID: 1684236062828756}
   restbody: {fileID: 1992944345654408}
   playerObject: {fileID: 0}
-  animator: {fileID: 0}
   chicken: {fileID: 0}
   totalMaxHealth: 0
   totalHealth: 0
@@ -930,6 +935,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  stillActive: 0
 --- !u!114 &114966268999675078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1075,7 +1081,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c960277d03943a74484f38270508b6ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba8c1faec7a5ef24cb499b6dce533934, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
