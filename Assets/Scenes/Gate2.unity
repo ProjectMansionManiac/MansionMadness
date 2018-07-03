@@ -803,6 +803,11 @@ Prefab:
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1743465982}
+    - target: {fileID: 114323213043760870, guid: b19f396039a87874d917193c2f2a6633,
+        type: 2}
+      propertyPath: health
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b19f396039a87874d917193c2f2a6633, type: 2}
   m_IsPrefabParent: 0
@@ -2303,6 +2308,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[5].phaseTypes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[6].phaseTypes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4431143362942950, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 10.55
@@ -2355,6 +2375,71 @@ Prefab:
       propertyPath: ObjectsToSpawn.Array.data[3]
       value: 
       objectReference: {fileID: 922607394}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[5].phaseTypes.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[5].phaseTypes.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[6].phaseTypes.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[6].phaseTypes.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[6].PhaseHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[6].animationToPlay
+      value: Speerphase
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[0].PhaseHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[1].PhaseHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[2].PhaseHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[3].PhaseHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[4].PhaseHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[5].PhaseHealth
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883185099697352, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: phases.Array.data[5].animationToPlay
+      value: Speerphase
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
   m_IsPrefabParent: 0
