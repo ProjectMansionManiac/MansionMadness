@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -36,6 +37,8 @@ public class DropComponent : MonoBehaviour
     void Start()
     {
         Assert.IsNotNull(prefab.GetComponent<BoxCollider2D>());
+
+        StartCoroutine(DestroyAfterTime());
 
         // save the drop height
         manualDropHeight = dropHeight;
@@ -81,6 +84,12 @@ public class DropComponent : MonoBehaviour
 
         // add a respawn countdown
         respawnCountdown = new Countdown(() => { this.respawn = true; }, dropRespawnTime);
+    }
+
+    IEnumerator DestroyAfterTime()
+    {
+        yield return new WaitForSeconds(20f);
+        Destroy(this.gameObject);
     }
 
     private void Update()

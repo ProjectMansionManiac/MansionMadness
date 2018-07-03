@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 6f;
-    public GameObject[] hearts;
-
 
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;

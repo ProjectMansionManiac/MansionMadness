@@ -40,7 +40,8 @@ public class PhaseController : MonoBehaviour {
         GetComponent<BossPhaseBigFireballs>().enabled = false;
 
         animator.Play(phases[currentPhaseIndex].animationToPlay);
-
+        if (phases[currentPhaseIndex].spriteToShowInThatPhase != null)
+        GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex].spriteToShowInThatPhase;
         if (phases.Length > currentPhaseIndex)
         foreach (PhaseType phaseType in phases[currentPhaseIndex].phaseTypes)
         switch (phaseType)
@@ -70,6 +71,7 @@ public class PhaseController : MonoBehaviour {
         public PhaseType[] phaseTypes;
         public float PhaseHealth;
         public string animationToPlay;
+        public Sprite spriteToShowInThatPhase;
     }
 }
 
