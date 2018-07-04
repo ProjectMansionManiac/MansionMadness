@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 GameObject.Find("MenuCanvas").GetComponent<Canvas>().enabled = true;
-                SceneManager.UnloadSceneAsync("Gate1");
+                SceneManager.UnloadSceneAsync("Gate2");
                 this.currentState = new GameState();
             }
         }
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
     {
         if (GameObject.Find("MenuCanvas").GetComponent<Canvas>().enabled == true)
         {
-            SceneManager.LoadScene("Gate1", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Gate2", LoadSceneMode.Additive);
             GameObject.Find("MenuCanvas").GetComponent<Canvas>().enabled = false;
             this.currentState = new GameState();
         }
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
 
     public void InvokedReload()
     {
-        SceneManager.LoadScene("Gate1", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Gate2", LoadSceneMode.Additive);
         this.currentState = new GameState();
     }
 

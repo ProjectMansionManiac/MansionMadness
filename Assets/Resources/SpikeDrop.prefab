@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1920556512682164, guid: 90a5be5e541663a468dccfdda21f6897, type: 2}
+  SpikeAmount: 0
   drops:
   - {fileID: 0}
   - {fileID: 0}
@@ -63,9 +64,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  dropHeight: 0
-  manualDropHeight: 0
-  spacingSize: 1
+  spacingSize: 0.5
   randomSpawnHeight: 0
   randomSpawnHeightMin: 6
   randomSpawnHeightMax: 6
