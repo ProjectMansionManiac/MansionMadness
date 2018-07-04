@@ -9,6 +9,8 @@ TagManager:
   - Through
   - EnemyBullet
   - Mirror
+  - Spike
+  - Ceiling
   layers:
   - Default
   - TransparentFX
