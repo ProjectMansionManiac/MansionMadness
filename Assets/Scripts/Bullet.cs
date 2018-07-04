@@ -5,11 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float chargeTime;
+    public GameObject enemy;
 
     public void Initialize(float damage, Vector2 direction)
     {
         this.damage = damage;
         this.direction = Vector2.zero;
+        this.transform.parent = enemy.transform;
 
         StartCoroutine(CleanUpBullet());
         StartCoroutine(ChargeAttack(direction));
@@ -26,6 +28,7 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForSeconds(chargeTime);
 
+        this.transform.parent = null;
         this.direction = direction;
     }
 
