@@ -9,6 +9,7 @@ public class BossPhaseBigFireballs : BossPhase
     [SerializeField] float TimeBetweenFireballs = 1f;
     [SerializeField] Transform shootingPivot;
     bool canShoot = false;
+
     public override void ActivatePhase()
     {
         Debug.Log("Big Fireball Phase Started");
@@ -52,7 +53,6 @@ public class BossPhaseBigFireballs : BossPhase
         {
             yield return new WaitForSeconds(TimeBetweenFireballs);
             Shoot();
-
         }
     }
 
