@@ -125,8 +125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bbb696f865f934796c5cc6c952c673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< WIP
   chargeTime: 0
   damage: 0
+=======
+  chargeTime: 1.5
+  damage: 5
+>>>>>>> Changed assets
   speed: 5
   direction: {x: 0, y: 0}
   ballSpawnAmount: 3
