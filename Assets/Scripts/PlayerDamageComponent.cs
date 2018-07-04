@@ -56,19 +56,20 @@ public class PlayerDamageComponent : DamageComponent
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (!isInvincible)
-            StartCoroutine(Invincibility());
+        if (isInvincible)
+            return;
 
         var other = collision.gameObject;
 
         if (other.tag == "EnemyBullet")
         {
+            StartCoroutine(Invincibility());
             var knockbackComp = other.GetComponent<KnockBackComponent>();
 
             DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
             info.damage = collision.gameObject.GetComponent<Bullet>().damage;
             info.sender = collision.gameObject;
-            if (!isInvincible)
+
                 this.OnDamageReceived(info);
 
             knockbackComp.Execute(gameObject.transform.parent.gameObject);
@@ -77,13 +78,13 @@ public class PlayerDamageComponent : DamageComponent
         }
         if (other.tag == "Spike")
         {
+            StartCoroutine(Invincibility());
             var knockbackComp = other.GetComponent<KnockBackComponent>();
 
             DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
             info.damage = collision.gameObject.GetComponent<Spike>().damage;
             info.sender = collision.gameObject;
 
-            if (!isInvincible)
                 this.OnDamageReceived(info);
 
             //collision.gameObject.GetComponent<KnockBackComponent>().canKnockback = false;
@@ -94,6 +95,7 @@ public class PlayerDamageComponent : DamageComponent
         }
         if ((other.name == "HitboxHead" || other.name == "HitboxBody" || other.name == "HitboxTorso") && damageZoneActive == false)
         {
+            StartCoroutine(Invincibility());
             var knockbackComp = other.GetComponent<KnockBackComponent>();
 
             var damageComponent = other.GetComponent<DamageComponent>();
@@ -103,7 +105,6 @@ public class PlayerDamageComponent : DamageComponent
                 info.damage = contactDamage;
                 info.sender = this.gameObject;
 
-                if (!isInvincible)
                     OnDamageReceived(info);
 
                 this.damageZoneActive = true;
