@@ -10,7 +10,7 @@ public class BossRoomTrigger : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             PhaseController.instance.StartNextPhase();
-            this.enabled = false;
+            Destroy(this.gameObject);
         }
     }
 }

@@ -45,7 +45,6 @@ public class BossPhase : MonoBehaviour {
     public virtual void ActivatePhase()
     {
         stillActive = true;
-        Debug.Log("Boss Phase Changed...");
         foreach (GameObject obj in ObjectsToSpawn)
         {
             obj.SetActive(true);
