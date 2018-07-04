@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  speed: 10
+  speed: 5
   direction: {x: 0, y: 0}
   ballSpawnAmount: 3
   canExplode: 0
