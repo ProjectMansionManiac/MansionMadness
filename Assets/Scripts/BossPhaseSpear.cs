@@ -54,6 +54,8 @@ public class BossPhaseSpear : BossPhase {
             float fullWidth = (spikeWidth * spikeAmount) + (spaceBetweenSpikes * (spikeAmount - 1));
 
             float randX = Random.Range(minSpikePosX + fullWidth / 2, maxSpikePosX - fullWidth / 2);
-            dropObject = Instantiate(Resources.Load("SpikeDrop"), new Vector3(randX, spikePosY, 0f), Quaternion.identity) as GameObject;        }
+            dropObject = Instantiate(Resources.Load("SpikeDrop"), new Vector3(randX, spikePosY, 0f), Quaternion.identity) as GameObject;
+        }
+
     }
 }

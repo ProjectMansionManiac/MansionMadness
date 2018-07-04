@@ -19,7 +19,7 @@ public class PhaseController : MonoBehaviour {
 
     private void Start()
     {
-        StartNextPhase();
+        //StartNextPhase();
     }
 
     public enum PhaseType
@@ -38,8 +38,6 @@ public class PhaseController : MonoBehaviour {
         GetComponent<BossPhaseSpear>().enabled = false;
         GetComponent<BossPhaseCharge>().enabled = false;
         GetComponent<BossPhaseBigFireballs>().enabled = false;
-
-        Debug.Log(currentPhaseIndex);
 
         animator.Play(phases[currentPhaseIndex].animationToPlay);
         if (phases[currentPhaseIndex].spriteToShowInThatPhase != null)
