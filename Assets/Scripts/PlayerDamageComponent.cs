@@ -53,12 +53,11 @@ public class PlayerDamageComponent : DamageComponent
         this.damageZoneActive = false;
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isInvincible)
-            return;
 
-        StartCoroutine(Invincibility());
+        if (!isInvincible)
+            StartCoroutine(Invincibility());
 
         var other = collision.gameObject;
 
@@ -69,8 +68,8 @@ public class PlayerDamageComponent : DamageComponent
             DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
             info.damage = collision.gameObject.GetComponent<Bullet>().damage;
             info.sender = collision.gameObject;
-
-            this.OnDamageReceived(info);
+            if (!isInvincible)
+                this.OnDamageReceived(info);
 
             knockbackComp.Execute(gameObject.transform.parent.gameObject);
 
@@ -83,7 +82,9 @@ public class PlayerDamageComponent : DamageComponent
             DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
             info.damage = collision.gameObject.GetComponent<Spike>().damage;
             info.sender = collision.gameObject;
-            this.OnDamageReceived(info);
+
+            if (!isInvincible)
+                this.OnDamageReceived(info);
 
             //collision.gameObject.GetComponent<KnockBackComponent>().canKnockback = false;
 
@@ -102,7 +103,9 @@ public class PlayerDamageComponent : DamageComponent
                 info.damage = contactDamage;
                 info.sender = this.gameObject;
 
-                OnDamageReceived(info);
+                if (!isInvincible)
+                    OnDamageReceived(info);
+
                 this.damageZoneActive = true;
 
                 StartCoroutine(DamageTick());

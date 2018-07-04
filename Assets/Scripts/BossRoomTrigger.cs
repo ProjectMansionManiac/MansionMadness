@@ -13,6 +13,7 @@ public class BossRoomTrigger : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             PhaseController.instance.StartNextPhase();
+            if (doorToSpawn!=null)
             doorToSpawn.SetActive(true);
             Destroy(this.gameObject);
         }
