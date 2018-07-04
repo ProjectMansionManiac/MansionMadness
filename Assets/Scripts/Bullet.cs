@@ -5,12 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float chargeTime;
-    public GameObject enemy;
+    GameObject enemy;
 
     public void Initialize(float damage, Vector2 direction)
     {
-        this.damage = damage;
         this.direction = Vector2.zero;
+        enemy = GameObject.Find("Enemy");
         this.transform.parent = enemy.transform;
 
         StartCoroutine(CleanUpBullet());
