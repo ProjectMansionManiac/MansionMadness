@@ -69,7 +69,7 @@ public class BossPhase : MonoBehaviour {
         }
 
         totalHealth = chicken.health;
-       
+
         if ((float)totalHealth <= 0)
         {
             PhaseController.instance.StartNextPhase();

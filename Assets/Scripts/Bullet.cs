@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float chargeTime;
+
     public void Initialize(float damage, Vector2 direction)
     {
         this.damage = damage;
-        this.direction = direction;
+        this.direction = Vector2.zero;
 
         StartCoroutine(CleanUpBullet());
+        StartCoroutine(ChargeAttack(direction));
     }
     
     IEnumerator CleanUpBullet()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(5f + chargeTime);
 
         Destroy(this.gameObject);
+    }
+
+    IEnumerator ChargeAttack(Vector2 direction)
+    {
+        yield return new WaitForSeconds(chargeTime);
+
+        this.direction = direction;
     }
 
     void Update()
