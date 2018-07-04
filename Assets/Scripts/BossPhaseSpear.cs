@@ -37,6 +37,7 @@ public class BossPhaseSpear : BossPhase {
 
     void OnDisable()
     {
+        StopAllCoroutines();
         DeactivatePhase();
     }
 
