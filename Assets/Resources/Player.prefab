@@ -285,10 +285,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   maxJumpHeight: 3
   minJumpHeight: 1
   timeToJumpApex: 0.4
@@ -353,6 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   health: 200
+  maxHealth: 200
   healthBar: {fileID: 0}
   gameOverScreen: {fileID: 0}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
