@@ -12,7 +12,6 @@ public class DamageComponent : MonoBehaviour
 
     public virtual void OnDamageReceived(DamageInfo info)
     {
-        Debug.Log("<color=green>Info:</color> Damage received from " + info.sender.name + ".");
 
         // check if the objects health minus the
         // damage to be done, is above zero

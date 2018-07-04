@@ -164,7 +164,7 @@ public class PlayerShooting : MonoBehaviour
         {
             animator.Play("Shoot");
             currentAmmo--;
-            Debug.Log("I Shoot");
+
             lineRenderer.SetPosition(0, shootingOrigin.position);
 
             Vector3 inputDirection = Vector3.zero;

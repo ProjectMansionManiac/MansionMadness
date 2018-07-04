@@ -39,7 +39,6 @@ public class BossDamageComponent : DamageComponent
     {
         if (!isAnimating)
         {
-            Debug.Log("Hey Man");
             isAnimating = true;
             for (int i = 0; i < animationSpeed; i++)
             {
