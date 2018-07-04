@@ -47,7 +47,7 @@ public class Spike : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 11)
+        if (collision.gameObject.layer == 11 && collision.gameObject.tag != "Ceiling")
         {
             hit = true;
             StartCoroutine(DestroyAfterSeconds());
