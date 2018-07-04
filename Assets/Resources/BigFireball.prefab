@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargeTime: 1.5
   damage: 5
-  speed: 5
+  speed: 7
   direction: {x: 0, y: 0}
   ballSpawnAmount: 3
   canExplode: 0

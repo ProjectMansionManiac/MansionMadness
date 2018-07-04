@@ -39,6 +39,17 @@ public class PhaseController : MonoBehaviour {
         GetComponent<BossPhaseCharge>().enabled = false;
         GetComponent<BossPhaseBigFireballs>().enabled = false;
 
+        if (phases.Length <= currentPhaseIndex)
+        {
+            statusScreen.SetActive(true);
+            var checkpointButton = GameObject.Find("CheckpointButton").gameObject;
+            var statusText = GameObject.Find("StatusText").GetComponent<UnityEngine.UI.Text>();
+            checkpointButton.SetActive(false);
+            statusText.text = "You win.";
+            Time.timeScale = 0f;
+            return;
+        }
+
         animator.Play(phases[currentPhaseIndex].animationToPlay);
         if (phases[currentPhaseIndex].spriteToShowInThatPhase != null)
         {
@@ -70,11 +81,7 @@ public class PhaseController : MonoBehaviour {
         }
         else
         {
-            statusScreen.SetActive(true);
-            var checkpointButton = GameObject.Find("CheckpointButton").gameObject;
-            var statusText = GameObject.Find("StatusText").GetComponent<UnityEngine.UI.Text>();
-            checkpointButton.SetActive(false);
-            statusText.text = "You win.";
+           
         }
         currentPhaseIndex++;
     }
