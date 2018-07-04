@@ -8,7 +8,7 @@ public class PhaseController : MonoBehaviour {
     public int currentPhaseIndex = 0;
     private Animator animator;
     public static PhaseController instance = null;
-
+    public GameObject statusScreen;
     public Phase[] phases;
 
     private void Awake()
@@ -41,26 +41,38 @@ public class PhaseController : MonoBehaviour {
 
         animator.Play(phases[currentPhaseIndex].animationToPlay);
         if (phases[currentPhaseIndex].spriteToShowInThatPhase != null)
-        GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex].spriteToShowInThatPhase;
-        if (phases.Length > currentPhaseIndex)
-        foreach (PhaseType phaseType in phases[currentPhaseIndex].phaseTypes)
-        switch (phaseType)
         {
-            case PhaseType.Init:
-                GetComponent<BossPhaseInit>().enabled = true;
-                break;
-            case PhaseType.Mirror:
-                GetComponent<BossPhaseMirror>().enabled = true;
-                break;
-            case PhaseType.Spear:
-                GetComponent<BossPhaseSpear>().enabled = true;
-                break;
-            case PhaseType.Charge:
-                GetComponent<BossPhaseCharge>().enabled = true;
-                break;
-            case PhaseType.BigFireball:
-                GetComponent<BossPhaseBigFireballs>().enabled = true;
-                break;
+            GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex].spriteToShowInThatPhase;
+        }
+        if (phases.Length > currentPhaseIndex)
+        {
+            foreach (PhaseType phaseType in phases[currentPhaseIndex].phaseTypes)
+            {
+                switch (phaseType)
+                {
+                    case PhaseType.Init:
+                        GetComponent<BossPhaseInit>().enabled = true;
+                        break;
+                    case PhaseType.Mirror:
+                        GetComponent<BossPhaseMirror>().enabled = true;
+                        break;
+                    case PhaseType.Spear:
+                        GetComponent<BossPhaseSpear>().enabled = true;
+                        break;
+                    case PhaseType.Charge:
+                        GetComponent<BossPhaseCharge>().enabled = true;
+                        break;
+                    case PhaseType.BigFireball:
+                        GetComponent<BossPhaseBigFireballs>().enabled = true;
+                        break;
+                }
+            }
+        }
+        else
+        {
+            statusScreen.SetActive(true);
+            var checkpointButton = GameObject.Find("CheckpointButton").gameObject;
+            checkpointButton.SetActive(false);
         }
         currentPhaseIndex++;
     }
