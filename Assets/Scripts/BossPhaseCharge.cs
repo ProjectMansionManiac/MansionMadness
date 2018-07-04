@@ -14,7 +14,9 @@ public class BossPhaseCharge : BossPhase {
         base.ActivatePhase();
 
         canCharge = true;
-
+        head.tag = "Untagged";
+        restbody.tag = "Untagged";
+        torso.tag = "Untagged";
         StartCoroutine(HandleCharge());
         //animator.Play("InitPhase");
     }

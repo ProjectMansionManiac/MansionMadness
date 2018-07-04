@@ -9,7 +9,7 @@ public class BigFireball : Bullet {
 
     public override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 11)
+        if (collision.gameObject.layer == 11 && collision.gameObject.tag != "Through")
         {
             if (canExplode)
             SpawnSmallBalls();

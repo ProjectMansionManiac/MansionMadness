@@ -10,7 +10,8 @@ public class BossPhaseMirror : BossPhase {
 
         if (torso != null)
         torso.tag = "Enemy";
-
+        head.tag = "Untagged";
+        restbody.tag = "Untagged";
         //animator.Play("MirrorPhase");
     }
 
