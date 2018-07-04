@@ -489,6 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   health: 100
+  maxHealth: 100
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   spriteRenderer: {fileID: 212955205661559174}
   animationSpeed: 20
@@ -517,6 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   health: 100
+  maxHealth: 100
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   spriteRenderer: {fileID: 212955205661559174}
   animationSpeed: 20
@@ -545,6 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   health: 100
+  maxHealth: 100
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   spriteRenderer: {fileID: 212955205661559174}
   animationSpeed: 20
@@ -592,7 +595,9 @@ MonoBehaviour:
   TimeBetweenSpikes: 5
   minSpikePosX: -2
   maxSpikePosX: 18
-  spikePosY: 11.8
+  spikePosY: 6
+  spikeDrop: {fileID: 0}
+  spike: {fileID: 0}
 --- !u!114 &114587340007382112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -670,24 +675,31 @@ MonoBehaviour:
   - phaseTypes: 00000000
     PhaseHealth: 150
     animationToPlay: fireball phase
+    spriteToShowInThatPhase: {fileID: 0}
   - phaseTypes: 04000000
     PhaseHealth: 150
     animationToPlay: fireball phase
+    spriteToShowInThatPhase: {fileID: 0}
   - phaseTypes: 01000000
     PhaseHealth: 50
     animationToPlay: MirrorPhaseBoss
+    spriteToShowInThatPhase: {fileID: 21300000, guid: 4f296d69cca8d584b949038b526ea277,
+      type: 3}
   - phaseTypes: 0400000001000000
     PhaseHealth: 50
     animationToPlay: MirrorPhaseBoss
+    spriteToShowInThatPhase: {fileID: 21300000, guid: 4f296d69cca8d584b949038b526ea277,
+      type: 3}
   - phaseTypes: 02000000
     PhaseHealth: 400
     animationToPlay: Speerphase
-  - phaseTypes: 03000000
-    PhaseHealth: 150
-    animationToPlay: 
+    spriteToShowInThatPhase: {fileID: 21300000, guid: 88a288a2f45500647a2e4dd50f5374a0,
+      type: 3}
   - phaseTypes: 0400000002000000
-    PhaseHealth: 100
+    PhaseHealth: 150
     animationToPlay: Speerphase
+    spriteToShowInThatPhase: {fileID: 21300000, guid: 88a288a2f45500647a2e4dd50f5374a0,
+      type: 3}
 --- !u!114 &114892080357825476
 MonoBehaviour:
   m_ObjectHideFlags: 1
