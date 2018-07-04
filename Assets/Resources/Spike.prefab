@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canKnockback: 1
-  pushBackCoefficient: 25
+  pushBackCoefficient: 7
 --- !u!114 &114592170044987818
 MonoBehaviour:
   m_ObjectHideFlags: 1

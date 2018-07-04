@@ -788,11 +788,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4526214090446676, guid: b19f396039a87874d917193c2f2a6633, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.42
+      value: -16.72
       objectReference: {fileID: 0}
     - target: {fileID: 4526214090446676, guid: b19f396039a87874d917193c2f2a6633, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.59
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 4526214090446676, guid: b19f396039a87874d917193c2f2a6633, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3250,7 +3250,7 @@ Prefab:
     - target: {fileID: 114909505532222670, guid: 63ee2744900a3b14492ba2b696672d7b,
         type: 2}
       propertyPath: pushBackCoefficient
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 212955205661559174, guid: 63ee2744900a3b14492ba2b696672d7b,
         type: 2}
@@ -3266,6 +3266,21 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931190786227690, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: pushBackCoefficient
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114026332338559440, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: pushBackCoefficient
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053053245998258, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: pushBackCoefficient
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
