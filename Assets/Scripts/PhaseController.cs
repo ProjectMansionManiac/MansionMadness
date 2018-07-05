@@ -42,9 +42,7 @@ public class PhaseController : MonoBehaviour {
         if (phases.Length <= currentPhaseIndex)
         {
             statusScreen.SetActive(true);
-            var checkpointButton = GameObject.Find("CheckpointButton").gameObject;
             var statusText = GameObject.Find("StatusText").GetComponent<UnityEngine.UI.Text>();
-            checkpointButton.SetActive(false);
             statusText.text = "You win.";
             Time.timeScale = 0f;
             return;
