@@ -32,7 +32,7 @@ public class Spike : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (isShaking)
+        if (isShaking && !PhaseController.instance.dead)
         {
             transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.time * shakeSpeed) * shakeAmount, transform.position.y,transform.position.z);
         }

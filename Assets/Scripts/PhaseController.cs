@@ -10,7 +10,7 @@ public class PhaseController : MonoBehaviour {
     public static PhaseController instance = null;
     public GameObject statusScreen;
     public Phase[] phases;
-
+    [HideInInspector] public bool dead = false;
     private void Awake()
     {
         instance = this;
@@ -44,6 +44,7 @@ public class PhaseController : MonoBehaviour {
             statusScreen.SetActive(true);
             var statusText = GameObject.Find("StatusText").GetComponent<UnityEngine.UI.Text>();
             statusText.text = "You win.";
+            dead = true;
             Time.timeScale = 0f;
             return;
         }
