@@ -70,7 +70,7 @@ public class PlayerShooting : MonoBehaviour
 
         if (currentrefillTick >= refillTick)
         {
-            currentrefillTick = 0f;
+            currentrefillTick = 0.0f;
             currentAmmo+= Time.deltaTime * refillAmount;
             if (currentAmmo > maxAmmo)
             {

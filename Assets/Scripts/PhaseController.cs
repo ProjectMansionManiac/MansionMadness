@@ -78,10 +78,6 @@ public class PhaseController : MonoBehaviour {
                 }
             }
         }
-        else
-        {
-           
-        }
         currentPhaseIndex++;
     }
 
