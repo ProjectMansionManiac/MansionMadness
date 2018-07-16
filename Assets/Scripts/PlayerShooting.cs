@@ -118,7 +118,7 @@ public class PlayerShooting : MonoBehaviour
         info.sender = this.gameObject;
         info.damage = this.damage;
 
-        receiver.GetComponent<BossDamageComponent>().OnDamageReceived(info);
+        receiver.GetComponent<DamageComponent>().OnDamageReceived(info);
 
         canDamage = false;
     }
