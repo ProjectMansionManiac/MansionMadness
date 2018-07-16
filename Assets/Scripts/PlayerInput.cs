@@ -35,6 +35,8 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
+
+        Debug.Log("INPUTx " + directionalInput.x);
         if (directionalInput.x < 0)
         {
             player.GetComponent<SpriteRenderer>().flipX = true;
