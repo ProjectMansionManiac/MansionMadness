@@ -28,6 +28,6 @@ public class DamageComponent : MonoBehaviour
     }
     
     [SerializeField] protected bool isDead = false;
-    [HideInInspector] public float health = 100.0f;
+    public float health = 100.0f;
     public float maxHealth = 100.0f;
 }
