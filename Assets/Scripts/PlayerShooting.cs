@@ -38,6 +38,9 @@ public class PlayerShooting : MonoBehaviour
 
     PlayerMovement playerMovement;
 
+    [HideInInspector] public SpriteRenderer spriteRenderer;
+
+
     private void Start()
     {
         ammoBarBlink = GameObject.Find("AmmoBarBG").GetComponent<Animator>();
@@ -46,6 +49,8 @@ public class PlayerShooting : MonoBehaviour
         animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         AmmoBar = GameObject.Find("AmmoBar").GetComponent<Image>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -187,6 +192,25 @@ public class PlayerShooting : MonoBehaviour
             // This would cast rays only against colliders in layer xxx.
             // But instead we want to collide against everything except layer xxx. The ~ operator does this, it inverts a bitmask.
             layerMask = ~layerMask;
+
+            if (inputDirection == Vector3.zero)
+            {
+                if (spriteRenderer.flipX == true)
+                {
+                    inputDirection = Vector3.left;
+                } else
+                {
+                    inputDirection = Vector3.right;
+                }
+            }
+
+            if (inputDirection.x >= .1f)
+            {
+                spriteRenderer.flipX = false;
+            } else
+            {
+                spriteRenderer.flipX = true;
+            }
 
             RaycastHit2D hit = Physics2D.Raycast((Vector2)shootingOrigin.position, inputDirection, 100f, layerMask);
 

@@ -2,8 +2,8 @@
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Vector2 levelTopLeft;
-    [SerializeField] private Vector2 levelBottomRight;
+    [SerializeField] public Vector2 levelTopLeft;
+    [SerializeField] public Vector2 levelBottomRight;
     [SerializeField] private float cameraClipOffsetX;
     [SerializeField] private float cameraClipOffsetY;
 
