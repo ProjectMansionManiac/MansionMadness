@@ -24,7 +24,7 @@ TagManager:
   - Enemy
   - Player
   - Ground
-  - 
+  - EnemyFirebal
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 
+    uniqueID: 959807103
     locked: 0
