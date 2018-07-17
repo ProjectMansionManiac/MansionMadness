@@ -2123,6 +2123,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b19f396039a87874d917193c2f2a6633, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &778769096 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4526214090446676, guid: b19f396039a87874d917193c2f2a6633,
+    type: 2}
+  m_PrefabInternal: {fileID: 753088479}
 --- !u!1001 &780217835
 Prefab:
   m_ObjectHideFlags: 0
@@ -2230,7 +2235,7 @@ Prefab:
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
       propertyPath: phases.Array.data[0].PhaseHealth
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114608724115122838, guid: bd743c680b77f864197871952fb62e15,
         type: 2}
@@ -2545,6 +2550,11 @@ Transform:
   m_Father: {fileID: 282214416}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &891603611 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4846708751260250, guid: bd743c680b77f864197871952fb62e15,
+    type: 2}
+  m_PrefabInternal: {fileID: 780217835}
 --- !u!1 &907481659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2606,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.8}
+    oldSize: {x: 1.55, y: 3.43}
     newSize: {x: 0.8, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2748,8 +2758,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5bf2c35041db09a4ead84a88904c2037, type: 3}
-  m_Color: {r: 0, g: 0.03938794, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 461d4db101c2c0c4abdca2edd0acc668, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3406,11 +3416,6 @@ Transform:
   m_Father: {fileID: 282214416}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1175525482 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4526214090446676, guid: b19f396039a87874d917193c2f2a6633,
-    type: 2}
-  m_PrefabInternal: {fileID: 753088479}
 --- !u!1 &1233514258
 GameObject:
   m_ObjectHideFlags: 0
@@ -4953,8 +4958,13 @@ MonoBehaviour:
   levelBottomRight: {x: 29.95, y: -4.95}
   cameraClipOffsetX: 8
   cameraClipOffsetY: 4
+  maxDistanceZ: 7.5
+  minDistanceZ: 4.783421
   dampTime: 9
-  target: {fileID: 1175525482}
+  target: {x: 0, y: 0, z: 0}
+  enemyTransform: {fileID: 891603611}
+  playerTransform: {fileID: 778769096}
+  maxDistanceToBoss: 0
 --- !u!81 &1811963127
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5674,7 +5684,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.8}
+    oldSize: {x: 1.55, y: 3.43}
     newSize: {x: 0.8, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5826,8 +5836,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5bf2c35041db09a4ead84a88904c2037, type: 3}
-  m_Color: {r: 0, g: 0.03938794, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 461d4db101c2c0c4abdca2edd0acc668, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
