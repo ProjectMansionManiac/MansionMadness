@@ -79,6 +79,19 @@ public class PhaseController : MonoBehaviour {
             }
         }
         currentPhaseIndex++;
+        StartCoroutine(ChangeSprite());
+    }
+
+    IEnumerator ChangeSprite()
+    {
+        while (true)
+        {
+            yield return new WaitForEndOfFrame();
+            if (phases[currentPhaseIndex - 1].spriteToShowInThatPhase != null)
+            {
+                GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex - 1].spriteToShowInThatPhase;
+            }
+        }
     }
 
     [System.Serializable]
