@@ -47,7 +47,6 @@ public class CameraFollow : MonoBehaviour
            Mathf.Clamp(transform.position.y, levelBottomRight.y + cameraClipOffsetY, levelTopLeft.y - cameraClipOffsetY),
            transform.position.z
        );
-        Debug.Log(distanceBetweenTargets);
         Camera.main.orthographicSize = Mathf.Clamp(distanceBetweenTargets, minDistanceZ, maxDistanceZ);
     }
 

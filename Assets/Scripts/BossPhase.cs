@@ -50,6 +50,8 @@ public class BossPhase : MonoBehaviour {
     {
         stillActive = true;
 
+        StartCoroutine(SpawnObjects());
+
         chicken = GetComponent<Chicken>();
         totalMaxHealth = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
         totalHealth = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
