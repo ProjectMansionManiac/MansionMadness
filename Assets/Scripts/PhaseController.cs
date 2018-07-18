@@ -89,12 +89,19 @@ public class PhaseController : MonoBehaviour {
         while (true)
         {
             yield return new WaitForEndOfFrame();
-            yield return new WaitForEndOfFrame();
-            yield return new WaitForEndOfFrame();
             if (phases[currentPhaseIndex - 1].spriteToShowInThatPhase != null)
             {
                 GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex - 1].spriteToShowInThatPhase;
             }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (currentPhaseIndex != 0)
+        if (phases[currentPhaseIndex - 1].spriteToShowInThatPhase != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex - 1].spriteToShowInThatPhase;
         }
     }
 
