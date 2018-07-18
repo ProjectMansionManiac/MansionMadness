@@ -59,7 +59,20 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
     public void OnExitClick()
     {
         Application.Quit();
