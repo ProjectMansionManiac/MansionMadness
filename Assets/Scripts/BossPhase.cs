@@ -24,6 +24,10 @@ public class BossPhase : MonoBehaviour {
 
     [HideInInspector] public bool stillActive = false;
 
+    public float waitTimeBeforeSpawningObjects;
+
+    public Animator[] otherAnimators;
+
     private void Start()
     {
         playerObject = GameObject.Find("Player");
@@ -45,16 +49,29 @@ public class BossPhase : MonoBehaviour {
     public virtual void ActivatePhase()
     {
         stillActive = true;
-        foreach (GameObject obj in ObjectsToSpawn)
-        {
-            obj.SetActive(true);
-        }
 
         chicken = GetComponent<Chicken>();
         totalMaxHealth = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
         totalHealth = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
         chicken.maxHealth = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
         chicken.health = PhaseController.instance.phases[PhaseController.instance.currentPhaseIndex].PhaseHealth;
+    }
+
+    IEnumerator SpawnObjects()
+    {
+        yield return new WaitForSeconds(waitTimeBeforeSpawningObjects);
+        foreach (GameObject obj in ObjectsToSpawn)
+        {
+            obj.SetActive(true);
+        }
+
+        if (otherAnimators.Length != 0)
+        {
+            foreach (Animator anim in otherAnimators)
+            {
+                anim.Play(0);
+            }
+        }
     }
 
     public virtual void Update()
