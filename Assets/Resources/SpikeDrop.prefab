@@ -65,7 +65,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   spacingSize: 0.5
-  randomSpawnHeight: 0
-  randomSpawnHeightMin: 6
-  randomSpawnHeightMax: 6
+  randomSpawnHeight: 1
+  randomSpawnHeightMin: 2
+  randomSpawnHeightMax: 0
   dropRespawnTime: 1
