@@ -42,12 +42,12 @@ public class BossDamageComponent : DamageComponent
             isAnimating = true;
             for (int i = 0; i < animationSpeed; i++)
             {
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForEndOfFrame();
                 spriteRenderer.color = Color.Lerp(normalColor, damageColor, .2f * i);
             }
             for (int i = animationSpeed; i > 0; i--)
             {
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForEndOfFrame();
                 spriteRenderer.color = Color.Lerp(damageColor, normalColor, .7f * i);
             }
             spriteRenderer.color = normalColor;
