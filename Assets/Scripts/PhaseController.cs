@@ -79,13 +79,17 @@ public class PhaseController : MonoBehaviour {
             }
         }
         currentPhaseIndex++;
-        StartCoroutine(ChangeSprite());
+
+        if (currentPhaseIndex == 1)
+            StartCoroutine(ChangeSprite());
     }
 
     IEnumerator ChangeSprite()
     {
         while (true)
         {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
             if (phases[currentPhaseIndex - 1].spriteToShowInThatPhase != null)
             {
