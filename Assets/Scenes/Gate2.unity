@@ -4257,6 +4257,11 @@ Prefab:
       propertyPath: ObjectsToSpawn.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114827762988476928, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: otherAnimators.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 60268511375063928, guid: 63ee2744900a3b14492ba2b696672d7b,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -4729,6 +4734,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827762988476928, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: otherAnimators.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61390597034089970, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
