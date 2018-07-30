@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &140269546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3841,6 +3841,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1226334838
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.3097297
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.101634875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.11050452
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1255396239
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,6 +4840,16 @@ Prefab:
         type: 2}
       propertyPath: phases.Array.data[1].phaseTypes.Array.data[0]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61878912594522248, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 61878912594522248, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61390597034089970, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
