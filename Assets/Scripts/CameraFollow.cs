@@ -47,7 +47,8 @@ public class CameraFollow : MonoBehaviour
            Mathf.Clamp(transform.position.y, levelBottomRight.y + cameraClipOffsetY, levelTopLeft.y - cameraClipOffsetY),
            transform.position.z
        );
-        Camera.main.orthographicSize = Mathf.Clamp(distanceBetweenTargets, minDistanceZ, maxDistanceZ);
+        
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize,Mathf.Clamp(distanceBetweenTargets, minDistanceZ, maxDistanceZ), Time.deltaTime);
     }
 
     private void OnDrawGizmos()

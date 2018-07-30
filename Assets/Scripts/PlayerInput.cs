@@ -6,11 +6,13 @@ public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement playerMovement;
     private Player player;
+    private Transform shootingOrigin;
 
     private void Start()
     {
         player = GetComponent<Player>();
         playerMovement = GetComponent<PlayerMovement>();
+        shootingOrigin = transform.GetChild(1);
     }
 
     private void Update()
@@ -39,6 +41,9 @@ public class PlayerInput : MonoBehaviour
         if (directionalInput.x < 0)
         {
             player.GetComponent<SpriteRenderer>().flipX = true;
+            shootingOrigin.localPosition = new Vector3(-Mathf.Abs(shootingOrigin.localPosition.x),
+                                                  shootingOrigin.localPosition.y,
+                                                  shootingOrigin.localPosition.z);
         } else if (directionalInput == Vector2.zero)
         {
 
@@ -46,6 +51,9 @@ public class PlayerInput : MonoBehaviour
         else
         {
             player.GetComponent<SpriteRenderer>().flipX = false;
+            shootingOrigin.localPosition = new Vector3(Mathf.Abs(shootingOrigin.localPosition.x),
+                                                  shootingOrigin.localPosition.y,
+                                                  shootingOrigin.localPosition.z);
         }
 
         playerMovement.SetDirectionalInput(directionalInput);
