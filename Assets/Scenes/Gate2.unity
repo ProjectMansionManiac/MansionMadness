@@ -939,6 +939,24 @@ Prefab:
       propertyPath: m_Parameters.widthMultiplier
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 4691486984586618, guid: b19f396039a87874d917193c2f2a6633, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691486984586618, guid: b19f396039a87874d917193c2f2a6633, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323213043760870, guid: b19f396039a87874d917193c2f2a6633,
+        type: 2}
+      propertyPath: damageColor.a
+      value: 0.14117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323213043760870, guid: b19f396039a87874d917193c2f2a6633,
+        type: 2}
+      propertyPath: contactDamage
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b19f396039a87874d917193c2f2a6633, type: 2}
   m_IsPrefabParent: 0
@@ -4850,6 +4868,11 @@ Prefab:
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114477384767721324, guid: 63ee2744900a3b14492ba2b696672d7b,
+        type: 2}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61390597034089970, guid: 63ee2744900a3b14492ba2b696672d7b, type: 2}
