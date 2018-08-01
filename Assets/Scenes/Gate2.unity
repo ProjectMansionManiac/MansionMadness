@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &140269546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2137,7 +2137,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 39
     m_FontStyle: 0
     m_BestFit: 0
@@ -2149,7 +2149,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: press A to return to Main Menu
+  m_Text: 'PRESS A TO RETURN TO MAIN MENUE '
 --- !u!222 &740784517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6241,7 +6241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1743465983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7132,7 +7132,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 300
     m_FontStyle: 1
     m_BestFit: 0
@@ -7144,7 +7144,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game Over '
+  m_Text: GAME OVER
 --- !u!222 &2043230271
 CanvasRenderer:
   m_ObjectHideFlags: 0

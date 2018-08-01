@@ -291,7 +291,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: PLAY
 --- !u!222 &55081514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -377,7 +377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: End
+  m_Text: END
 --- !u!222 &200243916
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -526,7 +526,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Credits
+  m_Text: CREDITS
 --- !u!222 &794736138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -588,7 +588,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -600,7 +600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Options
+  m_Text: OPTIONS
 --- !u!222 &861272362
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1277,7 +1277,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -1289,7 +1289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Tutorial
+  m_Text: TUTORIAL
 --- !u!222 &1638809810
 CanvasRenderer:
   m_ObjectHideFlags: 0

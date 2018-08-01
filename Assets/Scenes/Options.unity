@@ -304,7 +304,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Color Change
+  m_Text: COLOR CHANGE
 --- !u!222 &94602901
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Musik
+  m_Text: MUSIK
 --- !u!222 &140334973
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -1162,7 +1162,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Sound Subtitles
+  m_Text: SOUND SUBTITELS
 --- !u!222 &769273982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2101,7 +2101,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -2113,7 +2113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Full Screen '
+  m_Text: FULL SCREEN
 --- !u!222 &1314482075
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2567,7 +2567,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -2579,7 +2579,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Sound Effect
+  m_Text: SOUND EFECTS
 --- !u!222 &1528230464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2641,7 +2641,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -2653,7 +2653,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Back
+  m_Text: 'BACK
 
 '
 --- !u!222 &1582943936
