@@ -8,6 +8,9 @@ public class PlayerShooting : MonoBehaviour
     public float laserLength;
     public float CooldownTimeWhenLaserIsEmpty;
 
+
+    public GameObject gun;
+
     public int damage;
     [SerializeField]
     float damageTick = 0.1f;
@@ -207,10 +210,26 @@ public class PlayerShooting : MonoBehaviour
             if (inputDirection.x >= .1f)
             {
                 spriteRenderer.flipX = false;
+                shootingOrigin.localPosition = new Vector3(Mathf.Abs(shootingOrigin.localPosition.x),
+                                                  shootingOrigin.localPosition.y,
+                                                  shootingOrigin.localPosition.z);
             } else
             {
                 spriteRenderer.flipX = true;
+                shootingOrigin.localPosition = new Vector3(-Mathf.Abs(shootingOrigin.localPosition.x),
+                                                  shootingOrigin.localPosition.y,
+                                                  shootingOrigin.localPosition.z);
             }
+
+            float dot = Vector2.Dot(Vector2.left, (Vector2)inputDirection);
+
+            float angle = Mathf.Cos(dot);
+
+            var newRotation = Quaternion.LookRotation(inputDirection);
+            newRotation.y = 0.0f;
+            newRotation.x = 0.0f;
+
+            gun.transform.rotation = newRotation;
 
             RaycastHit2D hit = Physics2D.Raycast((Vector2)shootingOrigin.position, inputDirection, 100f, layerMask);
 
