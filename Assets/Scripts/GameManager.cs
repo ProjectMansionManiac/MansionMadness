@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour {
     public void Tutorial()
     {
         SceneManager.LoadScene("Tutorial");
+        Time.timeScale = 1f;
     }
 
     public void Credits()

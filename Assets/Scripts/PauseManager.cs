@@ -7,7 +7,7 @@ public class PauseManager : MonoBehaviour {
     public GameObject pauseMenuObject;
 
 	void Update () {
-		if (Input.GetKey(KeyCode.Joystick1Button7) || Input.GetKey(KeyCode.Escape)){
+		if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Escape)){
             ChangeActiveState();
         }
     }
