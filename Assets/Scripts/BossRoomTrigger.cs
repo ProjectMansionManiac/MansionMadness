@@ -12,6 +12,9 @@ public class BossRoomTrigger : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            SoundManager.instance.PlayEnvDoorCloseSound();
+            SoundManager.instance.PlayEnvIntroBossSound();
+
             GameObject.Find("Main Camera").GetComponent<CameraFollow>().levelTopLeft.x = newLeftBound;
             PhaseController.instance.StartNextPhase();
             if (doorToSpawn!=null)

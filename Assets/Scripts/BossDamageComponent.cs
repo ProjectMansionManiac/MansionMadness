@@ -26,6 +26,8 @@ public class BossDamageComponent : DamageComponent
         StartCoroutine(DamageAnimation());
 
         chicken.health -= info.damage;
+
+        SoundManager.instance.PlayBossDamageSound();
         // check if health is below zero
         //if (this.health <= 0)
         //{

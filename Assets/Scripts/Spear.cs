@@ -53,6 +53,8 @@ public class Spear : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
+            SoundManager.instance.PlayLanceRainCollideSound();
+
             var dmgComp = collider.gameObject.GetComponent<DamageComponent>();
 
             if (dmgComp == null)

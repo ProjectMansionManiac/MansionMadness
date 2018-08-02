@@ -18,6 +18,8 @@ public class PlayerDamageComponent : DamageComponent
     bool isInvincible = false;
     public float invincibilityTime = 1f;
 
+    public float lowLife = 20f;
+
     private void Start()
     {
         spriteRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
@@ -36,9 +38,17 @@ public class PlayerDamageComponent : DamageComponent
     {
         base.OnDamageReceived(info);
 
+        SoundManager.instance.PlayPlayerDamageSound();
+
         healthBar.fillAmount = this.health / this.maxHealth;
         StartCoroutine(DamageAnimation());
         // check if health is below zero
+
+        if (this.health <= lowLife)
+        {
+            SoundManager.instance.PlayLowLifeSound();
+        }
+
         if (this.health == 0f)
         {
             // the player is dead...

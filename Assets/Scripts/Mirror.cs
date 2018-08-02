@@ -71,7 +71,8 @@ public class Mirror : MonoBehaviour
         layerMask = ~layerMask;
 
         RaycastHit2D hit = Physics2D.Raycast(reflectionPoint, reflection, 100f);
-     
+
+        SoundManager.instance.PlayReflectSound();
 
         if (!hit)
         {

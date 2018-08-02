@@ -8,6 +8,8 @@ public class BossPhaseMirror : BossPhase {
         Debug.Log("Mirror Phase Started");
         base.ActivatePhase();
 
+        SoundManager.instance.PlayMirrorSpawnSound();
+
         if (torso != null)
         torso.tag = "Enemy";
         head.tag = "Untagged";

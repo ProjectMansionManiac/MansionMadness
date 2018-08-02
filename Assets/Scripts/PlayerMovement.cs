@@ -103,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (directionVertical < -.5f || Input.GetKey(KeyCode.S))
         {
+            SoundManager.instance.PlayCrouchSound();
             animator.Play("crouch");
             ducking = true;
             coll.size = new Vector2(

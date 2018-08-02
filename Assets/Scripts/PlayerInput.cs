@@ -34,6 +34,7 @@ public class PlayerInput : MonoBehaviour
             else if (-.2f > directionalInput.x && directionalInput.x > .2f )
             {
                 playerMovement.animator.Play("Walk");
+                SoundManager.instance.PlayWalkSound();
             }
         }
 

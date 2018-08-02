@@ -13,6 +13,9 @@ public class BigFireball : Bullet {
         {
             if (canExplode)
             SpawnSmallBalls();
+
+            SoundManager.instance.PlayFireballHitSound();
+
             Destroy(this.gameObject);
         }
     }

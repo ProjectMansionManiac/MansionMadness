@@ -128,6 +128,8 @@ public class PlayerShooting : MonoBehaviour
 
     private void AmmoEmpty()
     {
+        SoundManager.instance.PlayLowEnergySound();
+
         StartCoroutine(DisableShooting());
     }
 
@@ -254,6 +256,7 @@ public class PlayerShooting : MonoBehaviour
 
             lineRenderer.SetPosition(1, hit.point);
 
+            SoundManager.instance.PlayShootSound();
             if (hit.collider.gameObject.tag == "Mirror")
             {
                 Debug.Log("I Hit Mirror");

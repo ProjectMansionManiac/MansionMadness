@@ -33,6 +33,27 @@ public class SoundManager : MonoBehaviour
     public AudioSource walk;
     public AudioSource shoot;
     public AudioSource bossDamage;
+    public AudioSource reflect ;
+    public AudioSource crouch ;
+    public AudioSource playerDamage;
+    public AudioSource die ;
+    public AudioSource fireballThrow;
+    public AudioSource fireballFly;
+    public AudioSource fireballHit;
+    public AudioSource lancerainSpawn;
+    public AudioSource lanceRain ;
+    public AudioSource lanceRainCollide;
+    public AudioSource mirrorSpawn;
+    public AudioSource bossDie ;
+    public AudioSource envIntro ;
+    public AudioSource envDoorClose;
+    public AudioSource envIntroBoss;
+    public AudioSource envMirrorBreak;
+    public AudioSource dialog1 ;
+    public AudioSource dialog2 ;
+    public AudioSource button ;
+    public AudioSource lowEnergy ;
+    public AudioSource lowLife ;
 
     public static SoundManager instance;
 
@@ -41,33 +62,201 @@ public class SoundManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
-        shoot.clip = shootSound;
-        walk.clip = walkSound;
-        bossDamage.clip = bossDamageSound;
+        walk             .clip =  walkSound;
+        shoot            .clip =  shootSound;
+        bossDamage       .clip =  bossDamageSound;
+        reflect          .clip =  reflectSound;
+        crouch           .clip =  crouchSound;
+        playerDamage     .clip =  playerDamageSound;
+        die              .clip =  dieSound;
+        fireballThrow    .clip =  fireballThrowSound;
+        fireballFly      .clip =  fireballFlySound;
+        fireballHit      .clip =  fireballHitSound;
+        lancerainSpawn   .clip =  lancerainSpawnSound;
+        lanceRain        .clip =  lanceRainSound;
+        lanceRainCollide .clip =  lanceRainCollideSound;
+        mirrorSpawn      .clip =  mirrorSpawnSound;
+        bossDie          .clip =  bossDieSound;
+        envIntro         .clip =  envIntroSound;
+        envDoorClose     .clip =  envDoorCloseSound;
+        envIntroBoss     .clip =  envIntroBossSound;
+        envMirrorBreak   .clip =  envMirrorBreakSound;
+        dialog1          .clip =  dialog1Sound;
+        dialog2          .clip =  dialog2Sound;
+        button           .clip =  buttonSound;
+        lowEnergy        .clip =  lowEnergySound;
+        lowLife          .clip = lowLifeSound;
+
+        PlayEnvIntroSound();
     }
 
-    public void playShootSound()
+    public void PlayShootSound()
     {
         if (shoot.isPlaying)
             return;
 
         shoot.Play();
     }
-
-    public void playWalkSound()
+    public void PlayWalkSound()
     {
         if (walk.isPlaying)
             return;
 
         walk.Play();
     }
-
-    public void playBossDamageSound()
+    public void PlayBossDamageSound()
     {
         if (bossDamage.isPlaying)
             return;
 
         bossDamage.Play();
+    }
+    public void PlayReflectSound()
+    {
+        if (reflect.isPlaying)
+            return;
+
+        reflect.Play();
+    }
+    public void PlayCrouchSound()
+    {
+        if (crouch.isPlaying)
+            return;
+
+        crouch.Play();
+    }
+    public void PlayPlayerDamageSound()
+    {
+        if (playerDamage.isPlaying)
+            return;
+
+        playerDamage.Play();
+    }
+    public void PlayDieSound()
+    {
+        if (die.isPlaying)
+            return;
+
+        die.Play();
+    }
+    public void PlayFireballThrowSound()
+    {
+        if (fireballThrow.isPlaying)
+            return;
+
+        fireballThrow.Play();
+    }
+    public void PlayFireballFlyound()
+    {
+        if (fireballFly.isPlaying)
+            return;
+
+        fireballFly.Play();
+    }
+    public void PlayFireballHitSound()
+    {
+        if (fireballHit.isPlaying)
+            return;
+
+        fireballHit.Play();
+    }
+    public void PlayLancerainSpawnSound()
+    {
+        if (lancerainSpawn.isPlaying)
+            return;
+
+        lancerainSpawn.Play();
+    }
+    public void PlayLanceRainSound()
+    {
+        if (lanceRain.isPlaying)
+            return;
+
+        lanceRain.Play();
+    }
+    public void PlayLanceRainCollideSound()
+    {
+        if (lanceRainCollide.isPlaying)
+            return;
+
+        lanceRainCollide.Play();
+    }
+    public void PlayMirrorSpawnSound()
+    {
+        if (mirrorSpawn.isPlaying)
+            return;
+
+        mirrorSpawn.Play();
+    }
+    public void PlayBossDieSound()
+    {
+        if (bossDie.isPlaying)
+            return;
+
+        bossDie.Play();
+    }
+    public void PlayEnvIntroSound()
+    {
+        if (envIntro.isPlaying)
+            return;
+
+        envIntro.Play();
+    }
+    public void PlayEnvDoorCloseSound()
+    {
+        if (envDoorClose.isPlaying)
+            return;
+
+        envDoorClose.Play();
+    }
+    public void PlayEnvIntroBossSound()
+    {
+        if (envIntroBoss.isPlaying)
+            return;
+
+        envIntroBoss.Play();
+    }
+    public void PlayEnvMirrorBreakSound()
+    {
+        if (envMirrorBreak.isPlaying)
+            return;
+
+        envMirrorBreak.Play();
+    }
+    public void PlayDialog1Sound()
+    {
+        if (dialog1.isPlaying)
+            return;
+
+        dialog1.Play();
+    }
+    public void PlayDialog2Sound()
+    {
+        if (dialog2.isPlaying)
+            return;
+
+        dialog2.Play();
+    }
+    public void PlayButtonSound()
+    {
+        if (button.isPlaying)
+            return;
+
+        button.Play();
+    }
+    public void PlayLowEnergySound()
+    {
+        if (lowEnergy.isPlaying)
+            return;
+
+        lowEnergy.Play();
+    }
+    public void PlayLowLifeSound()
+    {
+        if (lowLife.isPlaying)
+            return;
+
+        lowLife.Play();
     }
 
 }

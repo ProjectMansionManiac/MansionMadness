@@ -58,6 +58,7 @@ public class BossPhaseBigFireballs : BossPhase
 
     void Shoot()
     {
+        SoundManager.instance.PlayFireballThrowSound();
         Vector2 direction = (playerObject.transform.position - shootingPivot.position).normalized;
         GameObject fireball = (GameObject)Instantiate(BigFireBallPrefab, shootingPivot.position, Quaternion.identity);
         fireball.GetComponent<BigFireball>().Initialize(5f, direction);
