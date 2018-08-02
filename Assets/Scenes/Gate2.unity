@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &140269546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3284,7 +3284,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1008829186
 GameObject:
@@ -4107,48 +4107,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &1226334838
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.3097297
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.101634875
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.11050452
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649730455557194, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 15e9f0de3cb75724f8969257fb169818, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1255396239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5502,7 +5460,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532404497
 GameObject:
@@ -6241,7 +6199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1743465983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6597,6 +6555,73 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 2.87}
   m_EdgeRadius: 0
+--- !u!1 &1882981975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1882981977}
+  - component: {fileID: 1882981976}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1882981976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1882981975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b477bdcf26396614fa7e0dd7d234916a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSound: {fileID: 0}
+  shootSound: {fileID: 0}
+  bossDamageSound: {fileID: 0}
+  reflectSound: {fileID: 0}
+  crouchSound: {fileID: 0}
+  playerDamageSound: {fileID: 0}
+  dieSound: {fileID: 8300000, guid: 2fe3e269fe8866f4fb3d1e23a8d4eca8, type: 3}
+  fireballThrowSound: {fileID: 8300000, guid: 02670e882192311478fa17d92c2456e9, type: 3}
+  fireballFlySound: {fileID: 0}
+  fireballHitSound: {fileID: 0}
+  lancerainSpawnSound: {fileID: 0}
+  lanceRainSound: {fileID: 0}
+  lanceRainCollideSound: {fileID: 0}
+  mirrorSpawnSound: {fileID: 0}
+  bossDieSound: {fileID: 8300000, guid: c8d91279eab58214faf2b01e3a53669a, type: 3}
+  envIntroSound: {fileID: 8300000, guid: ff107b267dfa9d2438a5ddae0657c4ce, type: 3}
+  envDoorCloseSound: {fileID: 8300000, guid: 51c0fb5a06fd4f34e9987eaf37c04723, type: 3}
+  envIntroBossSound: {fileID: 8300000, guid: 51c0fb5a06fd4f34e9987eaf37c04723, type: 3}
+  envMirrorBreakSound: {fileID: 8300000, guid: 0ba06e0d50829054d811aa5c4300c303, type: 3}
+  dialog1Sound: {fileID: 8300000, guid: 81613f8b3687f8b409e93bae9e8b470a, type: 3}
+  dialog2Sound: {fileID: 8300000, guid: 1c6c951187cf95c47876381a9d90ad2e, type: 3}
+  buttonSound: {fileID: 8300000, guid: c207f601413d2864d9e3c7bf6c4a663c, type: 3}
+  lowEnergySound: {fileID: 0}
+  lowLifeSound: {fileID: 0}
+  walk: {fileID: 0}
+  shoot: {fileID: 0}
+  bossDamage: {fileID: 0}
+--- !u!4 &1882981977
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1882981975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1020.26227, y: 435.83334, z: -0.6708447}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1885056926
 GameObject:
   m_ObjectHideFlags: 0
