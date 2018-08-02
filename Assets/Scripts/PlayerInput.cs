@@ -63,6 +63,7 @@ public class PlayerInput : MonoBehaviour
         {
             playerMovement.OnJumpInputDown();
             playerMovement.animator.Play("Jump");
+            SoundManager.instance.PlayPlayerJumpSound();
         }
 
         //if (Input.GetButtonUp("Jump"))

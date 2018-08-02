@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip playerDamageSound;
     public AudioClip dieSound;
     public AudioClip fireballThrowSound;
-    public AudioClip fireballFlySound;
+    public AudioClip playerJumpSound;
     public AudioClip fireballHitSound;
     public AudioClip lancerainSpawnSound;
     public AudioClip lanceRainSound;
@@ -29,6 +29,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip buttonSound;
     public AudioClip lowEnergySound;
     public AudioClip lowLifeSound;
+
 
     [HideInInspector] public AudioSource walk;
     [HideInInspector] public AudioSource shoot;
@@ -70,7 +71,7 @@ public class SoundManager : MonoBehaviour
         playerDamage     .clip =  playerDamageSound;
         die              .clip =  dieSound;
         fireballThrow    .clip =  fireballThrowSound;
-        fireballFly      .clip =  fireballFlySound;
+        fireballFly      .clip =  playerJumpSound;
         fireballHit      .clip =  fireballHitSound;
         lancerainSpawn   .clip =  lancerainSpawnSound;
         lanceRain        .clip =  lanceRainSound;
@@ -146,7 +147,7 @@ public class SoundManager : MonoBehaviour
 
         fireballThrow.Play();
     }
-    public void PlayFireballFlyound()
+    public void PlayPlayerJumpSound()
     {
         if (fireballFly.isPlaying)
             return;
