@@ -6926,9 +6926,9 @@ MonoBehaviour:
     type: 3}
   mirrorSpawnSound: {fileID: 8300000, guid: 7f88e41ebf7340d41b6ed4e5147c5cdb, type: 3}
   bossDieSound: {fileID: 8300000, guid: c8d91279eab58214faf2b01e3a53669a, type: 3}
-  envIntroSound: {fileID: 0}
+  envIntroSound: {fileID: 8300000, guid: c08c6fb25af643b4291ef6c3fddb2723, type: 3}
   envDoorCloseSound: {fileID: 0}
-  envIntroBossSound: {fileID: 0}
+  envIntroBossSound: {fileID: 8300000, guid: 996f5efd0ed287545bf66267034fb64d, type: 3}
   envMirrorBreakSound: {fileID: 8300000, guid: be5c88b2b3dcc4441aeeacbbdafaf6ab, type: 3}
   dialog1Sound: {fileID: 8300000, guid: a794d9afe6bf7884f9a427b2f7a95855, type: 3}
   dialog2Sound: {fileID: 8300000, guid: 13c7b4a6cc3316e4391ec3604628f9df, type: 3}
