@@ -6685,31 +6685,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b477bdcf26396614fa7e0dd7d234916a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSound: {fileID: 8300000, guid: 0d0a8815365d9764b95e6ea4d8cce92e, type: 3}
-  shootSound: {fileID: 8300000, guid: a981d46616978e34ebee9e31ba120a04, type: 3}
-  bossDamageSound: {fileID: 8300000, guid: a46bcee79c24dee45ac95700adebc094, type: 3}
-  reflectSound: {fileID: 0}
-  crouchSound: {fileID: 8300000, guid: c3bf28f7b2a6d594a89fe73b41f70655, type: 3}
-  playerDamageSound: {fileID: 8300000, guid: aeab141bdbcaa784c82b9668eab3eb5b, type: 3}
+  walkSound: {fileID: 8300000, guid: 84625067d5628dc40b9455d557a0e7e1, type: 3}
+  shootSound: {fileID: 8300000, guid: fe3faf4fe9b58c644a22d6f4b4b85c0c, type: 3}
+  bossDamageSound: {fileID: 8300000, guid: 50fbd71c5e2515d47835ed699628fd60, type: 3}
+  reflectSound: {fileID: 8300000, guid: 3e194c7b5efdf7e4bb836c36109cc306, type: 3}
+  crouchSound: {fileID: 8300000, guid: 1119e7b0cd5329c498e1ed03590debe0, type: 3}
+  playerDamageSound: {fileID: 8300000, guid: 4183a287112af4044a87d2559c233314, type: 3}
   dieSound: {fileID: 8300000, guid: 2fe3e269fe8866f4fb3d1e23a8d4eca8, type: 3}
   fireballThrowSound: {fileID: 8300000, guid: 02670e882192311478fa17d92c2456e9, type: 3}
   fireballFlySound: {fileID: 0}
   fireballHitSound: {fileID: 8300000, guid: 789b9a64cc26c4b488fe5d9f5bbf3e78, type: 3}
   lancerainSpawnSound: {fileID: 8300000, guid: f1781aace4ff2ca43934dc0d679eddf1, type: 3}
-  lanceRainSound: {fileID: 0}
+  lanceRainSound: {fileID: 8300000, guid: d872e538cb55cd04d82ac168d60a30ae, type: 3}
   lanceRainCollideSound: {fileID: 8300000, guid: c0ccbb2fbf82fd5428d20bf1416743f1,
     type: 3}
   mirrorSpawnSound: {fileID: 0}
   bossDieSound: {fileID: 8300000, guid: c8d91279eab58214faf2b01e3a53669a, type: 3}
-  envIntroSound: {fileID: 8300000, guid: ff107b267dfa9d2438a5ddae0657c4ce, type: 3}
-  envDoorCloseSound: {fileID: 8300000, guid: 51c0fb5a06fd4f34e9987eaf37c04723, type: 3}
-  envIntroBossSound: {fileID: 8300000, guid: 51c0fb5a06fd4f34e9987eaf37c04723, type: 3}
-  envMirrorBreakSound: {fileID: 8300000, guid: 0ba06e0d50829054d811aa5c4300c303, type: 3}
-  dialog1Sound: {fileID: 8300000, guid: 81613f8b3687f8b409e93bae9e8b470a, type: 3}
-  dialog2Sound: {fileID: 8300000, guid: 1c6c951187cf95c47876381a9d90ad2e, type: 3}
-  buttonSound: {fileID: 8300000, guid: c207f601413d2864d9e3c7bf6c4a663c, type: 3}
-  lowEnergySound: {fileID: 0}
-  lowLifeSound: {fileID: 0}
+  envIntroSound: {fileID: 0}
+  envDoorCloseSound: {fileID: 0}
+  envIntroBossSound: {fileID: 0}
+  envMirrorBreakSound: {fileID: 8300000, guid: be5c88b2b3dcc4441aeeacbbdafaf6ab, type: 3}
+  dialog1Sound: {fileID: 8300000, guid: a794d9afe6bf7884f9a427b2f7a95855, type: 3}
+  dialog2Sound: {fileID: 8300000, guid: 13c7b4a6cc3316e4391ec3604628f9df, type: 3}
+  buttonSound: {fileID: 8300000, guid: 7875a412c4bd3d449af2462a9c7da162, type: 3}
+  lowEnergySound: {fileID: 8300000, guid: 3272fc0550986c5429b6f6b4a1ce3a12, type: 3}
+  lowLifeSound: {fileID: 8300000, guid: b4af1f4b52e563b4aa95fa4740f85771, type: 3}
   walk: {fileID: 1882982001}
   shoot: {fileID: 1882982000}
   bossDamage: {fileID: 1882981999}
@@ -7133,7 +7133,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1882981975}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -7608,7 +7608,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1882981975}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -8083,7 +8083,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1882981975}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -8558,7 +8558,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1882981975}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
