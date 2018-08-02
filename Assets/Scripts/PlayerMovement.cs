@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public float wallSlideSpeedMax = 3f;
     public float wallStickTime = .25f;
     private float timeToWallUnstick;
-
+     
     [SerializeField]
     private float gravity;
     [SerializeField]
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     public float originalSize;
     public BoxCollider2D coll;
 
-    [HideInInspector] public bool ducking = false;
+    [HideInInspector] public bool ducking = false; 
 
     private void Start()
     {
@@ -68,9 +68,10 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator RefreshCalculations()
     {
         while (true)
+
         {
             yield return new WaitForSeconds(1f);
-            maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
+            maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex; 
             minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
             gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         }

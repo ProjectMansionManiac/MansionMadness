@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
             {
                 GameObject.Find("MenuCanvas").GetComponent<Canvas>().enabled = true;
                 SceneManager.UnloadSceneAsync("Gate2");
+
                 this.currentState = new GameState();
             }
         }
