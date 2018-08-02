@@ -171,7 +171,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level Start
+  m_Text: START LEVEL
 --- !u!222 &11831981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 206765467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.022, y: -0.17, z: 0}
+  m_LocalPosition: {x: -0.037, y: -0.11, z: 0}
   m_LocalScale: {x: 0.54561716, y: 1.6215302, z: 0.8527866}
   m_Children: []
   m_Father: {fileID: 220403623}
@@ -699,7 +699,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 206765467}
-  m_Text: "Use    to \nchange direction \nof the shoot \n"
+  m_Text: "USE    TO \nCHANGE DIREKTION \nOF THE SHOOT \n"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -709,7 +709,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+  m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -728,7 +728,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+  - {fileID: 2100000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1675,7 +1675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -118}
+  m_AnchoredPosition: {x: 14, y: -118}
   m_SizeDelta: {x: 515.4, y: 138.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407137709
@@ -4371,7 +4371,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198787707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.035, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0.005, y: 0.03, z: 0}
   m_LocalScale: {x: 0.73494136, y: 2.1841855, z: 1.1486952}
   m_Children: []
   m_Father: {fileID: 1310172912}
@@ -4384,7 +4384,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198787707}
-  m_Text: 'Press   to Jump '
+  m_Text: 'PRESS       TO JUMP '
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -4394,7 +4394,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+  m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -4413,7 +4413,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+  - {fileID: 2100000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4992,7 +4992,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1392488375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -0.14, z: 0}
+  m_LocalPosition: {x: 0.022, y: -0.1, z: 0}
   m_LocalScale: {x: 0.7373709, y: 2.1914065, z: 1.1524929}
   m_Children: []
   m_Father: {fileID: 1338240964}
@@ -5005,7 +5005,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1392488375}
-  m_Text: "Press    to shoot \n"
+  m_Text: "PRESS         TO SHOOT \n"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -5015,7 +5015,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+  m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -5034,7 +5034,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+  - {fileID: 2100000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5496,8 +5496,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
@@ -5508,7 +5508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: MAIN MENUE
 --- !u!222 &1590954173
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5716,7 +5716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1628974983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5861,9 +5861,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1a90e9e0d5dbd57428bb656ea218f11f, type: 3}
+    m_Font: {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
     m_FontSize: 200
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 300
@@ -5873,7 +5873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Tutorial Finished
+  m_Text: 'TUTORIAL FINISHED '
 --- !u!222 &1632066450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7474,7 +7474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -322}
+  m_AnchoredPosition: {x: 0, y: -255}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123397371
