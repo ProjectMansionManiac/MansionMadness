@@ -79,13 +79,13 @@ public class PlayerShooting : MonoBehaviour
         if (currentrefillTick >= refillTick)
         {
             currentrefillTick = 0.0f;
-            currentAmmo+= Time.deltaTime * refillAmount;
+            currentAmmo += Time.deltaTime * refillAmount;
             if (currentAmmo > maxAmmo)
             {
                 currentAmmo = maxAmmo;
             }
             //Allow shooting
-            if(currentAmmo > 1)
+            if (currentAmmo > 1)
             {
                 canShoot = true;
             }
@@ -94,16 +94,16 @@ public class PlayerShooting : MonoBehaviour
                 canShoot = false;
                 shootPressed = false;
                 if (!inCooldown)
-                AmmoEmpty();
+                    AmmoEmpty();
             }
         }
-        
+
     }
 
     private void HandleCooldown()
     {
         currentTick += Time.deltaTime;
-        
+
         if (currentTick >= damageTick)
         {
             currentTick = 0f;
@@ -201,7 +201,8 @@ public class PlayerShooting : MonoBehaviour
                 if (spriteRenderer.flipX == true)
                 {
                     inputDirection = Vector3.left;
-                } else
+                }
+                else
                 {
                     inputDirection = Vector3.right;
                 }
@@ -213,7 +214,8 @@ public class PlayerShooting : MonoBehaviour
                 shootingOrigin.localPosition = new Vector3(Mathf.Abs(shootingOrigin.localPosition.x),
                                                   shootingOrigin.localPosition.y,
                                                   shootingOrigin.localPosition.z);
-            } else
+            }
+            else
             {
                 spriteRenderer.flipX = true;
                 shootingOrigin.localPosition = new Vector3(-Mathf.Abs(shootingOrigin.localPosition.x),
@@ -221,15 +223,16 @@ public class PlayerShooting : MonoBehaviour
                                                   shootingOrigin.localPosition.z);
             }
 
-            float dot = Vector2.Dot(Vector2.left, (Vector2)inputDirection);
+            //float dot = Vector2.Dot(Vector2.left, (Vector2)inputDirection);
 
-            float angle = Mathf.Cos(dot);
+            float angle = Mathf.Atan2(inputDirection.y, inputDirection.x) * Mathf.Rad2Deg;
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            var newRotation = Quaternion.LookRotation(inputDirection);
-            newRotation.y = 0.0f;
-            newRotation.x = 0.0f;
+            //var newRotation = Quaternion.LookRotation(inputDirection);
+            //newRotation.y = 0.0f;
+            //newRotation.x = 0.0f;
 
-            gun.transform.rotation = newRotation;
+            gun.transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 9999f); ;
 
             RaycastHit2D hit = Physics2D.Raycast((Vector2)shootingOrigin.position, inputDirection, 100f, layerMask);
 
@@ -267,7 +270,8 @@ public class PlayerShooting : MonoBehaviour
             }
 
 
-        } else
+        }
+        else
         {
             lineRenderer.enabled = false;
         }
