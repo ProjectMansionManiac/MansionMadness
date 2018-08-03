@@ -51,7 +51,7 @@ public class BossPhaseBigFireballs : BossPhase
     {
         while (canShoot)
         {
-            yield return new WaitForSeconds(TimeBetweenFireballs /2f);
+            yield return new WaitForSeconds(TimeBetweenFireballs);
             Shoot();
         }
     }
@@ -62,5 +62,19 @@ public class BossPhaseBigFireballs : BossPhase
         Vector2 direction = (playerObject.transform.position - shootingPivot.position).normalized;
         GameObject fireball = (GameObject)Instantiate(BigFireBallPrefab, shootingPivot.position, Quaternion.identity);
         fireball.GetComponent<BigFireball>().Initialize(5f, direction);
+
+        if (PhaseController.instance.currentPhaseIndex - 1 == 1)
+        {
+            spriteAnimator.Play("EnemyFireballNaked");
+            Debug.Log(spriteAnimator.gameObject.name);
+        }
+        else if(PhaseController.instance.currentPhaseIndex - 1 == 3)
+        {
+            spriteAnimator.Play("EnemyFireballArm");
+        }
+        else if (PhaseController.instance.currentPhaseIndex - 1 == 5)
+        {
+            spriteAnimator.Play("EnemyFireballHead");
+        }
     }
 }

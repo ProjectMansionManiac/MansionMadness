@@ -34,7 +34,7 @@ public class BossPhase : MonoBehaviour {
     {
         playerObject = GameObject.Find("Player");
 
-        spriteAnimator = GetComponentInChildren<Animator>();
+        spriteAnimator = GameObject.Find("EnemySprite").GetComponent<Animator>();
 
         head = transform.Find("HitboxHead").gameObject;
         torso = transform.Find("HitboxTorso").gameObject;
