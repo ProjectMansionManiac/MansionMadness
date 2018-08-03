@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4716981, g: 0.26032394, b: 0.26032394, a: 1}
+  m_Color: {r: 0.4716981, g: 0.26032394, b: 0.26032394, a: 0.7137255}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1082,7 +1082,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 309060517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1447,6 +1447,12 @@ Prefab:
       propertyPath: gun
       value: 
       objectReference: {fileID: 309060517}
+    - target: {fileID: 212394936268527288, guid: b19f396039a87874d917193c2f2a6633,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c9e396abb8dfeb14fa51e1e03d60ef07,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b19f396039a87874d917193c2f2a6633, type: 2}
   m_IsPrefabParent: 0
@@ -4182,7 +4188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelTopLeft: {x: -22.74, y: 6.32}
-  levelBottomRight: {x: 19.4, y: -5.03}
+  levelBottomRight: {x: 19, y: -6.14}
   cameraClipOffsetX: 8
   cameraClipOffsetY: 4
   maxDistanceZ: 7.5
@@ -7485,30 +7491,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSound: {fileID: 8300000, guid: 84625067d5628dc40b9455d557a0e7e1, type: 3}
+  walkVolume: 0
   shootSound: {fileID: 8300000, guid: fe3faf4fe9b58c644a22d6f4b4b85c0c, type: 3}
+  shootVolume: 0
   bossDamageSound: {fileID: 8300000, guid: 50fbd71c5e2515d47835ed699628fd60, type: 3}
+  bossDamageVolume: 0
   reflectSound: {fileID: 8300000, guid: 3e194c7b5efdf7e4bb836c36109cc306, type: 3}
+  reflectVolume: 0
   crouchSound: {fileID: 8300000, guid: 1119e7b0cd5329c498e1ed03590debe0, type: 3}
-  playerDamageSound: {fileID: 8300000, guid: 4183a287112af4044a87d2559c233314, type: 3}
+  crouchVolume: 0
+  playerDamageSound: {fileID: 8300000, guid: d65e4d5fabb2e1249ae8c0e5613b78cf, type: 3}
+  playerDamageVolume: 0
   dieSound: {fileID: 8300000, guid: 2fe3e269fe8866f4fb3d1e23a8d4eca8, type: 3}
+  dieVolume: 0
   fireballThrowSound: {fileID: 8300000, guid: 9012f068ba4bd22459bccfb9a88828c9, type: 3}
+  fireballThrowVolume: 0
   playerJumpSound: {fileID: 8300000, guid: 056b7108a68219542b1fde3a0a24c099, type: 3}
+  playerJumpVolume: 0
   fireballHitSound: {fileID: 8300000, guid: 789b9a64cc26c4b488fe5d9f5bbf3e78, type: 3}
+  fireballHitVolume: 0
   lancerainSpawnSound: {fileID: 8300000, guid: e6662778a3d14a642bde67cf087730f6, type: 3}
+  lancerainSpawnVolume: 0
   lanceRainSound: {fileID: 8300000, guid: d872e538cb55cd04d82ac168d60a30ae, type: 3}
+  lanceRainVolume: 0
   lanceRainCollideSound: {fileID: 8300000, guid: 422013633639cbe4580afe4fe434225c,
     type: 3}
+  lanceRainCollideVolume: 0
   mirrorSpawnSound: {fileID: 8300000, guid: 7f88e41ebf7340d41b6ed4e5147c5cdb, type: 3}
+  mirrorSpawnVolume: 0
   bossDieSound: {fileID: 8300000, guid: c8d91279eab58214faf2b01e3a53669a, type: 3}
+  bossDieVolume: 0
   envIntroSound: {fileID: 8300000, guid: c08c6fb25af643b4291ef6c3fddb2723, type: 3}
+  envIntroVolume: 0
   envDoorCloseSound: {fileID: 0}
+  envDoorCloseVolume: 0
   envIntroBossSound: {fileID: 8300000, guid: 996f5efd0ed287545bf66267034fb64d, type: 3}
+  envIntroBossVolume: 0
   envMirrorBreakSound: {fileID: 8300000, guid: be5c88b2b3dcc4441aeeacbbdafaf6ab, type: 3}
+  envMirrorBreakVolume: 0
   dialog1Sound: {fileID: 8300000, guid: a794d9afe6bf7884f9a427b2f7a95855, type: 3}
+  dialog1Volume: 0
   dialog2Sound: {fileID: 8300000, guid: 13c7b4a6cc3316e4391ec3604628f9df, type: 3}
+  dialog2Volume: 0
   buttonSound: {fileID: 8300000, guid: 7875a412c4bd3d449af2462a9c7da162, type: 3}
+  buttonVolume: 0
   lowEnergySound: {fileID: 8300000, guid: 3272fc0550986c5429b6f6b4a1ce3a12, type: 3}
+  lowEnergyVolume: 0
   lowLifeSound: {fileID: 8300000, guid: b4af1f4b52e563b4aa95fa4740f85771, type: 3}
+  lowLifeVolume: 0
   walk: {fileID: 1882982001}
   shoot: {fileID: 1882982000}
   bossDamage: {fileID: 1882981999}

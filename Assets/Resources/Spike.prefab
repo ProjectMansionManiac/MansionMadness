@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab4eb19a7bb0544d9114daee00ca5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDownSpeed: 15
-  waitTimeAfterSpawn: 5
+  moveDownSpeed: 20
+  waitTimeAfterSpawn: 4
   shakeTime: 1.5
   lifetimeAfterHit: 0.5
   shakeSpeed: 10
