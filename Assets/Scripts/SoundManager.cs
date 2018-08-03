@@ -6,29 +6,53 @@ public class SoundManager : MonoBehaviour
 {
 
     public AudioClip walkSound;
+    [Range(0f, 1f)] public float walkVolume;
     public AudioClip shootSound;
+    [Range(0f, 1f)] public float shootVolume;
     public AudioClip bossDamageSound;
+    [Range(0f, 1f)] public float bossDamageVolume;
     public AudioClip reflectSound;
+    [Range(0f, 1f)] public float reflectVolume;
     public AudioClip crouchSound;
+    [Range(0f, 1f)] public float crouchVolume;
     public AudioClip playerDamageSound;
+    [Range(0f, 1f)] public float playerDamageVolume;
     public AudioClip dieSound;
+    [Range(0f, 1f)] public float dieVolume;
     public AudioClip fireballThrowSound;
+    [Range(0f, 1f)] public float fireballThrowVolume;
     public AudioClip playerJumpSound;
+    [Range(0f, 1f)] public float playerJumpVolume;
     public AudioClip fireballHitSound;
+    [Range(0f, 1f)] public float fireballHitVolume;
     public AudioClip lancerainSpawnSound;
+    [Range(0f, 1f)] public float lancerainSpawnVolume;
     public AudioClip lanceRainSound;
+    [Range(0f, 1f)] public float lanceRainVolume;
     public AudioClip lanceRainCollideSound;
+    [Range(0f, 1f)] public float lanceRainCollideVolume;
     public AudioClip mirrorSpawnSound;
+    [Range(0f, 1f)] public float mirrorSpawnVolume;
     public AudioClip bossDieSound;
+    [Range(0f, 1f)] public float bossDieVolume;
     public AudioClip envIntroSound;
+    [Range(0f, 1f)] public float envIntroVolume;
     public AudioClip envDoorCloseSound;
+    [Range(0f, 1f)] public float envDoorCloseVolume;
     public AudioClip envIntroBossSound;
+    [Range(0f, 1f)] public float envIntroBossVolume;
     public AudioClip envMirrorBreakSound;
+    [Range(0f, 1f)] public float envMirrorBreakVolume;
     public AudioClip dialog1Sound;
+    [Range(0f, 1f)] public float dialog1Volume;
     public AudioClip dialog2Sound;
+    [Range(0f, 1f)] public float dialog2Volume;
     public AudioClip buttonSound;
+    [Range(0f, 1f)] public float buttonVolume;
     public AudioClip lowEnergySound;
+    [Range(0f, 1f)] public float lowEnergyVolume;
     public AudioClip lowLifeSound;
+    [Range(0f, 1f)] public float lowLifeVolume;
 
 
     [HideInInspector] public AudioSource walk;
@@ -96,6 +120,7 @@ public class SoundManager : MonoBehaviour
         if (shoot.isPlaying)
             return;
 
+        shoot.volume = shootVolume;
         shoot.Play();
     }
     public void PlayWalkSound()
@@ -103,6 +128,7 @@ public class SoundManager : MonoBehaviour
         if (walk.isPlaying)
             return;
 
+        walk.volume = walkVolume;
         walk.Play();
     }
     public void PlayBossDamageSound()
@@ -110,6 +136,7 @@ public class SoundManager : MonoBehaviour
         if (bossDamage.isPlaying)
             return;
 
+        bossDamage.volume = bossDamageVolume;
         bossDamage.Play();
     }
     public void PlayReflectSound()
@@ -117,6 +144,7 @@ public class SoundManager : MonoBehaviour
         if (reflect.isPlaying)
             return;
 
+        reflect.volume = reflectVolume;
         reflect.Play();
     }
     public void PlayCrouchSound()
@@ -124,6 +152,7 @@ public class SoundManager : MonoBehaviour
         if (crouch.isPlaying)
             return;
 
+        crouch.volume = crouchVolume;
         crouch.Play();
     }
     public void PlayPlayerDamageSound()
@@ -131,6 +160,7 @@ public class SoundManager : MonoBehaviour
         if (playerDamage.isPlaying)
             return;
 
+        playerDamage.volume = playerDamageVolume;
         playerDamage.Play();
     }
     public void PlayDieSound()
@@ -138,6 +168,7 @@ public class SoundManager : MonoBehaviour
         if (die.isPlaying)
             return;
 
+        die.volume = dieVolume;
         die.Play();
     }
     public void PlayFireballThrowSound()
@@ -145,6 +176,7 @@ public class SoundManager : MonoBehaviour
         if (fireballThrow.isPlaying)
             return;
 
+        fireballThrow.volume = fireballThrowVolume;
         fireballThrow.Play();
     }
     public void PlayPlayerJumpSound()
@@ -152,6 +184,7 @@ public class SoundManager : MonoBehaviour
         if (fireballFly.isPlaying)
             return;
 
+        fireballFly.volume = playerJumpVolume;
         fireballFly.Play();
     }
     public void PlayFireballHitSound()
@@ -159,6 +192,7 @@ public class SoundManager : MonoBehaviour
         if (fireballHit.isPlaying)
             return;
 
+        fireballHit.volume = fireballHitVolume;
         fireballHit.Play();
     }
     public void PlayLancerainSpawnSound()
@@ -166,6 +200,7 @@ public class SoundManager : MonoBehaviour
         if (lancerainSpawn.isPlaying)
             return;
 
+        lancerainSpawn.volume = lancerainSpawnVolume;
         lancerainSpawn.Play();
     }
     public void PlayLanceRainSound()
@@ -173,6 +208,7 @@ public class SoundManager : MonoBehaviour
         if (lanceRain.isPlaying)
             return;
 
+        lanceRain.volume = lanceRainVolume;
         lanceRain.Play();
     }
     public void PlayLanceRainCollideSound()
@@ -180,6 +216,7 @@ public class SoundManager : MonoBehaviour
         if (lanceRainCollide.isPlaying)
             return;
 
+        lanceRainCollide.volume = lanceRainCollideVolume;
         lanceRainCollide.Play();
     }
     public void PlayMirrorSpawnSound()
@@ -187,6 +224,7 @@ public class SoundManager : MonoBehaviour
         if (mirrorSpawn.isPlaying)
             return;
 
+        mirrorSpawn.volume = mirrorSpawnVolume;
         mirrorSpawn.Play();
     }
     public void PlayBossDieSound()
@@ -194,6 +232,7 @@ public class SoundManager : MonoBehaviour
         if (bossDie.isPlaying)
             return;
 
+        bossDie.volume = bossDieVolume;
         bossDie.Play();
     }
     public void PlayEnvIntroSound()
@@ -201,6 +240,7 @@ public class SoundManager : MonoBehaviour
         if (envIntro.isPlaying)
             return;
 
+        envIntro.volume = envIntroVolume;
         envIntro.Play();
     }
     public void PlayEnvDoorCloseSound()
@@ -208,6 +248,7 @@ public class SoundManager : MonoBehaviour
         if (envDoorClose.isPlaying)
             return;
 
+        envDoorClose.volume = envDoorCloseVolume;
         envDoorClose.Play();
     }
     public void PlayEnvIntroBossSound()
@@ -215,6 +256,7 @@ public class SoundManager : MonoBehaviour
         if (envIntroBoss.isPlaying)
             return;
 
+        envIntroBoss.volume = envIntroBossVolume;
         envIntroBoss.Play();
     }
     public void PlayEnvMirrorBreakSound()
@@ -222,6 +264,7 @@ public class SoundManager : MonoBehaviour
         if (envMirrorBreak.isPlaying)
             return;
 
+        envMirrorBreak.volume = envMirrorBreakVolume;
         envMirrorBreak.Play();
     }
     public void PlayDialog1Sound()
@@ -229,6 +272,7 @@ public class SoundManager : MonoBehaviour
         if (dialog1.isPlaying)
             return;
 
+        dialog1.volume = dialog1Volume;
         dialog1.Play();
     }
     public void PlayDialog2Sound()
@@ -236,6 +280,7 @@ public class SoundManager : MonoBehaviour
         if (dialog2.isPlaying)
             return;
 
+        dialog2.volume = dialog2Volume;
         dialog2.Play();
     }
     public void PlayButtonSound()
@@ -243,6 +288,7 @@ public class SoundManager : MonoBehaviour
         if (button.isPlaying)
             return;
 
+        button.volume = buttonVolume;
         button.Play();
     }
     public void PlayLowEnergySound()
@@ -250,6 +296,7 @@ public class SoundManager : MonoBehaviour
         if (lowEnergy.isPlaying)
             return;
 
+        lowEnergy.volume = lowEnergyVolume;
         lowEnergy.Play();
     }
     public void PlayLowLifeSound()
@@ -257,6 +304,7 @@ public class SoundManager : MonoBehaviour
         if (lowLife.isPlaying)
             return;
 
+        lowLife.volume = lowLifeVolume;
         lowLife.Play();
     }
 
