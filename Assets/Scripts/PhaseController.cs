@@ -118,8 +118,9 @@ public class PhaseController : MonoBehaviour {
 
     void UpdateHealthbar()
     {
+        Debug.Log(healthbar);
         healthbar.fillAmount = (health1 / maxhealth1 / 3f) + (health2 / maxhealth2 / 3f) + (health3 / maxhealth3 / 3f);
-        Debug.Log((health1 / maxhealth1 / 3) + (health2 / maxhealth2 / 3) + (health3 / maxhealth3 / 3));
+        Debug.Log((health1 / maxhealth1 / 3f) + (health2 / maxhealth2 / 3f) + (health3 / maxhealth3 / 3f));
     }
 
     private void Update()
