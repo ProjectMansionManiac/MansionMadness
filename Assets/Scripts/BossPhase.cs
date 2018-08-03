@@ -75,7 +75,8 @@ public class BossPhase : MonoBehaviour {
         {
             foreach (Animator anim in otherAnimators)
             {
-                anim.Play(0);
+                anim.enabled = true;
+                anim.Play("Satair up test anim");
             }
         }
     }
@@ -105,6 +106,15 @@ public class BossPhase : MonoBehaviour {
         foreach (GameObject obj in ObjectsToSpawn)
         {
             obj.SetActive(false);
+        }
+
+        if (otherAnimators.Length != 0)
+        {
+            foreach (Animator anim in otherAnimators)
+            {
+                anim.enabled = false;
+                anim.Play("Satair up test anim");
+            }
         }
 
         head.tag = "Untagged";

@@ -15,7 +15,7 @@ public class BossDamageComponent : DamageComponent
 
     void Start()
     {
-        spriteRenderer = GameObject.Find("Enemy").GetComponent<SpriteRenderer>(); ;
+        spriteRenderer = GameObject.Find("EnemySprite").GetComponent<SpriteRenderer>(); ;
         normalColor = spriteRenderer.color;
         chicken = GetComponentInParent<Chicken>();
     }
