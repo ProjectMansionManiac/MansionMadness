@@ -51,7 +51,7 @@ public class BossPhaseBigFireballs : BossPhase
     {
         while (canShoot)
         {
-            yield return new WaitForSeconds(TimeBetweenFireballs);
+            yield return new WaitForSeconds(TimeBetweenFireballs /2f);
             Shoot();
         }
     }

@@ -50,6 +50,7 @@ public class PhaseController : MonoBehaviour {
         }
 
         animator.Play(phases[currentPhaseIndex].animationToPlay);
+        GetComponentInChildren<Animator>().Play(phases[currentPhaseIndex].spriteAnimationToPlay);
         if (phases[currentPhaseIndex].spriteToShowInThatPhase != null)
         {
             GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex].spriteToShowInThatPhase;
@@ -111,6 +112,7 @@ public class PhaseController : MonoBehaviour {
         public PhaseType[] phaseTypes;
         public float PhaseHealth;
         public string animationToPlay;
+        public string spriteAnimationToPlay;
         public Sprite spriteToShowInThatPhase;
     }
 }

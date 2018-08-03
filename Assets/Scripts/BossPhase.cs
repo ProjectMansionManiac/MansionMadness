@@ -28,9 +28,13 @@ public class BossPhase : MonoBehaviour {
 
     public Animator[] otherAnimators;
 
+    [HideInInspector] public Animator spriteAnimator;
+
     private void Start()
     {
         playerObject = GameObject.Find("Player");
+
+        spriteAnimator = GetComponentInChildren<Animator>();
 
         head = transform.Find("HitboxHead").gameObject;
         torso = transform.Find("HitboxTorso").gameObject;
