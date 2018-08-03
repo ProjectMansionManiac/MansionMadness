@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PhaseController : MonoBehaviour {
 
+    public Image healthbar;
+    public float health1, health2, health3, maxhealth1, maxhealth2, maxhealth3;
     //public PhaseType[] phases;
     public int currentPhaseIndex = 0;
     private Animator animator;
@@ -20,6 +23,13 @@ public class PhaseController : MonoBehaviour {
     private void Start()
     {
         //StartNextPhase();
+        //healthbar = GameObject.Find("Boss_Health").GetComponent<Image>();
+        health1 = phases[0].PhaseHealth + phases[1].PhaseHealth;
+        health2 = phases[2].PhaseHealth + phases[3].PhaseHealth;
+        health3 = phases[4].PhaseHealth + phases[5].PhaseHealth;
+        maxhealth1 = health1;
+        maxhealth2 = health2;
+        maxhealth3 = health3;
     }
 
     public enum PhaseType
@@ -104,6 +114,17 @@ public class PhaseController : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex - 1].spriteToShowInThatPhase;
         }
+    }
+
+    void UpdateHealthbar()
+    {
+        healthbar.fillAmount = (health1 / maxhealth1 / 3f) + (health2 / maxhealth2 / 3f) + (health3 / maxhealth3 / 3f);
+        Debug.Log((health1 / maxhealth1 / 3) + (health2 / maxhealth2 / 3) + (health3 / maxhealth3 / 3));
+    }
+
+    private void Update()
+    {
+        UpdateHealthbar();
     }
 
     [System.Serializable]

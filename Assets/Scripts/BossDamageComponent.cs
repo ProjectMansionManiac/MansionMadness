@@ -27,6 +27,36 @@ public class BossDamageComponent : DamageComponent
 
         chicken.health -= info.damage;
 
+        if (PhaseController.instance.health1 != 0)
+        PhaseController.instance.health1 -= info.damage;
+        
+        if (PhaseController.instance.health1 == 0)
+        {
+            if (PhaseController.instance.health2 != 0)
+                PhaseController.instance.health2 -= info.damage;
+        }
+
+        if (PhaseController.instance.health1 == 0 && PhaseController.instance.health2 == 0)
+        {
+            if (PhaseController.instance.health3 != 0)
+                PhaseController.instance.health3 -= info.damage;
+        }
+
+        if (PhaseController.instance.health1 < 0)
+        {
+            PhaseController.instance.health1 = 0;
+        }
+        if (PhaseController.instance.health2 < 0)
+        {
+            PhaseController.instance.health2 = 0;
+        }
+        if (PhaseController.instance.health3 < 0)
+        {
+            PhaseController.instance.health3 = 0;
+        }
+
+
+
         SoundManager.instance.PlayBossDamageSound();
         // check if health is below zero
         //if (this.health <= 0)
