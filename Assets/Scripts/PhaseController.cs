@@ -50,7 +50,7 @@ public class PhaseController : MonoBehaviour {
         }
 
         animator.Play(phases[currentPhaseIndex].animationToPlay);
-        GetComponentInChildren<Animator>().Play(phases[currentPhaseIndex].spriteAnimationToPlay);
+        GameObject.Find("EnemySprite").GetComponent<Animator>().Play(phases[currentPhaseIndex].spriteAnimationToPlay);
         if (phases[currentPhaseIndex].spriteToShowInThatPhase != null)
         {
             GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex].spriteToShowInThatPhase;
