@@ -8,11 +8,14 @@ public class PlayerInput : MonoBehaviour
     private Player player;
     private Transform shootingOrigin;
 
+    SpriteRenderer spriteRenderer;
+
     private void Start()
     {
         player = GetComponent<Player>();
         playerMovement = GetComponent<PlayerMovement>();
         shootingOrigin = transform.GetChild(1);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -42,6 +45,7 @@ public class PlayerInput : MonoBehaviour
         if (directionalInput.x < 0)
         {
             player.GetComponent<SpriteRenderer>().flipX = true;
+            
             shootingOrigin.localPosition = new Vector3(-Mathf.Abs(shootingOrigin.localPosition.x),
                                                   shootingOrigin.localPosition.y,
                                                   shootingOrigin.localPosition.z);
@@ -52,6 +56,7 @@ public class PlayerInput : MonoBehaviour
         else
         {
             player.GetComponent<SpriteRenderer>().flipX = false;
+           
             shootingOrigin.localPosition = new Vector3(Mathf.Abs(shootingOrigin.localPosition.x),
                                                   shootingOrigin.localPosition.y,
                                                   shootingOrigin.localPosition.z);
@@ -63,9 +68,13 @@ public class PlayerInput : MonoBehaviour
         {
             playerMovement.OnJumpInputDown();
             playerMovement.animator.Play("Jump");
-            SoundManager.instance.PlayPlayerJumpSound();
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlayPlayerJumpSound();
+            }
         }
 
+       
         //if (Input.GetButtonUp("Jump"))
         //{
         //    playerMovement.OnJumpInputUp();

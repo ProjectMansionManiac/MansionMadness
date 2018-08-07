@@ -56,12 +56,34 @@ public class PlayerShooting : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    public GameObject[] ammobar;
+    public Vector3 ammobarOffsetLeft;
+    public Vector3 ammobarOffsetRight;
+
     private void Update()
     {
+
+
         HandleShooting();
         HandleCooldown();
         HandleRefill();
         HandleAmmoBar();
+
+        if (spriteRenderer.flipX == true)
+        {
+            for (int i = 0; i < ammobar.Length; i++)
+            {
+                ammobar[i].transform.position = transform.position + ammobarOffsetLeft;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < ammobar.Length; i++)
+            {
+                ammobar[i].transform.position = transform.position + ammobarOffsetRight;
+            }
+
+        }
     }
 
     void HandleAmmoBar()
@@ -148,6 +170,16 @@ public class PlayerShooting : MonoBehaviour
 
     private void HandleShooting()
     {
+
+        if (currentAmmo < maxAmmo / 5)
+        {
+            ammoBarBlink.enabled = true;
+        }
+        else
+        {
+            ammoBarBlink.enabled = false;
+        }
+        gun.SetActive(false);
         if (Input.GetButtonDown("Fire1"))
         {
             shootPressed = true;
@@ -173,6 +205,7 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetButton("Fire1") && !playerMovement.ducking)
         {
             animator.Play("Shoot");
+            gun.SetActive(true);
             currentAmmo--;
 
             lineRenderer.SetPosition(0, shootingOrigin.position);
@@ -210,19 +243,19 @@ public class PlayerShooting : MonoBehaviour
                 }
             }
 
-            if (inputDirection.x >= .1f)
+            if (inputDirection.x >= 0f)
             {
                 spriteRenderer.flipX = false;
-                shootingOrigin.localPosition = new Vector3(Mathf.Abs(shootingOrigin.localPosition.x),
-                                                  shootingOrigin.localPosition.y,
-                                                  shootingOrigin.localPosition.z);
+                //shootingOrigin.localPosition = new Vector3(Mathf.Abs(shootingOrigin.localPosition.x),
+                //                                  shootingOrigin.localPosition.y,
+                //                                  shootingOrigin.localPosition.z);
             }
             else
             {
                 spriteRenderer.flipX = true;
-                shootingOrigin.localPosition = new Vector3(-Mathf.Abs(shootingOrigin.localPosition.x),
-                                                  shootingOrigin.localPosition.y,
-                                                  shootingOrigin.localPosition.z);
+                //shootingOrigin.localPosition = new Vector3(-Mathf.Abs(shootingOrigin.localPosition.x),
+                                                  //shootingOrigin.localPosition.y,
+                                                  //shootingOrigin.localPosition.z);
             }
 
             //float dot = Vector2.Dot(Vector2.left, (Vector2)inputDirection);
@@ -235,6 +268,16 @@ public class PlayerShooting : MonoBehaviour
             //newRotation.x = 0.0f;
 
             gun.transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 9999f); ;
+            if (inputDirection.x < 0f)
+            {
+                gun.transform.localScale = new Vector3(1f, -1f, 1f);
+                gun.transform.localPosition = new Vector3(-.15f, 0.269f, 0f);
+            }
+            else
+            {
+                gun.transform.localScale = new Vector3(1f, 1f, 1f);
+                gun.transform.localPosition = new Vector3(.15f, 0.269f, 0f);
+            }
 
             RaycastHit2D hit = Physics2D.Raycast((Vector2)shootingOrigin.position, inputDirection, 100f, layerMask);
 
@@ -255,8 +298,10 @@ public class PlayerShooting : MonoBehaviour
             lineRenderer.enabled = true;
 
             lineRenderer.SetPosition(1, hit.point);
-
-            SoundManager.instance.PlayShootSound();
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlayShootSound();
+            }
             if (hit.collider.gameObject.tag == "Mirror")
             {
                 Debug.Log("I Hit Mirror");

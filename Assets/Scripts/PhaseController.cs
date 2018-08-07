@@ -14,16 +14,27 @@ public class PhaseController : MonoBehaviour {
     public GameObject statusScreen;
     public Phase[] phases;
     [HideInInspector] public bool dead = false;
+    AudioSource audioSource;
+    float maxVolume;
+
+    public GameObject bossLoose, trineWin;
     private void Awake()
     {
         instance = this;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = audioSource.volume * PlayerPrefs.GetFloat("musicvolume", 1f);
+        maxVolume = audioSource.volume;
     }
 
     private void Start()
     {
         //StartNextPhase();
         //healthbar = GameObject.Find("Boss_Health").GetComponent<Image>();
+
+        if (phases.Length < 4)
+            return;
+
         health1 = phases[0].PhaseHealth + phases[1].PhaseHealth;
         health2 = phases[2].PhaseHealth + phases[3].PhaseHealth;
         health3 = phases[4].PhaseHealth + phases[5].PhaseHealth;
@@ -41,8 +52,11 @@ public class PhaseController : MonoBehaviour {
         BigFireball
     }
 
+    bool startFilling = false;
+
     public void StartNextPhase()
     {
+        startFilling = true;
         GetComponent<BossPhaseInit>().enabled = false;
         GetComponent<BossPhaseMirror>().enabled = false;
         GetComponent<BossPhaseSpear>().enabled = false;
@@ -51,22 +65,36 @@ public class PhaseController : MonoBehaviour {
 
         if (phases.Length <= currentPhaseIndex)
         {
+            PlayWinMusic();
+
             statusScreen.SetActive(true);
-            var statusText = GameObject.Find("StatusText").GetComponent<UnityEngine.UI.Text>();
-            statusText.text = "You win.";
+            bossLoose.SetActive(true);
+            trineWin.SetActive(true);
+            if (GameObject.Find("StatusText") != null)
+            {
+                var statusText = GameObject.Find("StatusText").GetComponent<UnityEngine.UI.Text>();
+                statusText.text = "YOU WIN!";
+            }
             dead = true;
             Time.timeScale = 0f;
             return;
         }
 
         animator.Play(phases[currentPhaseIndex].animationToPlay);
-        GameObject.Find("EnemySprite").GetComponent<Animator>().Play(phases[currentPhaseIndex].spriteAnimationToPlay);
+        if (GameObject.Find("EnemySprite").GetComponent<Animator>() != null)
+        {
+            GameObject.Find("EnemySprite").GetComponent<Animator>().Play(phases[currentPhaseIndex].spriteAnimationToPlay);
+        }
         if (phases[currentPhaseIndex].spriteToShowInThatPhase != null)
         {
             GetComponent<SpriteRenderer>().sprite = phases[currentPhaseIndex].spriteToShowInThatPhase;
         }
         if (phases.Length > currentPhaseIndex)
         {
+            if (phases[currentPhaseIndex].music != null)
+            {
+                StartCoroutine(FadeMusic());
+            }
             foreach (PhaseType phaseType in phases[currentPhaseIndex].phaseTypes)
             {
                 switch (phaseType)
@@ -95,6 +123,73 @@ public class PhaseController : MonoBehaviour {
             StartCoroutine(ChangeSprite());
     }
 
+    IEnumerator FadeMusic()
+    {
+        while (audioSource.volume > 0f)
+        {
+            yield return new WaitForSeconds(0.02f);
+            audioSource.volume -= maxVolume / 100f;
+        }
+
+        audioSource.clip = phases[currentPhaseIndex - 1].music;
+        audioSource.Play();
+
+        while (audioSource.volume < maxVolume)
+        {
+            yield return new WaitForSeconds(0.03f);
+            audioSource.volume += maxVolume / 100f;
+        }
+    }
+
+    public AudioClip LooseMusic;
+    public AudioClip WinMusic;
+
+    public void PlayLooseMusic()
+    {
+        StartCoroutine(FadeMusicLoose());
+    }
+
+    public void PlayWinMusic()
+    {
+        StartCoroutine(FadeMusicWin());
+    }
+
+    IEnumerator FadeMusicWin()
+    {
+        while (audioSource.volume > 0f)
+        {
+            yield return new WaitForSeconds(0.02f);
+            audioSource.volume -= maxVolume / 100f;
+        }
+
+        audioSource.clip = WinMusic;
+        audioSource.Play();
+
+        while (audioSource.volume < maxVolume)
+        {
+            yield return new WaitForSeconds(0.03f);
+            audioSource.volume += maxVolume / 100f;
+        }
+    }
+
+     IEnumerator FadeMusicLoose()
+    {
+        while (audioSource.volume > 0f)
+        {
+            yield return new WaitForSeconds(0.02f);
+            audioSource.volume -= maxVolume / 100f;
+        }
+
+        audioSource.clip = LooseMusic;
+        audioSource.Play();
+
+        while (audioSource.volume < maxVolume)
+        {
+            yield return new WaitForSeconds(0.03f);
+            audioSource.volume += maxVolume / 100f;
+        }
+    }
+
     IEnumerator ChangeSprite()
     {
         while (true)
@@ -116,9 +211,25 @@ public class PhaseController : MonoBehaviour {
         }
     }
 
+    bool full = false;
     void UpdateHealthbar()
     {
-        Debug.Log(healthbar);
+        if (healthbar == null)
+            return;
+
+        if (startFilling && !full)
+        {
+            healthbar.fillAmount += Time.deltaTime;
+            if (healthbar.fillAmount >= 1f)
+            {
+                full = true;
+            }
+            return;
+        }
+
+        if (!startFilling)
+            return;
+
         healthbar.fillAmount = (health1 / maxhealth1 / 3f) + (health2 / maxhealth2 / 3f) + (health3 / maxhealth3 / 3f);
         Debug.Log((health1 / maxhealth1 / 3f) + (health2 / maxhealth2 / 3f) + (health3 / maxhealth3 / 3f));
     }
@@ -136,6 +247,7 @@ public class PhaseController : MonoBehaviour {
         public string animationToPlay;
         public string spriteAnimationToPlay;
         public Sprite spriteToShowInThatPhase;
+        public AudioClip music;
     }
 }
 

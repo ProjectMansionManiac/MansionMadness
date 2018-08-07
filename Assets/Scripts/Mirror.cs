@@ -12,6 +12,8 @@ public class Mirror : MonoBehaviour
     float currentTick;
     bool canDamage = true;
 
+    public GameObject hitPoint;
+
     private LineRenderer lineRenderer;
     private void Start()
     {
@@ -25,6 +27,7 @@ public class Mirror : MonoBehaviour
         if (!canReflect)
         {
             lineRenderer.enabled = false;
+            hitPoint.SetActive(false);
         }
     }
 
@@ -54,12 +57,20 @@ public class Mirror : MonoBehaviour
     public void Reflect(Vector2 inputVector, Vector2 reflectionPoint, float laserLength)
     {
         Debug.Log("I Reflect");
+        hitPoint.SetActive(true);
+        hitPoint.transform.position = reflectionPoint;
+
+        Vector2 n = transform.up;
+
+        float angle = Mathf.Atan2(n.y, n.x) * Mathf.Rad2Deg;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        hitPoint.transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 9999f); ;
 
         lineRenderer.SetPosition(0, reflectionPoint);
 
         // initialize a new vector to zero which
         // will be the normal vector of the reflection
-        Vector2 n = transform.up;
 		
         // generate reflection vector between colliding object and mirror
         Vector2 reflection = Vector2.Reflect(inputVector, n);
@@ -72,7 +83,10 @@ public class Mirror : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(reflectionPoint, reflection, 100f);
 
-        SoundManager.instance.PlayReflectSound();
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayReflectSound();
+        }
 
         if (!hit)
         {

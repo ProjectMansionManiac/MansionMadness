@@ -7,6 +7,7 @@ public class PlayerDamageComponent : DamageComponent
 {
     public Image healthBar;
     public GameObject gameOverScreen;
+    public GameObject trineLoose;
 
     public Color damageColor;
     Color normalColor;
@@ -24,6 +25,7 @@ public class PlayerDamageComponent : DamageComponent
     {
         spriteRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         normalColor = spriteRenderer.color;
+        if (GameObject.Find("HealthBar") != null)
         healthBar = GameObject.Find("HealthBar").GetComponent<Image>();
         //gameOverScreen = GameObject.Find("GameOverScreen");
 
@@ -54,6 +56,11 @@ public class PlayerDamageComponent : DamageComponent
             // the player is dead...
             Time.timeScale = 0f;
             gameOverScreen.SetActive(true);
+
+            PhaseController.instance.PlayLooseMusic();
+
+            if (trineLoose != null)
+            trineLoose.SetActive(true);
         }
     }
 

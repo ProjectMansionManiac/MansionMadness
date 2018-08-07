@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 347aaa99ae889c3488a68e6180b9ce39
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Knight Of The Ectoplasm Font
+  fontNames:
+  - Knight Of The Ectoplasm Font
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a98b87501f389c4478572806b21ddfb0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

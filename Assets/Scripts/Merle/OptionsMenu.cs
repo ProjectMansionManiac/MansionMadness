@@ -61,4 +61,31 @@ public class OptionsMenu : MonoBehaviour {
 
     }
 
+    public void SetMusicVolume()
+    {
+
+    }
+    public void SetSoundVolume()
+    {
+
+    }
+
+    public Slider musicSlider, soundSlider;
+    public Toggle musicToggle, soundToggle;
+
+    void Update()
+    {
+        PlayerPrefs.SetFloat("musicvolume", musicSlider.value);
+        PlayerPrefs.SetFloat("soundvolume", musicSlider.value);
+
+        if (!musicToggle.isOn)
+        {
+            PlayerPrefs.SetFloat("musicvolume", 0f);
+        }
+        if (!soundToggle.isOn)
+        {
+            PlayerPrefs.SetFloat("soundvolume", 0f);
+        }
+    }
+
 }

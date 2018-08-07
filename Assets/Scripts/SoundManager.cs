@@ -112,6 +112,33 @@ public class SoundManager : MonoBehaviour
         lowEnergy        .clip =  lowEnergySound;
         lowLife          .clip = lowLifeSound;
 
+
+        walk             .volume =     walk             .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        shoot            .volume =     shoot            .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        bossDamage       .volume =     bossDamage       .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        reflect          .volume =     reflect          .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        crouch           .volume =     crouch           .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        playerDamage     .volume =     playerDamage     .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        die              .volume =     die              .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        fireballThrow    .volume =     fireballThrow    .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        fireballFly      .volume =     fireballFly      .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        fireballHit      .volume =     fireballHit      .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        lancerainSpawn   .volume =     lancerainSpawn   .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        lanceRain        .volume =     lanceRain        .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        lanceRainCollide .volume =     lanceRainCollide .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        mirrorSpawn      .volume =     mirrorSpawn      .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        bossDie          .volume =     bossDie          .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        envIntro         .volume =     envIntro         .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        envDoorClose     .volume =     envDoorClose     .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        envIntroBoss     .volume =     envIntroBoss     .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        envMirrorBreak   .volume =     envMirrorBreak   .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        dialog1          .volume =     dialog1          .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        dialog2          .volume =     dialog2          .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        button           .volume =     button           .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        lowEnergy        .volume =     lowEnergy        .volume * PlayerPrefs.GetFloat("soundvolume",1f);
+        lowLife.volume = lowLife.volume * PlayerPrefs.GetFloat("soundvolume",1f);
+
+
         PlayEnvIntroSound();
     }
 
