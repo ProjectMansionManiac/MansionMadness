@@ -119,6 +119,8 @@ public class PhaseController : MonoBehaviour {
         }
         currentPhaseIndex++;
 
+        //fixed
+
         if (currentPhaseIndex == 1)
             StartCoroutine(ChangeSprite());
     }
@@ -127,8 +129,8 @@ public class PhaseController : MonoBehaviour {
     {
         while (audioSource.volume > 0f)
         {
-            yield return new WaitForSeconds(0.02f);
-            audioSource.volume -= maxVolume / 100f;
+            yield return new WaitForSecondsRealtime(0.05f);
+            audioSource.volume -= maxVolume / 10f;
         }
 
         audioSource.clip = phases[currentPhaseIndex - 1].music;
@@ -136,8 +138,8 @@ public class PhaseController : MonoBehaviour {
 
         while (audioSource.volume < maxVolume)
         {
-            yield return new WaitForSeconds(0.03f);
-            audioSource.volume += maxVolume / 100f;
+            yield return new WaitForSecondsRealtime(0.05f);
+            audioSource.volume += maxVolume / 10f;
         }
     }
 
@@ -147,6 +149,9 @@ public class PhaseController : MonoBehaviour {
     public void PlayLooseMusic()
     {
         StartCoroutine(FadeMusicLoose());
+
+
+        Debug.Log("Loose music");
     }
 
     public void PlayWinMusic()
@@ -158,8 +163,8 @@ public class PhaseController : MonoBehaviour {
     {
         while (audioSource.volume > 0f)
         {
-            yield return new WaitForSeconds(0.02f);
-            audioSource.volume -= maxVolume / 100f;
+            yield return new WaitForSecondsRealtime(0.05f);
+            audioSource.volume -= maxVolume / 10f;
         }
 
         audioSource.clip = WinMusic;
@@ -167,8 +172,8 @@ public class PhaseController : MonoBehaviour {
 
         while (audioSource.volume < maxVolume)
         {
-            yield return new WaitForSeconds(0.03f);
-            audioSource.volume += maxVolume / 100f;
+            yield return new WaitForSecondsRealtime(0.05f);
+            audioSource.volume += maxVolume / 10f;
         }
     }
 
@@ -176,8 +181,8 @@ public class PhaseController : MonoBehaviour {
     {
         while (audioSource.volume > 0f)
         {
-            yield return new WaitForSeconds(0.02f);
-            audioSource.volume -= maxVolume / 100f;
+            yield return new WaitForSecondsRealtime(0.05f);
+            audioSource.volume -= maxVolume / 10f;
         }
 
         audioSource.clip = LooseMusic;
@@ -185,8 +190,8 @@ public class PhaseController : MonoBehaviour {
 
         while (audioSource.volume < maxVolume)
         {
-            yield return new WaitForSeconds(0.03f);
-            audioSource.volume += maxVolume / 100f;
+            yield return new WaitForSecondsRealtime(0.05f);
+            audioSource.volume += maxVolume / 10f;
         }
     }
 

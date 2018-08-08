@@ -135,7 +135,7 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    private void TriggerDamage(GameObject receiver)
+    private void TriggerDamage(GameObject receiver, Vector3 pos)
     {
 
         //trigger damage at the Enemy GameObject
@@ -144,8 +144,24 @@ public class PlayerShooting : MonoBehaviour
         info.damage = this.damage;
 
         receiver.GetComponent<DamageComponent>().OnDamageReceived(info);
+        receiver.GetComponent<DamageComponent>().ShowHitpoint(pos);
 
         canDamage = false;
+    }
+
+    public GameObject hitPoint;
+
+    public void ShowHitpoint(Vector3 pos)
+    {
+        hitPoint.transform.position = pos;
+        hitPoint.SetActive(true);
+        DisableHitpoint();
+    }
+
+    IEnumerator DisableHitpoint()
+    {
+        yield return new WaitForSeconds(.1f);
+        hitPoint.SetActive(false);
     }
 
     private void AmmoEmpty()
@@ -205,6 +221,10 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetButton("Fire1") && !playerMovement.ducking)
         {
             animator.Play("Shoot");
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlayShootSound();
+            }
             gun.SetActive(true);
             currentAmmo--;
 
@@ -298,10 +318,6 @@ public class PlayerShooting : MonoBehaviour
             lineRenderer.enabled = true;
 
             lineRenderer.SetPosition(1, hit.point);
-            if (SoundManager.instance != null)
-            {
-                SoundManager.instance.PlayShootSound();
-            }
             if (hit.collider.gameObject.tag == "Mirror")
             {
                 Debug.Log("I Hit Mirror");
@@ -314,7 +330,7 @@ public class PlayerShooting : MonoBehaviour
             //otherwise hit enemy
             if (hit.collider.gameObject.tag == "Enemy")
             {
-                TriggerDamage(hit.collider.gameObject);
+                TriggerDamage(hit.collider.gameObject, hit.point);
             }
 
 

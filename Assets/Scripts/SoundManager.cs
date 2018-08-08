@@ -228,7 +228,7 @@ public class SoundManager : MonoBehaviour
             return;
 
         lancerainSpawn.volume = lancerainSpawnVolume;
-        lancerainSpawn.Play();
+        lancerainSpawn.Play(30870);
     }
     public void PlayLanceRainSound()
     {

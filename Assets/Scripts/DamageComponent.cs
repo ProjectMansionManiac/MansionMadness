@@ -10,6 +10,21 @@ public class DamageComponent : MonoBehaviour
         public float damage;
     }
 
+    public GameObject hitPoint;
+
+    public void ShowHitpoint(Vector3 pos)
+    {
+        hitPoint.transform.position = pos;
+        hitPoint.SetActive(true);
+        StartCoroutine(DisableHitpoint());
+    }
+
+    IEnumerator DisableHitpoint()
+    {
+        yield return new WaitForSeconds(.1f);
+        hitPoint.SetActive(false);
+    }
+
     public virtual void OnDamageReceived(DamageInfo info)
     {
 

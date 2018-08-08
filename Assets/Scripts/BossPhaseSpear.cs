@@ -47,8 +47,6 @@ public class BossPhaseSpear : BossPhase {
         {
             yield return new WaitForSeconds(TimeBetweenSpikes);
 
-            SoundManager.instance.PlayLancerainSpawnSound();
-
             float spikeWidth = spike.GetComponent<SpriteRenderer>().bounds.size.x;
             float spikeAmount = (float)spikeDrop.GetComponent<DropComponent>().drops.Count;
             float spaceBetweenSpikes = spikeDrop.GetComponent<DropComponent>().spacingSize;

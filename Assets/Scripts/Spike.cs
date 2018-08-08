@@ -27,7 +27,9 @@ public class Spike : MonoBehaviour {
 
     void Start () {
         StartCoroutine(WaitBeforFall());
-	}
+
+        SoundManager.instance.PlayLancerainSpawnSound();
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -51,6 +53,7 @@ public class Spike : MonoBehaviour {
         {
             hit = true;
             StartCoroutine(DestroyAfterSeconds());
+            SoundManager.instance.PlayLanceRainCollideSound();
             return;
         }
         if (collision.gameObject.name == "Hitbox")

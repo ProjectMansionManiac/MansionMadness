@@ -54,6 +54,16 @@ public class Mirror : MonoBehaviour
         bullet.direction = reflection;
     }
 
+    bool canSound = true;
+
+    IEnumerator controllSound()
+    {
+        canSound = false;
+        yield return new WaitForSeconds(.3f);
+        canSound = true;
+
+    }
+
     public void Reflect(Vector2 inputVector, Vector2 reflectionPoint, float laserLength)
     {
         Debug.Log("I Reflect");
@@ -85,7 +95,17 @@ public class Mirror : MonoBehaviour
 
         if (SoundManager.instance != null)
         {
-            SoundManager.instance.PlayReflectSound();
+            if (canSound)
+            {
+                SoundManager.instance.PlayReflectSound();
+                StopCoroutine(controllSound());
+                StartCoroutine(controllSound());
+            }
+            else
+            {
+                StopCoroutine(controllSound());
+                StartCoroutine(controllSound());
+            }
         }
 
         if (!hit)
@@ -124,12 +144,12 @@ public class Mirror : MonoBehaviour
         //otherwise hit enemy
         if (hit.collider.gameObject.tag == "Enemy")
         {
-            TriggerDamage(hit.collider.gameObject);
+            TriggerDamage(hit.collider.gameObject, hit.point);
         }
 
         if (hit.collider.gameObject.tag == "Player")
         {
-            TriggerDamage(hit.collider.gameObject);
+            TriggerDamage(hit.collider.gameObject, hit.point);
         }
     }
 
@@ -137,6 +157,7 @@ public class Mirror : MonoBehaviour
     {
         yield return new WaitForSeconds(.1f);
         canReflect = false;
+        hitPoint.SetActive(false);
     }
 
     private void HandleCooldown()
@@ -153,7 +174,7 @@ public class Mirror : MonoBehaviour
     }
 
 
-    private void TriggerDamage(GameObject receiver)
+    private void TriggerDamage(GameObject receiver, Vector3 pos)
     {
         //trigger damage at the Enemy GameObject
         DamageComponent.DamageInfo info = new DamageComponent.DamageInfo();
@@ -161,6 +182,9 @@ public class Mirror : MonoBehaviour
         info.damage = this.damage;
 
         receiver.GetComponent<DamageComponent>().OnDamageReceived(info);
+
+        receiver.GetComponent<DamageComponent>().ShowHitpoint(pos);
+
 
         canDamage = false;
     }

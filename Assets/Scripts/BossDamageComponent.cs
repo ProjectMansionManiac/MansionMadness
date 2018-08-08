@@ -15,7 +15,12 @@ public class BossDamageComponent : DamageComponent
 
     void Start()
     {
-        spriteRenderer = GameObject.Find("EnemySprite").GetComponent<SpriteRenderer>(); ;
+        spriteRenderer = GameObject.Find("EnemySprite").GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GameObject.Find("Enemy").GetComponent<SpriteRenderer>();
+            Debug.Log(spriteRenderer);
+        }
         normalColor = spriteRenderer.color;
         chicken = GetComponentInParent<Chicken>();
     }
@@ -67,10 +72,15 @@ public class BossDamageComponent : DamageComponent
         //}
     }
 
+   
+
     IEnumerator DamageAnimation()
     {
+        Debug.Log("SUKA BLJAT");
+
         if (!isAnimating)
         {
+            Debug.Log("SUKA BLJAT 2");
             isAnimating = true;
             for (int i = 0; i < animationSpeed; i++)
             {

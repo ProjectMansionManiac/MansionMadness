@@ -86,6 +86,8 @@ public class OptionsMenu : MonoBehaviour {
         {
             PlayerPrefs.SetFloat("soundvolume", 0f);
         }
+
+        GameObject.Find("BackroundMusik").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("musicVolume");
     }
 
 }

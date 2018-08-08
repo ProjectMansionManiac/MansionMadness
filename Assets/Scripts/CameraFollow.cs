@@ -35,7 +35,7 @@ public class CameraFollow : MonoBehaviour
                 to.z = transform.position.z;
             }
                 
-
+            // do nothing
 
             transform.position -= (from - to) * dampTime * Time.deltaTime;
             //Camera.main.orthographicSize = distanceBetweenTargets;
